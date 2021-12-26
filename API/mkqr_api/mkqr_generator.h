@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <unordered_map>
      
 /*!@brief Indicates that no error has occured during the last action.Use this to check if
  * something has executed successfuly or not */
@@ -8,8 +9,11 @@
 /*!@brief Indicates that the last action has returned null or that  the handle that the last
  * function tried to access was null */
 #define MKQR_ERR_NULL 1
-/*!@brief Indicates that an argument was invalid.Set this when a validation fails */
-#define MKQR_ERR_INVALID_ARG 2    
+/*!@brief Indicates that an argument was invalid. Set this when a validation fails */
+#define MKQR_ERR_NONFATAL 2    
+/*!@brief Indicates that an argument was invalid, but the argument was mandatory.
+ * Set this when a validation of a mandatory arguemnt fails. */
+#define MKQR_ERR_FATAL 3    
 //==========================================================================================
 
 //!@brief Yellow color, 24-bit expanded to 32-bit
@@ -36,18 +40,31 @@
 namespace MKQR
 {
 	class Validator;
-
 	/*!@brief The MKQR::Generator class contains functionality for generating and
 	 * validating MKQR codes. MKQR::Generator implements all details of the MKQR 
 	 * standard for generating such codes */
 	class Generator
 	{
+		friend Validator;
 	private:
 		/*!@brief Instance of the validator class which validates each parameter */
 		const Validator* mValidator;
 
-		/*!@brief Holds all preconcatanated parameter values */
-		std::vector<std::string> mParameters;
+		/*!@brief Holds all parameter values */
+		std::unordered_map<std::string, std::string> mParameters;
+
+		/*!@brief If true, a fatal error has occured and there is no need to continue
+		 * executing any functions any further. 
+		 */
+		bool mFatalError = false;
+
+		/*!@brief Gets a parameter value based on the name, used only for validation 
+		 *
+		 * @param name The name of the parameter
+		 * 
+		 * @return The value of the parameter
+		*/
+		[[nodiscard]] std::string GetParameterValue(const std::string& name) const noexcept;
 
 		/*!@brief Iterates over all added parametersand generates a single MKQR URI string
 		 * from them
@@ -56,7 +73,7 @@ namespace MKQR
 		 * execute if one of the non-mandatory parameters is invalid
 		 *
 		 * @return A string containing a valid MKQR URI */
-		std::string GenerateStringFromParameters() const noexcept;
+		[[nodiscard]] std::string GenerateStringFromParameters() const noexcept;
 
 		/*!@brief Maps value that is between low1 and high1 to a value that is the same 
 		 * distance both from low2 and high2
@@ -128,7 +145,7 @@ namespace MKQR
 
 		/*!@brief Internal use only. Used for copying the last error message when
 		 * it's removed */
-		char* mTempErrorMessage;
+		char* mTempErrorMessage = nullptr;
 
 		/*!@brief Last recorded error code. Use the MKQR_ERR macro to set this */
 		uint8_t mLastErrorCode = MKQR_ERR_NO;

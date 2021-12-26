@@ -64,7 +64,7 @@ namespace wpfexample
             if (lastErrorCode != 0)
             {
                 string message = Marshal.PtrToStringAnsi((IntPtr)(long)(ulong)(MkqrGetLastErrorMessage(mkqr)));
-                MessageBox.Show(message);
+                MessageBox.Show(message, "Parameter error", MessageBoxButton.OK, lastErrorCode == 3 ? MessageBoxImage.Error : MessageBoxImage.Warning);
             }
         }
 
@@ -93,11 +93,11 @@ namespace wpfexample
             InitializeComponent();
             InitializeMkqr();
 
-            CreateParameter("t", "1");
-            CreateParameter("v", "200");
-            CreateParameter("iban", "1"); // DE89370400440532013000
+            CreateParameter("t", "MKD");
+            CreateParameter("v", "1000");
+            CreateParameter("iban", "DE89370400440532013000");
             CreateParameter("aiban", "312324123|312324123|312324123|312324123|312324123");
-            CreateParameter("cat", "1");
+            CreateParameter("cat", "S");
             CreateParameter("cn", "Toplifikacija Skopje");
             CreateParameter("cadd1", "Londonska br. 8");
             CreateParameter("cz", "1000");

@@ -61,8 +61,8 @@ void GenerateQR(size_t num)
 	{
 		const size_t mkqr = MkqrCreateNew();
 
-		MkqrCreateParameter(mkqr, "t", "1");
-		MkqrCreateParameter(mkqr, "v", "200");
+		MkqrCreateParameter(mkqr, "t", "MKD");
+		MkqrCreateParameter(mkqr, "v", "1000");
 		MkqrCreateParameter(mkqr, "c", "1");
 		MkqrCreateParameter(mkqr, "iban", "DE89370400440532013000"); 
 		MkqrCreateParameter(mkqr, "aiban", "312324123|312324123|312324123|312324123|312324123");

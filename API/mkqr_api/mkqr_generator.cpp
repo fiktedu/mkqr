@@ -5,12 +5,24 @@
 
 #include <regex>
 
+std::string MKQR::Generator::GetParameterValue(const std::string& name) const noexcept
+{
+	std::string retVal = "";
+	const auto& paramIt = mParameters.find(name);
+	if (paramIt != mParameters.end())
+	{
+		retVal = paramIt->second;
+	}
+
+	return retVal;
+}
+
 std::string MKQR::Generator::GenerateStringFromParameters() const noexcept
 {
 	std::string retVal = "mkqr://pay?";
-	for (const std::string& param : mParameters)
+	for (const auto& param : mParameters)
 	{
-		retVal += param + "&";
+		retVal += param.first + "=" + param.second + "&";
 	}
 
 	retVal.pop_back();
@@ -35,7 +47,7 @@ uint32_t MKQR::Generator::LerpColor(uint32_t color1, uint32_t color2, float alph
 }
 
 MKQR::Generator::Generator()
-	: mValidator(new Validator())
+	: mValidator(new Validator(*this))
 {
 }
 
@@ -47,19 +59,35 @@ MKQR::Generator::~Generator()
 
 void MKQR::Generator::CreateParameter(const std::string& name, const std::string& value) noexcept
 {
+	if (mFatalError)
+		return;
+
 	if (name.empty())
-		MKQR_ERR(MKQR_ERR_INVALID_ARG, "Parameter name is empty.");
+		MKQR_ERR(MKQR_ERR_FATAL, "Parameter name is empty.");
 
 	if (value.empty())
-		MKQR_ERR(MKQR_ERR_INVALID_ARG, "Parameter value is empty.");
+		MKQR_ERR(MKQR_ERR_FATAL, "Parameter value is empty.");
 
-	mValidator->ValidateParameter(name, value);
+	Validator::SResult result = mValidator->ValidateParameter(name, value);
 
-	mParameters.push_back(name + "=" + value);
+	if (result.GetLevel() == Validator::SResult::ELevel::Warning)
+	{
+		MKQR_ERR(MKQR_ERR_NONFATAL, result.GetMessage());
+	}
+	else if (result.GetLevel() == Validator::SResult::ELevel::Error)
+	{
+		MKQR_ERR(MKQR_ERR_FATAL, result.GetMessage());
+		mFatalError = true;
+	}
+
+	mParameters.insert_or_assign(name, value);
 }
 
 void MKQR::Generator::Generate(uint8_t isMonochrome, size_t superSampling) noexcept
 {
+	if (mFatalError)
+		return;
+
 	mSuperSampling = superSampling;
 	mIsMonochrome = isMonochrome;
 
