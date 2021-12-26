@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['mask_0',['mask',['../classqrcodegen_1_1_qr_code.html#af660f7dee1a8d8a8ff8f7616b3f37d0c',1,'qrcodegen::QrCode']]],
+  ['max_5fversion_1',['MAX_VERSION',['../classqrcodegen_1_1_qr_code.html#ac884bc36ec4765b89540751ad8c7dfa1',1,'qrcodegen::QrCode']]],
+  ['min_5fversion_2',['MIN_VERSION',['../classqrcodegen_1_1_qr_code.html#a49443c1e43f8c73b6a5c6069c6b24bd4',1,'qrcodegen::QrCode']]],
+  ['mismonochrome_3',['mIsMonochrome',['../class_m_k_q_r_1_1_generator.html#a13e4daa07cbe41e0bf0a5652bd1654b6',1,'MKQR::Generator']]],
+  ['mlasterrorcode_4',['mLastErrorCode',['../class_m_k_q_r_1_1_generator.html#a50498912167310b43a18283c42c74647',1,'MKQR::Generator']]],
+  ['mlasterrormessage_5',['mLastErrorMessage',['../class_m_k_q_r_1_1_generator.html#a30ad17a8728bc7eed4b0b0a7287ddcb2',1,'MKQR::Generator']]],
+  ['mode_6',['mode',['../classqrcodegen_1_1_qr_segment.html#a3baf40039866112e795965e86826205e',1,'qrcodegen::QrSegment']]],
+  ['modebits_7',['modeBits',['../classqrcodegen_1_1_qr_segment_1_1_mode.html#abf6370926d771ea555d45656789f8d99',1,'qrcodegen::QrSegment::Mode']]],
+  ['modules_8',['modules',['../classqrcodegen_1_1_qr_code.html#a2d156221013f4f01f37c83963dab3290',1,'qrcodegen::QrCode']]],
+  ['mparameters_9',['mParameters',['../class_m_k_q_r_1_1_generator.html#af3eb9fb46ab6b838d7c703fe8e008be2',1,'MKQR::Generator']]],
+  ['mqrimagedata_10',['mQrImageData',['../class_m_k_q_r_1_1_generator.html#a8859ec0fe5ce6d06ebb4ec5d3fbeaf7e',1,'MKQR::Generator']]],
+  ['mqrmatrix_11',['mQrMatrix',['../class_m_k_q_r_1_1_generator.html#a19a8662bb437c330a5f409d500f3b491',1,'MKQR::Generator']]],
+  ['mqrmatrixsize_12',['mQrMatrixSize',['../class_m_k_q_r_1_1_generator.html#a65b1671d91ccf19e6faec2774798173e',1,'MKQR::Generator']]],
+  ['msupersampling_13',['mSuperSampling',['../class_m_k_q_r_1_1_generator.html#ac661380bc01a9dc5bcc67d35e7faabee',1,'MKQR::Generator']]],
+  ['mtemperrormessage_14',['mTempErrorMessage',['../class_m_k_q_r_1_1_generator.html#afa83d1d1f78eefe67e63c8d8f75dff95',1,'MKQR::Generator']]],
+  ['mvalidator_15',['mValidator',['../class_m_k_q_r_1_1_generator.html#a05dcbf21b06b5f5bcaeafe8276e9e62b',1,'MKQR::Generator']]]
+];

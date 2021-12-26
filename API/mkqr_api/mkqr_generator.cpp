@@ -75,10 +75,10 @@ void MKQR::Generator::Generate(uint8_t isMonochrome, size_t superSampling) noexc
 
 	mQrMatrix.clear();
 
-	mString = GenerateStringFromParameters();
+	const std::string string = GenerateStringFromParameters();
 
 	const qrcodegen::QrCode::Ecc errCorLvl = qrcodegen::QrCode::Ecc::LOW;
-	const qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(mString.c_str(), errCorLvl);
+	const qrcodegen::QrCode qrCode = qrcodegen::QrCode::encodeText(string.c_str(), errCorLvl);
 
 	mQrMatrixSize = qrCode.getSize();
 
