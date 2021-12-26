@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="57" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="57" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="57" column="27" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1af39f44897bee3e04d1d473f4ae34e8bd" prot="public" static="yes" mutable="no">
         <type>const Mode</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="58" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="58" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="58" column="27" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a3238fac594cabde6a7e9e8c4a8f69d21" prot="public" static="yes" mutable="no">
         <type>const Mode</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="59" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="59" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="59" column="27" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a811d8957ee17d2aabbebab9bf891dc35" prot="public" static="yes" mutable="no">
         <type>const Mode</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="60" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="60" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="60" column="27" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a0163090a4c534a28dbed7ee3102fc66d" prot="public" static="yes" mutable="no">
         <type>const Mode</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="61" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="61" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="61" column="27" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="67" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="67" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="67" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a5b2cf39a8668c22331b133321ebeff05" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="70" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="70" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="70" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="75" column="10" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="44" bodyend="49"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="75" column="10" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="44" bodyend="49"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="83" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="52" bodyend="54"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="83" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="52" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a82d2c9bd7eef555bf8884b48cee84adb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -157,14 +157,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="89" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="57" bodyend="59"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="89" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="57" bodyend="59"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="mkqr_api/qrcodegen.h" line="53" column="9" bodyfile="mkqr_api/qrcodegen.h" bodystart="53" bodyend="91"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="53" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="53" bodyend="91"/>
     <listofallmembers>
       <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1af39f44897bee3e04d1d473f4ae34e8bd" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>ALPHANUMERIC</name></member>
       <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a3238fac594cabde6a7e9e8c4a8f69d21" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>BYTE</name></member>

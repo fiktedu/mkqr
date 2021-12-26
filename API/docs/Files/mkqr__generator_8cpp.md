@@ -1,9 +1,9 @@
 ---
-title: mkqr_api/mkqr_generator.cpp
+title: D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp
 
 ---
 
-# mkqr_api/mkqr_generator.cpp
+# D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp
 
 
 
@@ -50,8 +50,14 @@ uint32_t MKQR::Generator::LerpColor(uint32_t color1, uint32_t color2, float alph
 }
 
 MKQR::Generator::Generator()
-    : mValidator(Validator())
+    : mValidator(new Validator())
 {
+}
+
+MKQR::Generator::~Generator()
+{
+    delete mTempErrorMessage;
+    delete mValidator;
 }
 
 void MKQR::Generator::CreateParameter(const std::string& name, const std::string& value) noexcept
@@ -62,23 +68,7 @@ void MKQR::Generator::CreateParameter(const std::string& name, const std::string
     if (value.empty())
         MKQR_ERR(MKQR_ERR_INVALID_ARG, "Parameter value is empty.");
 
-    if (name == "iban")
-    {
-        if (!mValidator.ValidateStringIBAN(value.c_str()))
-        {
-            MKQR_ERR(MKQR_ERR_INVALID_ARG, "IBAN is not valid.");
-        }
-    }
-
-    if (name == "aiban")
-    {
-        if (!mValidator.ValidateStringAltIBAN(value.c_str()))
-        {
-            MKQR_ERR(MKQR_ERR_INVALID_ARG, "One or more values in the Alternative IBAN field are not valid");
-        }
-    }
-
-    // TODO: add more checks here
+    mValidator->ValidateParameter(name, value);
 
     mParameters.push_back(name + "=" + value);
 }
@@ -176,4 +166,4 @@ uint8_t MKQR::Generator::GetLastErrorCode() noexcept
 
 -------------------------------
 
-Updated on 2021-12-26 at 15:42:24 +0100
+Updated on 2021-12-26 at 18:31:40 +0100

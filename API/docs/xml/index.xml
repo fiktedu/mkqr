@@ -8,7 +8,7 @@
     <member refid="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" kind="function"><name>data_too_long</name></member>
   </compound>
   <compound refid="class_m_k_q_r_1_1_generator" kind="class"><name>MKQR::Generator</name>
-    <member refid="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" kind="variable"><name>mValidator</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" kind="variable"><name>mValidator</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" kind="variable"><name>mParameters</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" kind="variable"><name>mQrMatrixSize</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" kind="variable"><name>mQrMatrix</name></member>
@@ -115,9 +115,23 @@
     <member refid="classqrcodegen_1_1_qr_segment_1ada47b1386b68fa990d7b0c39e42711ef" kind="function"><name>getData</name></member>
   </compound>
   <compound refid="class_m_k_q_r_1_1_validator" kind="class"><name>MKQR::Validator</name>
+    <member refid="class_m_k_q_r_1_1_validator_1a8a6babf73e71e2cbfb872f5cb2d6cb9e" kind="typedef"><name>ValidatorFunction</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a1e99d2f0ff0882f202643dc3a428fbc3" kind="typedef"><name>ValidatorQueue</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a755cf48d9d4292766b0baf34f309cec1" kind="variable"><name>mValidators</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a3ce00208034b756110ca76615a430ce7" kind="variable"><name>mCountryCodes</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a9b36ae4f2fe596212190140f925aec02" kind="variable"><name>mCurrencyCodes</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" kind="function"><name>TokenizeString</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1ae79807703640fe2e3458e011875be7c9" kind="function"><name>ValidateStringIBAN</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a25c3c0ec9a37bc364254ad3ba6e04165" kind="function"><name>ValidateStringAltIBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a89216e8c2ffe1ad023dfb425675ca16b" kind="function"><name>IsNumber</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a42c2113b5d0ce536c4922b4725aed244" kind="function"><name>IBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1af1bc343078e98dec83e584634462868e" kind="function"><name>AltIBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1ad294123e39150e8704180a86d3586bcf" kind="function"><name>IsEqual</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1aece9e4efcdca1a5863b31491293f83ca" kind="function"><name>NonZeroMaxLength</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a78b11d1d2dab0d8640b8da51c40e794d" kind="function"><name>FixedLength</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a48b8e3a5d04c8e6d59cf789c7c4eebf8" kind="function"><name>FixedChars</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a52370046cb564bea389a52f3a563b5b1" kind="function"><name>CountryCode</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1acdc7d72e5c86efd99fd9e35ad4d1fafb" kind="function"><name>IsPositiveNumber</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1aa5866f470c86c3e25d9668377a5ce72d" kind="function"><name>CurrencyCode</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a03cdd022cc100630284f601c23979ced" kind="function"><name>ValidateParameter</name></member>
   </compound>
   <compound refid="namespace_m_k_q_r" kind="namespace"><name>MKQR</name>
   </compound>
@@ -145,6 +159,8 @@
   </compound>
   <compound refid="mkqr__validator_8h" kind="file"><name>mkqr_validator.h</name>
     <member refid="mkqr__validator_8h_1adff663c72d2b2eb090ae045fb0fbd407" kind="define"><name>MKQR_STR_DELIMITER</name></member>
+    <member refid="mkqr__validator_8h_1a5a1e05954df6452310f863710bfedf9e" kind="define"><name>MKQR_VBIND</name></member>
+    <member refid="mkqr__validator_8h_1ac9bd55eaa9dc730237c2c649234b7428" kind="define"><name>MKQR_VALIDATOR</name></member>
   </compound>
   <compound refid="mkqrapi_8cpp" kind="file"><name>mkqrapi.cpp</name>
     <member refid="mkqrapi_8cpp_1a00154a55d268ad378642611c1cf87e59" kind="function"><name>MkqrCreateNew</name></member>
@@ -171,6 +187,6 @@
   </compound>
   <compound refid="qrcodegen_8h" kind="file"><name>qrcodegen.h</name>
   </compound>
-  <compound refid="dir_7a4743c6d98667c9466b65002521998f" kind="dir"><name>mkqr_api</name>
+  <compound refid="dir_7a4743c6d98667c9466b65002521998f" kind="dir"><name>D:/Projects/mkqr/API/mkqr_api</name>
   </compound>
 </doxygenindex>

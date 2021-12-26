@@ -19,14 +19,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="523" column="18" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="816" bodyend="817"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="523" column="18" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="816" bodyend="817"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="mkqr_api/qrcodegen.h" line="521" column="1" bodyfile="mkqr_api/qrcodegen.h" bodystart="521" bodyend="525"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="521" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="521" bodyend="525"/>
     <listofallmembers>
       <member refid="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" prot="public" virt="non-virtual"><scope>qrcodegen::data_too_long</scope><name>data_too_long</name></member>
     </listofallmembers>

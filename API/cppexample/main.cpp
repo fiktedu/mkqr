@@ -45,7 +45,7 @@ void WriteBMP(const std::string path, const size_t width, const size_t height, c
 
 std::string GenerateRandomString(size_t numLetters)
 {
-	std::string str("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+	std::string str("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
 
 	std::random_device rd;
 	std::mt19937 generator(rd());
@@ -63,6 +63,7 @@ void GenerateQR(size_t num)
 
 		MkqrCreateParameter(mkqr, "t", "1");
 		MkqrCreateParameter(mkqr, "v", "200");
+		MkqrCreateParameter(mkqr, "c", "1");
 		MkqrCreateParameter(mkqr, "iban", "DE89370400440532013000"); 
 		MkqrCreateParameter(mkqr, "aiban", "312324123|312324123|312324123|312324123|312324123");
 		MkqrCreateParameter(mkqr, "cat", "1");
@@ -70,7 +71,7 @@ void GenerateQR(size_t num)
 		MkqrCreateParameter(mkqr, "cadd1", "Лондонска бр. 8");
 		MkqrCreateParameter(mkqr, "cz", "1000");
 		MkqrCreateParameter(mkqr, "cg", "Скопје");
-		MkqrCreateParameter(mkqr, "cc", "Македонија");
+		MkqrCreateParameter(mkqr, "cc", "MK");
 		MkqrCreateParameter(mkqr, "cur", "MKD");
 		MkqrCreateParameter(mkqr, "ref", "894732847239");
 

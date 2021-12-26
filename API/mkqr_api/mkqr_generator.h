@@ -44,7 +44,7 @@ namespace MKQR
 	{
 	private:
 		/*!@brief Instance of the validator class which validates each parameter */
-		const Validator& mValidator;
+		const Validator* mValidator;
 
 		/*!@brief Holds all preconcatanated parameter values */
 		std::vector<std::string> mParameters;
@@ -138,7 +138,7 @@ namespace MKQR
 
 		/*!@brief Default destructor. Is used to delete the temporary error message used 
 		 * when copying if it exists */
-		~Generator() { delete mTempErrorMessage; }
+		~Generator();
 
 		/*!@brief Creates parameter with the given name and value. Additionaly, the 
 		 * validation of the parameter is done inside this function. If a validation 

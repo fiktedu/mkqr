@@ -15,7 +15,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>mkqr_api/mkqrapi.cpp</label>
+        <label>D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp</label>
         <link refid="mkqrapi_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="6" column="17" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="6" bodyend="15"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="6" column="17" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="6" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1adf498ab6b20ca33d08417a0f001c18e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API void</type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="17" column="15" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="17" bodyend="28"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="17" column="15" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="17" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1a06709193ddbd40ef84b78fbcd69717aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API void</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="30" column="15" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="30" bodyend="40"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="30" column="15" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="30" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1a99e267002c3e025aa75de95af064e37e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API void</type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="42" column="15" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="42" bodyend="52"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="42" column="15" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="42" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1a4b84295e7ef72a648cccc939550d089b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API size_t</type>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="54" column="17" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="54" bodyend="64"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="54" column="17" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="54" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1a0dc361ffaf63fadda683f32ce7c7adcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API uint32_t</type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="68" column="19" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="68" bodyend="78"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="68" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="68" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1ae346eef1f522ec39184625be5a82ca9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API const char *</type>
@@ -299,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="80" column="21" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="80" bodyend="90"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="80" column="21" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="80" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="mkqrapi_8cpp_1af4c4416919ab46956a28f0bcc381f6e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>MKQR_API uint8_t</type>
@@ -329,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqrapi.cpp" line="92" column="18" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="92" bodyend="102"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" line="92" column="18" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="92" bodyend="102"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -440,6 +440,6 @@
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instancePtr-&gt;<ref refid="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" kindref="member">GetLastErrorCode</ref>();</highlight></codeline>
 <codeline lineno="102"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="mkqr_api/mkqrapi.cpp"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp"/>
   </compounddef>
 </doxygen>

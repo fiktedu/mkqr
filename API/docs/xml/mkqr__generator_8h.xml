@@ -4,11 +4,11 @@
     <compoundname>mkqr_generator.h</compoundname>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
-    <includedby refid="mkqr__generator_8cpp" local="yes">mkqr_api/mkqr_generator.cpp</includedby>
-    <includedby refid="mkqrapi_8cpp" local="yes">mkqr_api/mkqrapi.cpp</includedby>
+    <includedby refid="mkqr__generator_8cpp" local="yes">D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp</includedby>
+    <includedby refid="mkqrapi_8cpp" local="yes">D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp</includedby>
     <incdepgraph>
       <node id="1">
-        <label>mkqr_api/mkqr_generator.h</label>
+        <label>D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h</label>
         <link refid="mkqr__generator_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="7" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="7" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="7" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1ad7e8458a25bab87e67722d56ed82e249" prot="public" static="no">
         <name>MKQR_ERR_NULL</name>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="10" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="10" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="10" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1a1d2649a3b5d9e1f1ebee179314c6b8bc" prot="public" static="no">
         <name>MKQR_ERR_INVALID_ARG</name>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="12" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="12" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="12" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1aea81585dfeec3d4813ec053ba34f6883" prot="public" static="no">
         <name>MKQR_YELLOW</name>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="16" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="16" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="16" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1a70d050123b351088a0c9c3bbb22edce7" prot="public" static="no">
         <name>MKQR_RED</name>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="18" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="18" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="18" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1a7c2a6b9817cf0e92328ffd528f4f44cf" prot="public" static="no">
         <name>MKQR_WHITE</name>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="20" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="20" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="20" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1a74a3814d9878850aee5f844d5776ec98" prot="public" static="no">
         <name>MKQR_BLACK</name>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="22" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="22" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="22" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1ad91d24e9e7ab9f0b261d9d3c76a89458" prot="public" static="no">
         <name>MKQR_LOGO_SIZE</name>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="27" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="27" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="27" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="mkqr__generator_8h_1a2aea35a73733cbfa7f8571a5bdbe81ee" prot="public" static="no">
         <name>MKQR_ERR</name>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/mkqr_generator.h" line="31" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="31" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="31" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -170,7 +170,7 @@
 <codeline lineno="43" refid="class_m_k_q_r_1_1_generator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_m_k_q_r_1_1_generator" kindref="compound">Generator</ref></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="47" refid="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_m_k_q_r_1_1_validator" kindref="compound">Validator</ref>&amp;<sp/><ref refid="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" kindref="member">mValidator</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_m_k_q_r_1_1_validator" kindref="compound">Validator</ref>*<sp/><ref refid="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" kindref="member">mValidator</ref>;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50" refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" kindref="member">mParameters</ref>;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
@@ -209,7 +209,7 @@
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" kindref="member">Generator</ref>();</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141" refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" kindref="member">~Generator</ref>()<sp/>{<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" kindref="member">mTempErrorMessage</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" kindref="member">~Generator</ref>();</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" kindref="member">CreateParameter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>value)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
@@ -227,6 +227,6 @@
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="206"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="mkqr_api/mkqr_generator.h"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h"/>
   </compounddef>
 </doxygen>

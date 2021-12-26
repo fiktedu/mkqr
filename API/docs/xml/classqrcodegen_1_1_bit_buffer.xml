@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="537" column="9" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="823" bodyend="824"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="537" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="823" bodyend="824"/>
       </memberdef>
       <memberdef kind="function" id="classqrcodegen_1_1_bit_buffer_1af5771c1c6c59831b78414722f806f2ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36,14 +36,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mkqr_api/qrcodegen.h" line="545" column="14" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="827" bodyend="832"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="545" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp" bodystart="827" bodyend="832"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="mkqr_api/qrcodegen.h" line="532" column="1" bodyfile="mkqr_api/qrcodegen.h" bodystart="532" bodyend="547"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" line="532" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h" bodystart="532" bodyend="547"/>
     <listofallmembers>
       <member refid="classqrcodegen_1_1_bit_buffer_1af5771c1c6c59831b78414722f806f2ed" prot="public" virt="non-virtual"><scope>qrcodegen::BitBuffer</scope><name>appendBits</name></member>
       <member refid="classqrcodegen_1_1_bit_buffer_1a4100cc1e451d6d815032a85e6238877b" prot="public" virt="non-virtual"><scope>qrcodegen::BitBuffer</scope><name>BitBuffer</name></member>

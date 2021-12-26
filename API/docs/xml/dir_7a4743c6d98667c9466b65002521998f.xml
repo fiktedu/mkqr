@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
   <compounddef id="dir_7a4743c6d98667c9466b65002521998f" kind="dir">
-    <compoundname>mkqr_api</compoundname>
+    <compoundname>D:/Projects/mkqr/API/mkqr_api</compoundname>
     <innerfile refid="logo_8h">logo.h</innerfile>
     <innerfile refid="mkqr__generator_8cpp">mkqr_generator.cpp</innerfile>
     <innerfile refid="mkqr__generator_8h">mkqr_generator.h</innerfile>
@@ -14,6 +14,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="mkqr_api/"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/"/>
   </compounddef>
 </doxygen>

@@ -1,9 +1,9 @@
 ---
-title: mkqr_api/mkqr_generator.h
+title: D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h
 
 ---
 
-# mkqr_api/mkqr_generator.h
+# D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h
 
 
 
@@ -146,7 +146,7 @@ namespace MKQR
     class Generator
     {
     private:
-        const Validator& mValidator;
+        const Validator* mValidator;
 
         std::vector<std::string> mParameters;
 
@@ -185,7 +185,7 @@ namespace MKQR
     public:
         Generator();
 
-        ~Generator() { delete mTempErrorMessage; }
+        ~Generator();
 
         void CreateParameter(const std::string& name, const std::string& value) noexcept;
 
@@ -207,4 +207,4 @@ namespace MKQR
 
 -------------------------------
 
-Updated on 2021-12-26 at 15:42:24 +0100
+Updated on 2021-12-26 at 18:31:40 +0100

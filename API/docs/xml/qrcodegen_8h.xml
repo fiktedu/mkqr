@@ -7,11 +7,11 @@
     <includes local="no">stdexcept</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
-    <includedby refid="mkqr__generator_8cpp" local="yes">mkqr_api/mkqr_generator.cpp</includedby>
-    <includedby refid="qrcodegen_8cpp" local="yes">mkqr_api/qrcodegen.cpp</includedby>
+    <includedby refid="mkqr__generator_8cpp" local="yes">D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp</includedby>
+    <includedby refid="qrcodegen_8cpp" local="yes">D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp</includedby>
     <incdepgraph>
       <node id="1">
-        <label>mkqr_api/qrcodegen.h</label>
+        <label>D:/Projects/mkqr/API/mkqr_api/qrcodegen.h</label>
         <link refid="qrcodegen_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -601,6 +601,6 @@
 <codeline lineno="548"><highlight class="normal"></highlight></codeline>
 <codeline lineno="549"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="mkqr_api/qrcodegen.h"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.h"/>
   </compounddef>
 </doxygen>

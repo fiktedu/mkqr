@@ -1,6 +1,6 @@
 ---
 title: MKQR::Validator
-summary: This class contains functions that validate parameters. Please don't make it static or singleton, keep all functions const and refrain from using member variables. 
+summary: This class contains functions that validate parameters. Please don't make it static or singleton and keep all functions const, inlined by default ;) 
 
 ---
 
@@ -8,7 +8,7 @@ summary: This class contains functions that validate parameters. Please don't ma
 
 
 
-This class contains functions that validate parameters. Please don't make it static or singleton, keep all functions const and refrain from using member variables. 
+This class contains functions that validate parameters. Please don't make it static or singleton and keep all functions const, inlined by default ;) 
 
 
 `#include <mkqr_validator.h>`
@@ -17,45 +17,20 @@ This class contains functions that validate parameters. Please don't make it sta
 
 |                | Name           |
 | -------------- | -------------- |
-| bool | **[ValidateStringIBAN](/Classes/class_m_k_q_r_1_1_validator.md#function-validatestringiban)**(const std::string & ibanString) const<br>Validate IBAN.  |
-| bool | **[ValidateStringAltIBAN](/Classes/class_m_k_q_r_1_1_validator.md#function-validatestringaltiban)**(const std::string & aibanString) const<br>Splits aibanString into components and then evaluates each component separately.  |
+| bool | **[ValidateParameter](/Classes/class_m_k_q_r_1_1_validator.md#function-validateparameter)**(const std::string & name, const std::string & value) const |
 
 ## Public Functions Documentation
 
-### function ValidateStringIBAN
+### function ValidateParameter
 
 ```cpp
-inline bool ValidateStringIBAN(
-    const std::string & ibanString
+inline bool ValidateParameter(
+    const std::string & name,
+    const std::string & value
 ) const
 ```
 
-Validate IBAN. 
-
-**Parameters**: 
-
-  * **ibanString** The IBAN string to validate
-
-
-**Return**: True if valid, false if not valid 
-
-### function ValidateStringAltIBAN
-
-```cpp
-inline bool ValidateStringAltIBAN(
-    const std::string & aibanString
-) const
-```
-
-Splits aibanString into components and then evaluates each component separately. 
-
-**Parameters**: 
-
-  * **aibanString** The alternative IBAN string to validate
-
-
-**Return**: True if valid, false if not valid 
 
 -------------------------------
 
-Updated on 2021-12-26 at 15:42:24 +0100
+Updated on 2021-12-26 at 18:31:40 +0100

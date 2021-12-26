@@ -13,7 +13,7 @@
     <includes refid="qrcodegen_8h" local="yes">qrcodegen.h</includes>
     <incdepgraph>
       <node id="1">
-        <label>mkqr_api/qrcodegen.cpp</label>
+        <label>D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp</label>
         <link refid="qrcodegen_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -929,6 +929,6 @@
 <codeline lineno="833"><highlight class="normal"></highlight></codeline>
 <codeline lineno="834"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="mkqr_api/qrcodegen.cpp"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/qrcodegen.cpp"/>
   </compounddef>
 </doxygen>

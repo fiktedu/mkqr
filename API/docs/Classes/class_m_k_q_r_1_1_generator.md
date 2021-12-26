@@ -39,7 +39,7 @@ Default constructor. Used to initialize the validator.
 ### function ~Generator
 
 ```cpp
-inline ~Generator()
+~Generator()
 ```
 
 Default destructor. Is used to delete the temporary error message used when copying if it exists. 
@@ -131,4 +131,4 @@ Gets the last error code.
 
 -------------------------------
 
-Updated on 2021-12-26 at 15:42:24 +0100
+Updated on 2021-12-26 at 18:31:40 +0100
