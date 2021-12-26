@@ -85,20 +85,28 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a00154a55d268ad378642611c1cf87e59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59">MkqrCreateNew</a> ()</td></tr>
+<tr class="memdesc:a00154a55d268ad378642611c1cf87e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new unmanaged instance of the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a>. Returns a handle. Save this handle in a variable of the appropriate type and size on your platform. Send this handle to other functions in the API to manipulate the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> instance. Remember to call MkqrDelete with this instance when you're ready to free the memory.  <a href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59">More...</a><br /></td></tr>
 <tr class="separator:a00154a55d268ad378642611c1cf87e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf498ab6b20ca33d08417a0f001c18e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#adf498ab6b20ca33d08417a0f001c18e5">MkqrDelete</a> (size_t instance)</td></tr>
+<tr class="memdesc:adf498ab6b20ca33d08417a0f001c18e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> handle if it exists. Remember to call this function whenever you don't need the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> instance anymore.  <a href="mkqrapi_8h.html#adf498ab6b20ca33d08417a0f001c18e5">More...</a><br /></td></tr>
 <tr class="separator:adf498ab6b20ca33d08417a0f001c18e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06709193ddbd40ef84b78fbcd69717aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#a06709193ddbd40ef84b78fbcd69717aa">MkqrCreateParameter</a> (size_t instance, const char *name, const char *value)</td></tr>
+<tr class="memdesc:a06709193ddbd40ef84b78fbcd69717aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to create a new parameter on the supplied instance of <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a>. If it fails to validate the value of the parameter it will log a message that you can retrieve by calling MkqrGetLastErrorMessage.  <a href="mkqrapi_8h.html#a06709193ddbd40ef84b78fbcd69717aa">More...</a><br /></td></tr>
 <tr class="separator:a06709193ddbd40ef84b78fbcd69717aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99e267002c3e025aa75de95af064e37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#a99e267002c3e025aa75de95af064e37e">MkqrGenerate</a> (size_t instance, uint8_t isMonochrome, size_t superSampling)</td></tr>
+<tr class="memdesc:a99e267002c3e025aa75de95af064e37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to generate a new <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code from the supplied parameters. Call only after you have created all parameters using MkqrCreateParameter. The generator may fail because of an invalid parameter, in this case a <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code will not be generated and a message with a code will be logged. You can retrieve the message and the code using the MkqrGetLastErrorMessage and MkqrGetLastErrorCode functions.  <a href="mkqrapi_8h.html#a99e267002c3e025aa75de95af064e37e">More...</a><br /></td></tr>
 <tr class="separator:a99e267002c3e025aa75de95af064e37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b84295e7ef72a648cccc939550d089b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#a4b84295e7ef72a648cccc939550d089b">MkqrGetImageSize</a> (size_t instance)</td></tr>
+<tr class="memdesc:a4b84295e7ef72a648cccc939550d089b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of pixels (height*width) in the QR image.  <a href="mkqrapi_8h.html#a4b84295e7ef72a648cccc939550d089b">More...</a><br /></td></tr>
 <tr class="separator:a4b84295e7ef72a648cccc939550d089b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dc361ffaf63fadda683f32ce7c7adcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#a0dc361ffaf63fadda683f32ce7c7adcc">MkqrGetImageDataAtIndex</a> (size_t instance, size_t index)</td></tr>
+<tr class="memdesc:a0dc361ffaf63fadda683f32ce7c7adcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pixel color data at a given pixel index.  <a href="mkqrapi_8h.html#a0dc361ffaf63fadda683f32ce7c7adcc">More...</a><br /></td></tr>
 <tr class="separator:a0dc361ffaf63fadda683f32ce7c7adcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae346eef1f522ec39184625be5a82ca9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#ae346eef1f522ec39184625be5a82ca9a">MkqrGetLastErrorMessage</a> (size_t instance)</td></tr>
+<tr class="memdesc:ae346eef1f522ec39184625be5a82ca9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last error message.  <a href="mkqrapi_8h.html#ae346eef1f522ec39184625be5a82ca9a">More...</a><br /></td></tr>
 <tr class="separator:ae346eef1f522ec39184625be5a82ca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4c4416919ab46956a28f0bcc381f6e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkqrapi_8h.html#aa0e95f89bd6ef81df38d88450920d588">MKQR_API</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mkqrapi_8h.html#af4c4416919ab46956a28f0bcc381f6e6">MkqrGetLastErrorCode</a> (size_t instance)</td></tr>
+<tr class="memdesc:af4c4416919ab46956a28f0bcc381f6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last error code.  <a href="mkqrapi_8h.html#af4c4416919ab46956a28f0bcc381f6e6">More...</a><br /></td></tr>
 <tr class="separator:af4c4416919ab46956a28f0bcc381f6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -131,6 +139,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a new unmanaged instance of the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a>. Returns a handle. Save this handle in a variable of the appropriate type and size on your platform. Send this handle to other functions in the API to manipulate the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> instance. Remember to call MkqrDelete with this instance when you're ready to free the memory. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a 32-bit or 64-bit integer which represents the pointer (address) to the newly created instance of the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> class. </dd></dl>
 
 </div>
 </div>
@@ -166,6 +177,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tries to create a new parameter on the supplied instance of <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a>. If it fails to validate the value of the parameter it will log a message that you can retrieve by calling MkqrGetLastErrorMessage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a> </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the new parameter (might need marshalling) </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the new parameter (might need marshalling)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="adf498ab6b20ca33d08417a0f001c18e5" name="adf498ab6b20ca33d08417a0f001c18e5"></a>
@@ -183,6 +205,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Deletes the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> handle if it exists. Remember to call this function whenever you don't need the <a class="el" href="class_m_k_q_r_1_1_generator.html" title="The MKQR::Generator class contains functionality for generating and validating MKQR codes....">MKQR::Generator</a> instance anymore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -218,6 +249,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tries to generate a new <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code from the supplied parameters. Call only after you have created all parameters using MkqrCreateParameter. The generator may fail because of an invalid parameter, in this case a <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code will not be generated and a message with a code will be logged. You can retrieve the message and the code using the MkqrGetLastErrorMessage and MkqrGetLastErrorCode functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a> </td></tr>
+    <tr><td class="paramname">isMonochrome</td><td>If 0 the generated <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code will be colored, if 1 the generated <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code will be black and white </td></tr>
+    <tr><td class="paramname">superSampling</td><td>If set to 1 then for every QR segment (square) that is generated, the resulting image will have exactly 1 pixel. If set to 2 the resulting image will have 4 pixels for each segment, and so on</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="a0dc361ffaf63fadda683f32ce7c7adcc" name="a0dc361ffaf63fadda683f32ce7c7adcc"></a>
@@ -246,6 +288,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the pixel color data at a given pixel index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a> </td></tr>
+    <tr><td class="paramname">index</td><td>The absolute index at which to get the color data. To calculate the index from column/row value use: row * rowSize + column</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>32-bit integer which contains the color data for the given pixel, alpha is always set to 0xFF </dd></dl>
+
 </div>
 </div>
 <a id="a4b84295e7ef72a648cccc939550d089b" name="a4b84295e7ef72a648cccc939550d089b"></a>
@@ -263,6 +315,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the total number of pixels (height*width) in the QR image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Total number of pixels </dd></dl>
 
 </div>
 </div>
@@ -282,6 +343,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the last error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>8-bit error code which categorizes the error </dd></dl>
+
 </div>
 </div>
 <a id="ae346eef1f522ec39184625be5a82ca9a" name="ae346eef1f522ec39184625be5a82ca9a"></a>
@@ -299,6 +369,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the last error message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>The instance created using <a class="el" href="mkqrapi_8h.html#a00154a55d268ad378642611c1cf87e59" title="Creates a new unmanaged instance of the MKQR::Generator. Returns a handle. Save this handle in a vari...">MkqrCreateNew()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The error message as a string (<b>requres marshalling!</b>) </dd></dl>
 
 </div>
 </div>

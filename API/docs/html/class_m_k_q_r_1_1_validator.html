@@ -69,27 +69,34 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="class_m_k_q_r_1_1_validator-members.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle"><div class="title">MKQR::Validator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class contains functions that validate parameters. Please don't make it static or singleton, keep all functions const and refrain from using member variables.  
+ <a href="class_m_k_q_r_1_1_validator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mkqr__validator_8h_source.html">mkqr_validator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d5d62ab928abb1ca88afa2c4c650e68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_validator.html#a5d5d62ab928abb1ca88afa2c4c650e68">ValidateStringIBAN</a> (const std::string &amp;ibanString) const</td></tr>
+<tr class="memdesc:a5d5d62ab928abb1ca88afa2c4c650e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate IBAN.  <a href="class_m_k_q_r_1_1_validator.html#a5d5d62ab928abb1ca88afa2c4c650e68">More...</a><br /></td></tr>
 <tr class="separator:a5d5d62ab928abb1ca88afa2c4c650e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fafea42e788dfc1eb615634e00ff810"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_validator.html#a3fafea42e788dfc1eb615634e00ff810">ValidateStringAltIBAN</a> (const std::string &amp;aibanString) const</td></tr>
+<tr class="memdesc:a3fafea42e788dfc1eb615634e00ff810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits aibanString into components and then evaluates each component separately.  <a href="class_m_k_q_r_1_1_validator.html#a3fafea42e788dfc1eb615634e00ff810">More...</a><br /></td></tr>
 <tr class="separator:a3fafea42e788dfc1eb615634e00ff810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a9e253771d8e73a3cf69387ad6b1d348b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_validator.html#a9e253771d8e73a3cf69387ad6b1d348b">TokenizeString</a> (const char *str, char delimiter) const</td></tr>
+<tr class="memdesc:a9e253771d8e73a3cf69387ad6b1d348b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the string into components.  <a href="class_m_k_q_r_1_1_validator.html#a9e253771d8e73a3cf69387ad6b1d348b">More...</a><br /></td></tr>
 <tr class="separator:a9e253771d8e73a3cf69387ad6b1d348b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This class contains functions that validate parameters. Please don't make it static or singleton, keep all functions const and refrain from using member variables. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9e253771d8e73a3cf69387ad6b1d348b" name="a9e253771d8e73a3cf69387ad6b1d348b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e253771d8e73a3cf69387ad6b1d348b">&#9670;&nbsp;</a></span>TokenizeString()</h2>
 
@@ -124,6 +131,16 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Splits the string into components. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to split </td></tr>
+    <tr><td class="paramname">delimiter</td><td>The delimiter to split it with, use MKQR_STR_DELIMITER macro</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of strings derived from str </dd></dl>
+
 </div>
 </div>
 <a id="a3fafea42e788dfc1eb615634e00ff810" name="a3fafea42e788dfc1eb615634e00ff810"></a>
@@ -150,6 +167,15 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Splits aibanString into components and then evaluates each component separately. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aibanString</td><td>The alternative IBAN string to validate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if valid, false if not valid </dd></dl>
+
 </div>
 </div>
 <a id="a5d5d62ab928abb1ca88afa2c4c650e68" name="a5d5d62ab928abb1ca88afa2c4c650e68"></a>
@@ -175,6 +201,15 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Validate IBAN. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ibanString</td><td>The IBAN string to validate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if valid, false if not valid </dd></dl>
 
 </div>
 </div>

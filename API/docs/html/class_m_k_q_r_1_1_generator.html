@@ -70,8 +70,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="class_m_k_q_r_1_1_generator-members.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">MKQR::Generator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -84,20 +83,29 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a89b805f7ef026f32a868c958e070a4b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a89b805f7ef026f32a868c958e070a4b9">Generator</a> ()</td></tr>
+<tr class="memdesc:a89b805f7ef026f32a868c958e070a4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Used to initialize the validator.  <a href="class_m_k_q_r_1_1_generator.html#a89b805f7ef026f32a868c958e070a4b9">More...</a><br /></td></tr>
 <tr class="separator:a89b805f7ef026f32a868c958e070a4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ee3f3e613dcabd2a492ffeeaf1cdf09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a8ee3f3e613dcabd2a492ffeeaf1cdf09">~Generator</a> ()</td></tr>
+<tr class="memdesc:a8ee3f3e613dcabd2a492ffeeaf1cdf09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. Is used to delete the temporary error message used when copying if it exists.  <a href="class_m_k_q_r_1_1_generator.html#a8ee3f3e613dcabd2a492ffeeaf1cdf09">More...</a><br /></td></tr>
 <tr class="separator:a8ee3f3e613dcabd2a492ffeeaf1cdf09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a212f5a20998784355fd97240983a837c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a212f5a20998784355fd97240983a837c">CreateParameter</a> (const std::string &amp;name, const std::string &amp;value) noexcept</td></tr>
+<tr class="memdesc:a212f5a20998784355fd97240983a837c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates parameter with the given name and value. Additionaly, the validation of the parameter is done inside this function. If a validation fails this function will set the mLastErrorMessage and mLastErrorCode. If it fails any subsequent calls to the Generate function will fail. to the Example: <br  />
+ name=t value=0 This will result with a new parameter t=0 which will be added to the map of parameters.  <a href="class_m_k_q_r_1_1_generator.html#a212f5a20998784355fd97240983a837c">More...</a><br /></td></tr>
 <tr class="separator:a212f5a20998784355fd97240983a837c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73537db6ecdf5a0a8e40b53e18faac8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a73537db6ecdf5a0a8e40b53e18faac8c">Generate</a> (uint8_t isMonochrome, size_t superSampling) noexcept</td></tr>
+<tr class="memdesc:a73537db6ecdf5a0a8e40b53e18faac8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code based on the previously entered parameters. This function will fail if a previously created parameter is invalid. The result of the function is kept inside the mQrImageData variable, which can then be retrieved by the GetQrImageDataAtIndex function.  <a href="class_m_k_q_r_1_1_generator.html#a73537db6ecdf5a0a8e40b53e18faac8c">More...</a><br /></td></tr>
 <tr class="separator:a73537db6ecdf5a0a8e40b53e18faac8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8811ce739cd3133dc1b807a80db5b74"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#ad8811ce739cd3133dc1b807a80db5b74">GetQrSize</a> () const noexcept</td></tr>
+<tr class="memdesc:ad8811ce739cd3133dc1b807a80db5b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the QR image.  <a href="class_m_k_q_r_1_1_generator.html#ad8811ce739cd3133dc1b807a80db5b74">More...</a><br /></td></tr>
 <tr class="separator:ad8811ce739cd3133dc1b807a80db5b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a537d2fbeaa85f0a28e9fe809bcfa439b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a537d2fbeaa85f0a28e9fe809bcfa439b">GetQrImageDataAtIndex</a> (size_t index) const noexcept</td></tr>
+<tr class="memdesc:a537d2fbeaa85f0a28e9fe809bcfa439b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the pixel at the specified index.  <a href="class_m_k_q_r_1_1_generator.html#a537d2fbeaa85f0a28e9fe809bcfa439b">More...</a><br /></td></tr>
 <tr class="separator:a537d2fbeaa85f0a28e9fe809bcfa439b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a1859805c0ef59ebdd58e88871293fb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a8a1859805c0ef59ebdd58e88871293fb">GetLastErrorMessage</a> () noexcept</td></tr>
+<tr class="memdesc:a8a1859805c0ef59ebdd58e88871293fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last error message.  <a href="class_m_k_q_r_1_1_generator.html#a8a1859805c0ef59ebdd58e88871293fb">More...</a><br /></td></tr>
 <tr class="separator:a8a1859805c0ef59ebdd58e88871293fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50601793e4b561fcb3a3da0d5c0dec8b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a50601793e4b561fcb3a3da0d5c0dec8b">GetLastErrorCode</a> () noexcept</td></tr>
+<tr class="memdesc:a50601793e4b561fcb3a3da0d5c0dec8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last error code.  <a href="class_m_k_q_r_1_1_generator.html#a50601793e4b561fcb3a3da0d5c0dec8b">More...</a><br /></td></tr>
 <tr class="separator:a50601793e4b561fcb3a3da0d5c0dec8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -129,7 +137,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a65b1671d91ccf19e6faec2774798173e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the QR matrix in a single dimension, represents the number of segments in the QR code. To calculate the total segments, square this.  <a href="class_m_k_q_r_1_1_generator.html#a65b1671d91ccf19e6faec2774798173e">More...</a><br /></td></tr>
 <tr class="separator:a65b1671d91ccf19e6faec2774798173e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19a8662bb437c330a5f409d500f3b491"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a19a8662bb437c330a5f409d500f3b491">mQrMatrix</a></td></tr>
-<tr class="memdesc:a19a8662bb437c330a5f409d500f3b491"><td class="mdescLeft">&#160;</td><td class="mdescRight">The QR matrix, true is for black, false is for white. Contains mQrMatrixSize*mQrMatrixSize number of elements. <br  />
+<tr class="memdesc:a19a8662bb437c330a5f409d500f3b491"><td class="mdescLeft">&#160;</td><td class="mdescRight">The QR matrix, true is for black, false is for white. Contains mQrMatrixSize*mQrMatrixSize number of elements <br  />
   <a href="class_m_k_q_r_1_1_generator.html#a19a8662bb437c330a5f409d500f3b491">More...</a><br /></td></tr>
 <tr class="separator:a19a8662bb437c330a5f409d500f3b491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8859ec0fe5ce6d06ebb4ec5d3fbeaf7e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a8859ec0fe5ce6d06ebb4ec5d3fbeaf7e">mQrImageData</a></td></tr>
@@ -142,10 +150,13 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:ac661380bc01a9dc5bcc67d35e7faabee"><td class="mdescLeft">&#160;</td><td class="mdescRight">If set to 1 the resulting QR code will have the same amount of pixels as segments. Setting it to 2 will result with the QR code image having 2 times as much pixels as segments, and so on.  <a href="class_m_k_q_r_1_1_generator.html#ac661380bc01a9dc5bcc67d35e7faabee">More...</a><br /></td></tr>
 <tr class="separator:ac661380bc01a9dc5bcc67d35e7faabee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ad17a8728bc7eed4b0b0a7287ddcb2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a30ad17a8728bc7eed4b0b0a7287ddcb2">mLastErrorMessage</a></td></tr>
+<tr class="memdesc:a30ad17a8728bc7eed4b0b0a7287ddcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last recorded error message. Use the MKQR_ERR macro to set this.  <a href="class_m_k_q_r_1_1_generator.html#a30ad17a8728bc7eed4b0b0a7287ddcb2">More...</a><br /></td></tr>
 <tr class="separator:a30ad17a8728bc7eed4b0b0a7287ddcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa83d1d1f78eefe67e63c8d8f75dff95"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#afa83d1d1f78eefe67e63c8d8f75dff95">mTempErrorMessage</a></td></tr>
+<tr class="memdesc:afa83d1d1f78eefe67e63c8d8f75dff95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal use only. Used for copying the last error message when it's removed.  <a href="class_m_k_q_r_1_1_generator.html#afa83d1d1f78eefe67e63c8d8f75dff95">More...</a><br /></td></tr>
 <tr class="separator:afa83d1d1f78eefe67e63c8d8f75dff95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50498912167310b43a18283c42c74647"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_k_q_r_1_1_generator.html#a50498912167310b43a18283c42c74647">mLastErrorCode</a> = <a class="el" href="mkqr__generator_8h.html#a9fdf6bfa66133062e34f2657a382f9ff">MKQR_ERR_NO</a></td></tr>
+<tr class="memdesc:a50498912167310b43a18283c42c74647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last recorded error code. Use the MKQR_ERR macro to set this.  <a href="class_m_k_q_r_1_1_generator.html#a50498912167310b43a18283c42c74647">More...</a><br /></td></tr>
 <tr class="separator:a50498912167310b43a18283c42c74647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -165,6 +176,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor. Used to initialize the validator. </p>
 
 </div>
 </div>
@@ -190,6 +203,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default destructor. Is used to delete the temporary error message used when copying if it exists. </p>
 
 </div>
 </div>
@@ -228,6 +243,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates parameter with the given name and value. Additionaly, the validation of the parameter is done inside this function. If a validation fails this function will set the mLastErrorMessage and mLastErrorCode. If it fails any subsequent calls to the Generate function will fail. to the Example: <br  />
+ name=t value=0 This will result with a new parameter t=0 which will be added to the map of parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the parameter </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the parameter</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="a73537db6ecdf5a0a8e40b53e18faac8c" name="a73537db6ecdf5a0a8e40b53e18faac8c"></a>
@@ -263,6 +289,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Generates the <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code based on the previously entered parameters. This function will fail if a previously created parameter is invalid. The result of the function is kept inside the mQrImageData variable, which can then be retrieved by the GetQrImageDataAtIndex function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isMonochrome</td><td>Can be either 0 or 1. Setting this parameter to 0 will create a <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> code in full color. Setting it to 1 means the <a class="el" href="namespace_m_k_q_r.html" title="This is the default MKQR namespace.Use it to wrap anything that is related to MKQR&#39;s internal systems...">MKQR</a> will be black and white. </td></tr>
+    <tr><td class="paramname">superSampling</td><td>Sets the super-sampling value. A value of 1 will generate a bitmap with mQrMatrixSize*mQrMatrixSize pixels. A value of 2 will generate twice*twice that, and so on.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -318,6 +354,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the last error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>The error code that occured most recently </dd></dl>
+
 </div>
 </div>
 <a id="a8a1859805c0ef59ebdd58e88871293fb" name="a8a1859805c0ef59ebdd58e88871293fb"></a>
@@ -342,6 +381,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the last error message. </p>
+<dl class="section return"><dt>Returns</dt><dd>The error message that occured most recently </dd></dl>
 
 </div>
 </div>
@@ -369,6 +411,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the color of the pixel at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The absolute index of the pixel. If you have 2 rows of 32 pixels the fourth pixel in the second row will have an index of 36</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>32-bit color value of the pixel, alpha is always 0xFF </dd></dl>
+
 </div>
 </div>
 <a id="ad8811ce739cd3133dc1b807a80db5b74" name="ad8811ce739cd3133dc1b807a80db5b74"></a>
@@ -393,6 +444,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the size of the QR image. </p>
+<dl class="section return"><dt>Returns</dt><dd>mQrMatrixSize * mSuperSampling </dd></dl>
 
 </div>
 </div>
@@ -573,7 +627,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a13e4daa07cbe41e0bf0a5652bd1654b6" name="a13e4daa07cbe41e0bf0a5652bd1654b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13e4daa07cbe41e0bf0a5652bd1654b6">&#9670;&nbsp;</a></span>mIsMonochrome</h2>
 
@@ -618,6 +672,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Last recorded error code. Use the MKQR_ERR macro to set this. </p>
+
 </div>
 </div>
 <a id="a30ad17a8728bc7eed4b0b0a7287ddcb2" name="a30ad17a8728bc7eed4b0b0a7287ddcb2"></a>
@@ -639,6 +695,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Last recorded error message. Use the MKQR_ERR macro to set this. </p>
 
 </div>
 </div>
@@ -710,7 +768,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>The QR matrix, true is for black, false is for white. Contains mQrMatrixSize*mQrMatrixSize number of elements. <br  />
+<p>The QR matrix, true is for black, false is for white. Contains mQrMatrixSize*mQrMatrixSize number of elements <br  />
  </p>
 
 </div>
@@ -782,6 +840,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Internal use only. Used for copying the last error message when it's removed. </p>
 
 </div>
 </div>

@@ -7,9 +7,19 @@
 
 namespace MKQR
 {
+	/*!@brief This class contains functions that validate parameters. Please don't make it
+	 * static or singleton, keep all functions const and refrain from using member variables*/
 	class Validator
 	{
 	private:
+
+		/*!@brief Splits the string into components
+		 * 
+		 * @param str The string to split
+		 * @param delimiter The delimiter to split it with, use MKQR_STR_DELIMITER macro
+		 * 
+		 * @return Vector of strings derived from str
+		 */
 		std::vector<std::string> TokenizeString(const char* str, char delimiter) const
 		{
 			std::vector<std::string> tokens;
@@ -28,6 +38,12 @@ namespace MKQR
 		}
 
 	public:
+		/*!@brief Validate IBAN
+		 * 
+		 * @param ibanString The IBAN string to validate
+		 * 
+		 * @return True if valid, false if not valid
+		 */
 		bool ValidateStringIBAN(const std::string& ibanString) const
 		{
 			const std::regex ibanRegex(
@@ -35,6 +51,12 @@ namespace MKQR
 			return std::regex_match(ibanString, ibanRegex);
 		}
 
+		/*!@brief Splits aibanString into components and then evaluates each component separately
+		 *
+		 * @param aibanString The alternative IBAN string to validate
+		 *
+		 * @return True if valid, false if not valid
+		 */
 		bool ValidateStringAltIBAN(const std::string& aibanString) const
 		{
 			std::vector<std::string> tokens = TokenizeString(aibanString.c_str(), MKQR_STR_DELIMITER);
