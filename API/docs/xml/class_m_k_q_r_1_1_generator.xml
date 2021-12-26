@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_m_k_q_r_1_1_generator" kind="class" language="C++" prot="public">
+    <compoundname>MKQR::Generator</compoundname>
+    <includes refid="mkqr__generator_8h" local="no">mkqr_generator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_m_k_q_r_1_1_validator" kindref="compound">Validator</ref> &amp;</type>
+        <definition>const Validator&amp; mValidator</definition>
+        <argsstring></argsstring>
+        <name>mValidator</name>
+        <briefdescription>
+<para>Instance of the validator class which validates each parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="47" column="17" bodyfile="mkqr_api/mkqr_generator.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; mParameters</definition>
+        <argsstring></argsstring>
+        <name>mParameters</name>
+        <briefdescription>
+<para>Holds all preconcatanated parameter values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="50" column="13" bodyfile="mkqr_api/mkqr_generator.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t mQrMatrixSize</definition>
+        <argsstring></argsstring>
+        <name>mQrMatrixSize</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The size of the QR matrix in a single dimension, represents the number of segments in the QR code. To calculate the total segments, square this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="106" column="8" bodyfile="mkqr_api/mkqr_generator.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; mQrMatrix</definition>
+        <argsstring></argsstring>
+        <name>mQrMatrix</name>
+        <briefdescription>
+<para>The QR matrix, true is for black, false is for white. Contains mQrMatrixSize*mQrMatrixSize number of elements <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="110" column="13" bodyfile="mkqr_api/mkqr_generator.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint32_t &gt;</type>
+        <definition>std::vector&lt;uint32_t&gt; mQrImageData</definition>
+        <argsstring></argsstring>
+        <name>mQrImageData</name>
+        <briefdescription>
+<para>The QR image data (all pixels). Contains mQrMatrixSize * mSuperSampling number of elements. Each pixel is represented by a 32-bit value, of which only 24 are used, the alpha channel is always set to 255. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="115" column="13" bodyfile="mkqr_api/mkqr_generator.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1ac546105770aeada94198d0bbb6b800b7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mIsMonochrome</definition>
+        <argsstring></argsstring>
+        <name>mIsMonochrome</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>If set, the generated QR code will be black and white. Otherwise it will generate the colored version. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="119" column="6" bodyfile="mkqr_api/mkqr_generator.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aa23a2a7674cc25842de8bcfc38db11ec" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t mSuperSampling</definition>
+        <argsstring></argsstring>
+        <name>mSuperSampling</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>If set to 1 the resulting QR code will have the same amount of pixels as segments. Setting it to 2 will result with the QR code image having 2 times as much pixels as segments, and so on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="124" column="8" bodyfile="mkqr_api/mkqr_generator.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string mLastErrorMessage</definition>
+        <argsstring></argsstring>
+        <name>mLastErrorMessage</name>
+        <briefdescription>
+<para>Last recorded error message. Use the MKQR_ERR macro to set this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="127" column="13" bodyfile="mkqr_api/mkqr_generator.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* mTempErrorMessage</definition>
+        <argsstring></argsstring>
+        <name>mTempErrorMessage</name>
+        <briefdescription>
+<para>Internal use only. Used for copying the last error message when it&apos;s removed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="131" column="6" bodyfile="mkqr_api/mkqr_generator.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t mLastErrorCode</definition>
+        <argsstring></argsstring>
+        <name>mLastErrorCode</name>
+        <initializer>= MKQR_ERR_NO</initializer>
+        <briefdescription>
+<para>Last recorded error code. Use the MKQR_ERR macro to set this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="134" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a2032094a169db7e616e57a900a29b584" prot="private" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string GenerateStringFromParameters</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GenerateStringFromParameters</name>
+        <briefdescription>
+<para>Iterates over all added parametersand generates a single <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> URI string from them. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Should not execute if one of the mandatory parameters is invalid, should execute if one of the non-mandatory parameters is invalid</para>
+</simplesect>
+<simplesect kind="return"><para>A string containing a valid <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> URI </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="59" column="13" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="8" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T MapRange</definition>
+        <argsstring>(T value, T low1, T high1, T low2, T high2) const noexcept</argsstring>
+        <name>MapRange</name>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>low1</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>high1</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>low2</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>high2</declname>
+        </param>
+        <briefdescription>
+<para>Maps value that is between low1 and high1 to a value that is the same distance both from low2 and high2. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be maped to a different range </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>low1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lowest possible value in the original range </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>high1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The highest possible value in the original range </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>low2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lowest possible value in the new range </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>high2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The highest possible value in the new range</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value mapped to the new range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="72" column="4" bodyfile="mkqr_api/mkqr_generator.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Lerp</definition>
+        <argsstring>(float alpha, T a, T b) const noexcept</argsstring>
+        <name>Lerp</name>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Interpolates linearly between a and b with a given normalized alpha value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point between a and b, 0.0f will return a, 1.0f will return b, 0.5f will return the mid point between a and b </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The point between a and b based on the alpha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="87" column="4" bodyfile="mkqr_api/mkqr_generator.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1aa709f2f2d94705e3c4d065e84aefcaab" prot="private" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t LerpColor</definition>
+        <argsstring>(uint32_t color1, uint32_t color2, float alpha) const noexcept</argsstring>
+        <name>LerpColor</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>color1</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>color2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Interpolates linearly between color1 and color2 with the given alpha value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first color </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second color </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point between color1 and color2, 0.0f will return color1, 1.0f will return color2, 0.5f will return the mid point between color1 and color2</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The point between color1 and color2 based on the alpha </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="101" column="11" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="20" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Generator</definition>
+        <argsstring>()</argsstring>
+        <name>Generator</name>
+        <briefdescription>
+<para>Default constructor. Used to initialize the validator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="137" column="1" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>~Generator</definition>
+        <argsstring>()</argsstring>
+        <name>~Generator</name>
+        <briefdescription>
+<para>Default destructor. Is used to delete the temporary error message used when copying if it exists. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="141" column="1" bodyfile="mkqr_api/mkqr_generator.h" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CreateParameter</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;value) noexcept</argsstring>
+        <name>CreateParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates parameter with the given name and value. Additionaly, the validation of the parameter is done inside this function. If a validation fails this function will set the mLastErrorMessage and mLastErrorCode. If it fails any subsequent calls to the Generate function will fail. to the Example: <linebreak/>
+ name=t value=0 This will result with a new parameter t=0 which will be added to the map of parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="159" column="6" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="42" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Generate</definition>
+        <argsstring>(uint8_t isMonochrome, size_t superSampling) noexcept</argsstring>
+        <name>Generate</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>isMonochrome</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>superSampling</declname>
+        </param>
+        <briefdescription>
+<para>Generates the <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code based on the previously entered parameters. This function will fail if a previously created parameter is invalid. The result of the function is kept inside the mQrImageData variable, which can then be retrieved by the GetQrImageDataAtIndex function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isMonochrome</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Can be either 0 or 1. Setting this parameter to 0 will create a <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code in full color. Setting it to 1 means the <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> will be black and white. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>superSampling</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the super-sampling value. A value of 1 will generate a bitmap with mQrMatrixSize*mQrMatrixSize pixels. A value of 2 will generate twice*twice that, and so on.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="175" column="6" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="71" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t GetQrSize</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetQrSize</name>
+        <briefdescription>
+<para>Gets the size of the QR image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>mQrMatrixSize * mSuperSampling </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="181" column="9" bodyfile="mkqr_api/mkqr_generator.h" bodystart="181" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t GetQrImageDataAtIndex</definition>
+        <argsstring>(size_t index) const noexcept</argsstring>
+        <name>GetQrImageDataAtIndex</name>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the color of the pixel at the specified index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The absolute index of the pixel. If you have 2 rows of 32 pixels the fourth pixel in the second row will have an index of 36</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>32-bit color value of the pixel, alpha is always 0xFF </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="191" column="11" bodyfile="mkqr_api/mkqr_generator.h" bodystart="191" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a5d4597c0ca51c1d3034b06c7a5746387" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * GetLastErrorMessage</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>GetLastErrorMessage</name>
+        <briefdescription>
+<para>Gets the last error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The error message that occured most recently </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="198" column="13" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="144" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t GetLastErrorCode</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>GetLastErrorCode</name>
+        <briefdescription>
+<para>Gets the last error code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The error code that occured most recently </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_generator.h" line="204" column="10" bodyfile="mkqr_api/mkqr_generator.cpp" bodystart="153" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> class contains functionality for generating and validating <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> codes. <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> implements all details of the <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> standard for generating such codes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Generator</label>
+        <link refid="class_m_k_q_r_1_1_generator"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mValidator</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Validator</label>
+        <link refid="class_m_k_q_r_1_1_validator"/>
+      </node>
+    </collaborationgraph>
+    <location file="mkqr_api/mkqr_generator.h" line="43" column="1" bodyfile="mkqr_api/mkqr_generator.h" bodystart="44" bodyend="205"/>
+    <listofallmembers>
+      <member refid="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>CreateParameter</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>Generate</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a2032094a169db7e616e57a900a29b584" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>GenerateStringFromParameters</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>Generator</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetLastErrorCode</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a5d4597c0ca51c1d3034b06c7a5746387" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetLastErrorMessage</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetQrImageDataAtIndex</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetQrSize</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>Lerp</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1aa709f2f2d94705e3c4d065e84aefcaab" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>LerpColor</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>MapRange</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1ac546105770aeada94198d0bbb6b800b7" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mIsMonochrome</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mLastErrorCode</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mLastErrorMessage</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mParameters</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrImageData</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrMatrix</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrMatrixSize</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1aa23a2a7674cc25842de8bcfc38db11ec" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mSuperSampling</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mTempErrorMessage</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mValidator</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>~Generator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

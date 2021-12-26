@@ -1,0 +1,910 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classqrcodegen_1_1_qr_code" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>qrcodegen::QrCode</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Ecc</name>
+        <enumvalue id="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317a41bc94cbd8eebea13ce0491b2ac11b88" prot="public">
+          <name>LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317ac87f3be66ffc3c0d4249f1c2cc5f3cce" prot="public">
+          <name>MEDIUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317a8927abb1f5ad5fce6a9eccbcf2b0a12d" prot="public">
+          <name>QUARTILE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317ab89de3b4b81c4facfac906edf29aec8c" prot="public">
+          <name>HIGH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="243" column="9" bodyfile="mkqr_api/qrcodegen.h" bodystart="243" bodyend="248"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1aad880fc4455c253781e8968f2239d56f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="301" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a439227feff9d7f55384e8780cfc2eb82" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="305" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1abd24f07fefef409b2714895fd8cad85e" prot="private" static="no" mutable="no">
+        <type>Ecc</type>
+        <definition>Ecc errorCorrectionLevel</definition>
+        <argsstring></argsstring>
+        <name>errorCorrectionLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="308" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1ab77cc972f3ee899689ba053015472ccd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="313" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1af1c0b162dd3bbcfffd61e99b4f372291" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; bool &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;bool&gt; &gt; modules</definition>
+        <argsstring></argsstring>
+        <name>modules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="319" column="22" bodyfile="mkqr_api/qrcodegen.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1aa91695a4622e898cc52a293803152ba9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; bool &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;bool&gt; &gt; isFunction</definition>
+        <argsstring></argsstring>
+        <name>isFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="322" column="22" bodyfile="mkqr_api/qrcodegen.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a03e87c2eb4d8a933972f0db81629246b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int MIN_VERSION</definition>
+        <argsstring></argsstring>
+        <name>MIN_VERSION</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="488" column="30" bodyfile="mkqr_api/qrcodegen.h" bodystart="488" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a6324df04a6a728981e2bd545d5134f98" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int MAX_VERSION</definition>
+        <argsstring></argsstring>
+        <name>MAX_VERSION</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="491" column="30" bodyfile="mkqr_api/qrcodegen.h" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a3928d5c05a7afc1a1dbacd946ced60e1" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int PENALTY_N1</definition>
+        <argsstring></argsstring>
+        <name>PENALTY_N1</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="495" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a2e77c1abffa48b55a464b8ebebe6236b" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int PENALTY_N2</definition>
+        <argsstring></argsstring>
+        <name>PENALTY_N2</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="496" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a04495626b845c0e983106c741235b500" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int PENALTY_N3</definition>
+        <argsstring></argsstring>
+        <name>PENALTY_N3</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="497" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a69bbf54cb5fecf7d5b18908177662400" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int PENALTY_N4</definition>
+        <argsstring></argsstring>
+        <name>PENALTY_N4</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="498" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1aa6bf78f71df8a50faaed1b2c0d52f2e8" prot="private" static="yes" mutable="no">
+        <type>const std::int8_t</type>
+        <definition>const int8_t ECC_CODEWORDS_PER_BLOCK</definition>
+        <argsstring>[4][41]</argsstring>
+        <name>ECC_CODEWORDS_PER_BLOCK</name>
+        <initializer>= {
+		
+		
+		{-1,  7, 10, 15, 20, 26, 18, 20, 24, 30, 18, 20, 24, 26, 30, 22, 24, 28, 30, 28, 28, 28, 28, 30, 30, 26, 28, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30},  
+		{-1, 10, 16, 26, 18, 24, 16, 18, 22, 22, 26, 30, 22, 22, 24, 24, 28, 28, 26, 26, 26, 26, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28},  
+		{-1, 13, 22, 18, 26, 18, 24, 18, 22, 20, 24, 28, 26, 24, 20, 30, 24, 28, 28, 26, 30, 28, 30, 30, 30, 30, 28, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30},  
+		{-1, 17, 28, 22, 16, 22, 28, 26, 26, 24, 28, 24, 28, 22, 24, 24, 30, 28, 28, 26, 28, 30, 24, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30},  
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="501" column="35" bodyfile="mkqr_api/qrcodegen.h" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_code_1a0393775d413537009cc52c8295060992" prot="private" static="yes" mutable="no">
+        <type>const std::int8_t</type>
+        <definition>const int8_t NUM_ERROR_CORRECTION_BLOCKS</definition>
+        <argsstring>[4][41]</argsstring>
+        <name>NUM_ERROR_CORRECTION_BLOCKS</name>
+        <initializer>= {
+		
+		
+		{-1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4,  4,  4,  4,  4,  6,  6,  6,  6,  7,  8,  8,  9,  9, 10, 12, 12, 12, 13, 14, 15, 16, 17, 18, 19, 19, 20, 21, 22, 24, 25},  
+		{-1, 1, 1, 1, 2, 2, 4, 4, 4, 5, 5,  5,  8,  9,  9, 10, 10, 11, 13, 14, 16, 17, 17, 18, 20, 21, 23, 25, 26, 28, 29, 31, 33, 35, 37, 38, 40, 43, 45, 47, 49},  
+		{-1, 1, 1, 2, 2, 4, 4, 6, 6, 8, 8,  8, 10, 12, 16, 12, 17, 16, 18, 21, 20, 23, 23, 25, 27, 29, 34, 34, 35, 38, 40, 43, 45, 48, 51, 53, 56, 59, 62, 65, 68},  
+		{-1, 1, 1, 2, 4, 4, 4, 5, 6, 8, 8, 11, 11, 16, 16, 18, 16, 19, 21, 25, 25, 25, 34, 30, 32, 35, 37, 40, 42, 45, 48, 51, 54, 57, 60, 63, 66, 70, 74, 77, 81},  
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="502" column="35" bodyfile="mkqr_api/qrcodegen.h" bodystart="502" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ab18de2c759ec76fdd0c7a0a111a054e1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getFormatBits</definition>
+        <argsstring>(Ecc ecl)</argsstring>
+        <name>getFormatBits</name>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="252" column="21" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="238" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a40eee75fa81a2506753aa097b0d96fe6" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getNumRawDataModules</definition>
+        <argsstring>(int ver)</argsstring>
+        <name>getNumRawDataModules</name>
+        <param>
+          <type>int</type>
+          <declname>ver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="445" column="21" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="684" bodyend="696"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ae76267d6b2e80013123dcfb84c6641f7" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getNumDataCodewords</definition>
+        <argsstring>(int ver, Ecc ecl)</argsstring>
+        <name>getNumDataCodewords</name>
+        <param>
+          <type>int</type>
+          <declname>ver</declname>
+        </param>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="451" column="21" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="699" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a29708b7b4cd92a66e30299fe34f78aba" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::uint8_t &gt;</type>
+        <definition>vector&lt; uint8_t &gt; reedSolomonComputeDivisor</definition>
+        <argsstring>(int degree)</argsstring>
+        <name>reedSolomonComputeDivisor</name>
+        <param>
+          <type>int</type>
+          <declname>degree</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="456" column="29" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="706" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1afd782e056c69441bd97805f1882b9a97" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::uint8_t &gt;</type>
+        <definition>vector&lt; uint8_t &gt; reedSolomonComputeRemainder</definition>
+        <argsstring>(const std::vector&lt; std::uint8_t &gt; &amp;data, const std::vector&lt; std::uint8_t &gt; &amp;divisor)</argsstring>
+        <name>reedSolomonComputeRemainder</name>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="460" column="29" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="731" bodyend="741"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a247fb4919a1648c24f630e5fb686686b" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::uint8_t</type>
+        <definition>uint8_t reedSolomonMultiply</definition>
+        <argsstring>(std::uint8_t x, std::uint8_t y)</argsstring>
+        <name>reedSolomonMultiply</name>
+        <param>
+          <type>std::uint8_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="465" column="30" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="744" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a28d2b95bd39d07a37aa8709a99f69848" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool getBit</definition>
+        <argsstring>(long x, int i)</argsstring>
+        <name>getBit</name>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="482" column="22" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="784" bodyend="786"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a8471e039d03e8fec03e17012acda4f57" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrCode</type>
+        <definition>QrCode encodeText</definition>
+        <argsstring>(const char *text, Ecc ecl)</argsstring>
+        <name>encodeText</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="265" column="23" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="249" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a79eda2e6a60204b91640b9f9e3b1961e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrCode</type>
+        <definition>QrCode encodeBinary</definition>
+        <argsstring>(const std::vector&lt; std::uint8_t &gt; &amp;data, Ecc ecl)</argsstring>
+        <name>encodeBinary</name>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="274" column="23" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="255" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a13470d7983dc9cf093a4dc667608a5cf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrCode</type>
+        <definition>QrCode encodeSegments</definition>
+        <argsstring>(const std::vector&lt; QrSegment &gt; &amp;segs, Ecc ecl, int minVersion=1, int maxVersion=40, int mask=-1, bool boostEcl=true)</argsstring>
+        <name>encodeSegments</name>
+        <param>
+          <type>const std::vector&lt; QrSegment &gt; &amp;</type>
+          <declname>segs</declname>
+        </param>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minVersion</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxVersion</declname>
+          <defval>40</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>boostEcl</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="290" column="23" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="261" bodyend="319"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a292897c42f161f24e7774d1562b4e2dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QrCode</definition>
+        <argsstring>(int ver, Ecc ecl, const std::vector&lt; std::uint8_t &gt; &amp;dataCodewords, int msk)</argsstring>
+        <name>QrCode</name>
+        <param>
+          <type>int</type>
+          <declname>ver</declname>
+        </param>
+        <param>
+          <type>Ecc</type>
+          <declname>ecl</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>dataCodewords</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="334" column="9" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="322" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ac63a160486412a48be2de2d13b5ccd04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>getVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="343" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="364" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a75a346c2c84af39192f73d7a92db1812" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="349" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="369" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ad9630d60ab568cffe1cf517e90f99691" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Ecc</type>
+        <definition>QrCode::Ecc getErrorCorrectionLevel</definition>
+        <argsstring>() const</argsstring>
+        <name>getErrorCorrectionLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="355" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="374" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a6d09811d42df778ce815ac988f9b8cd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getMask</definition>
+        <argsstring>() const</argsstring>
+        <name>getMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="361" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="379" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a62e4535d6e71152aade6c6ca2f954fb7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool getModule</definition>
+        <argsstring>(int x, int y) const</argsstring>
+        <name>getModule</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="369" column="14" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="384" bodyend="386"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a3b4e8f11b2bea3e4a553cc09cd858eda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawFunctionPatterns</definition>
+        <argsstring>()</argsstring>
+        <name>drawFunctionPatterns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="376" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="389" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1acd4ce7908871a7d91f5aa823542bfde6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawFormatBits</definition>
+        <argsstring>(int msk)</argsstring>
+        <name>drawFormatBits</name>
+        <param>
+          <type>int</type>
+          <declname>msk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="381" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="418" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a1db9f3c35ff9fbf3191fdb81bff99335" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawVersion</definition>
+        <argsstring>()</argsstring>
+        <name>drawVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="386" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="445" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a0770c8b19e27c70340a784814c4099d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawFinderPattern</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>drawFinderPattern</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="391" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="467" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a6ef1ae0f9e000dc6fb920af8b5183166" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawAlignmentPattern</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>drawAlignmentPattern</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="396" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="479" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ac0b8e1d11427e4312c81ea1a374f23f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setFunctionModule</definition>
+        <argsstring>(int x, int y, bool isDark)</argsstring>
+        <name>setFunctionModule</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isDark</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="401" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="487" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a31a81c50ffa8c09b5784ec73c9c24ae2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool module</definition>
+        <argsstring>(int x, int y) const</argsstring>
+        <name>module</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="405" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="495" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a6d7f48f8119cfa0396ffe28943a757d9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::uint8_t &gt;</type>
+        <definition>vector&lt; uint8_t &gt; addEccAndInterleave</definition>
+        <argsstring>(const std::vector&lt; std::uint8_t &gt; &amp;data) const</argsstring>
+        <name>addEccAndInterleave</name>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="412" column="22" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="500" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a738a3c125a0c817e46f9ef08bba91e19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawCodewords</definition>
+        <argsstring>(const std::vector&lt; std::uint8_t &gt; &amp;data)</argsstring>
+        <name>drawCodewords</name>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="417" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="538" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a07f77240b01e9cd3bb81874d2dabdb3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void applyMask</definition>
+        <argsstring>(int msk)</argsstring>
+        <name>applyMask</name>
+        <param>
+          <type>int</type>
+          <declname>msk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="425" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="565" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ac09c281949603b3b2f86f6d3f608dd5f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long getPenaltyScore</definition>
+        <argsstring>() const</argsstring>
+        <name>getPenaltyScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="430" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="589" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a8693a77d4c66f610580906dc1b557ae4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>vector&lt; int &gt; getAlignmentPatternPositions</definition>
+        <argsstring>() const</argsstring>
+        <name>getAlignmentPatternPositions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="439" column="22" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="668" bodyend="681"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a23394c9899625b5d7cf1cb8adf848ca3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int finderPenaltyCountPatterns</definition>
+        <argsstring>(const std::array&lt; int, 7 &gt; &amp;runHistory) const</argsstring>
+        <name>finderPenaltyCountPatterns</name>
+        <param>
+          <type>const std::array&lt; int, 7 &gt; &amp;</type>
+          <declname>runHistory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="470" column="14" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="756" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1ac3a044d75b264dd75df847c50f5bfc63" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int finderPenaltyTerminateAndCount</definition>
+        <argsstring>(bool currentRunColor, int currentRunLength, std::array&lt; int, 7 &gt; &amp;runHistory) const</argsstring>
+        <name>finderPenaltyTerminateAndCount</name>
+        <param>
+          <type>bool</type>
+          <declname>currentRunColor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentRunLength</declname>
+        </param>
+        <param>
+          <type>std::array&lt; int, 7 &gt; &amp;</type>
+          <declname>runHistory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="474" column="14" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="765" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_code_1a64aa4088b3a52eece406e2c90c86526b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void finderPenaltyAddHistory</definition>
+        <argsstring>(int currentRunLength, std::array&lt; int, 7 &gt; &amp;runHistory) const</argsstring>
+        <name>finderPenaltyAddHistory</name>
+        <param>
+          <type>int</type>
+          <declname>currentRunLength</declname>
+        </param>
+        <param>
+          <type>std::array&lt; int, 7 &gt; &amp;</type>
+          <declname>runHistory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="478" column="15" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="776" bodyend="781"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/qrcodegen.h" line="236" column="1" bodyfile="mkqr_api/qrcodegen.h" bodystart="236" bodyend="504"/>
+    <listofallmembers>
+      <member refid="classqrcodegen_1_1_qr_code_1a6d7f48f8119cfa0396ffe28943a757d9" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>addEccAndInterleave</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a07f77240b01e9cd3bb81874d2dabdb3e" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>applyMask</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a6ef1ae0f9e000dc6fb920af8b5183166" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawAlignmentPattern</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a738a3c125a0c817e46f9ef08bba91e19" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawCodewords</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a0770c8b19e27c70340a784814c4099d5" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawFinderPattern</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1acd4ce7908871a7d91f5aa823542bfde6" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawFormatBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a3b4e8f11b2bea3e4a553cc09cd858eda" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawFunctionPatterns</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a1db9f3c35ff9fbf3191fdb81bff99335" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>drawVersion</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>Ecc</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1aa6bf78f71df8a50faaed1b2c0d52f2e8" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>ECC_CODEWORDS_PER_BLOCK</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a79eda2e6a60204b91640b9f9e3b1961e" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>encodeBinary</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a13470d7983dc9cf093a4dc667608a5cf" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>encodeSegments</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a8471e039d03e8fec03e17012acda4f57" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>encodeText</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1abd24f07fefef409b2714895fd8cad85e" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>errorCorrectionLevel</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a64aa4088b3a52eece406e2c90c86526b" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>finderPenaltyAddHistory</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a23394c9899625b5d7cf1cb8adf848ca3" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>finderPenaltyCountPatterns</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ac3a044d75b264dd75df847c50f5bfc63" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>finderPenaltyTerminateAndCount</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a8693a77d4c66f610580906dc1b557ae4" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getAlignmentPatternPositions</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a28d2b95bd39d07a37aa8709a99f69848" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getBit</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ad9630d60ab568cffe1cf517e90f99691" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getErrorCorrectionLevel</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ab18de2c759ec76fdd0c7a0a111a054e1" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getFormatBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a6d09811d42df778ce815ac988f9b8cd9" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getMask</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a62e4535d6e71152aade6c6ca2f954fb7" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getModule</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ae76267d6b2e80013123dcfb84c6641f7" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getNumDataCodewords</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a40eee75fa81a2506753aa097b0d96fe6" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getNumRawDataModules</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ac09c281949603b3b2f86f6d3f608dd5f" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getPenaltyScore</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a75a346c2c84af39192f73d7a92db1812" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getSize</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ac63a160486412a48be2de2d13b5ccd04" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>getVersion</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1aa91695a4622e898cc52a293803152ba9" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>isFunction</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ab77cc972f3ee899689ba053015472ccd" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>mask</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a6324df04a6a728981e2bd545d5134f98" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>MAX_VERSION</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a03e87c2eb4d8a933972f0db81629246b" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>MIN_VERSION</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a31a81c50ffa8c09b5784ec73c9c24ae2" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>module</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1af1c0b162dd3bbcfffd61e99b4f372291" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>modules</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a0393775d413537009cc52c8295060992" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>NUM_ERROR_CORRECTION_BLOCKS</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a3928d5c05a7afc1a1dbacd946ced60e1" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>PENALTY_N1</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a2e77c1abffa48b55a464b8ebebe6236b" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>PENALTY_N2</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a04495626b845c0e983106c741235b500" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>PENALTY_N3</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a69bbf54cb5fecf7d5b18908177662400" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>PENALTY_N4</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a292897c42f161f24e7774d1562b4e2dd" prot="public" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>QrCode</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a29708b7b4cd92a66e30299fe34f78aba" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>reedSolomonComputeDivisor</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1afd782e056c69441bd97805f1882b9a97" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>reedSolomonComputeRemainder</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a247fb4919a1648c24f630e5fb686686b" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>reedSolomonMultiply</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1ac0b8e1d11427e4312c81ea1a374f23f5" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>setFunctionModule</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1a439227feff9d7f55384e8780cfc2eb82" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>size</name></member>
+      <member refid="classqrcodegen_1_1_qr_code_1aad880fc4455c253781e8968f2239d56f" prot="private" virt="non-virtual"><scope>qrcodegen::QrCode</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

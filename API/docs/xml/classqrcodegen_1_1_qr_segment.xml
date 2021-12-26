@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classqrcodegen_1_1_qr_segment" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>qrcodegen::QrSegment</compoundname>
+    <innerclass refid="classqrcodegen_1_1_qr_segment_1_1_mode" prot="public">qrcodegen::QrSegment::Mode</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1a527c597e0b7c293f0c17d81d029d25cd" prot="private" static="no" mutable="no">
+        <type>const Mode *</type>
+        <definition>const Mode* mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="154" column="21" bodyfile="mkqr_api/qrcodegen.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1a21cf352456b9527481b93f0e581f9659" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int numChars</definition>
+        <argsstring></argsstring>
+        <name>numChars</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="160" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1a2c4f068be959f1f62fa7b310e152bdb8" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="163" column="22" bodyfile="mkqr_api/qrcodegen.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1a2045c7c6ef7924cbcf8ce40fe5d3953c" prot="private" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char * ALPHANUMERIC_CHARSET</definition>
+        <argsstring></argsstring>
+        <name>ALPHANUMERIC_CHARSET</name>
+        <initializer>= &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="214" column="28" bodyfile="mkqr_api/qrcodegen.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1a8bc4f25b39366df624899bc262c9bd15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrSegment</type>
+        <definition>QrSegment makeBytes</definition>
+        <argsstring>(const std::vector&lt; std::uint8_t &gt; &amp;data)</argsstring>
+        <name>makeBytes</name>
+        <param>
+          <type>const std::vector&lt; std::uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="102" column="26" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="69" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1acd397b5dae37199520df563c2b63aa97" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrSegment</type>
+        <definition>QrSegment makeNumeric</definition>
+        <argsstring>(const char *digits)</argsstring>
+        <name>makeNumeric</name>
+        <param>
+          <type>const char *</type>
+          <declname>digits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="108" column="26" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="79" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1a174a489a23f4c6fa38453e53d7943e1a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrSegment</type>
+        <definition>QrSegment makeAlphanumeric</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>makeAlphanumeric</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="116" column="26" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="102" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1ac5c6eacb93c53855a2922b5d2508304e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; QrSegment &gt;</type>
+        <definition>vector&lt; QrSegment &gt; makeSegments</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>makeSegments</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="123" column="28" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="125" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1ab63edcbd4945696dbd7f9300a18ba6bd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QrSegment</type>
+        <definition>QrSegment makeEci</definition>
+        <argsstring>(long assignVal)</argsstring>
+        <name>makeEci</name>
+        <param>
+          <type>long</type>
+          <declname>assignVal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="130" column="26" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="143" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1ac27ed6e0da668891ac4321a8f23de6a8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isNumeric</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>isNumeric</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="139" column="21" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="198" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1a749be3d3d2fd5bface2ce7d9ec514c98" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isAlphanumeric</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>isAlphanumeric</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="147" column="21" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="208" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1a1aedcc0891e92f24f2684881e30eedb1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getTotalBits</definition>
+        <argsstring>(const std::vector&lt; QrSegment &gt; &amp;segs, int version)</argsstring>
+        <name>getTotalBits</name>
+        <param>
+          <type>const std::vector&lt; QrSegment &gt; &amp;</type>
+          <declname>segs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="207" column="20" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="181" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1aeee37e9ff9c9c7e1b420e9b756c0e152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QrSegment</definition>
+        <argsstring>(const Mode &amp;md, int numCh, const std::vector&lt; bool &gt; &amp;dt)</argsstring>
+        <name>QrSegment</name>
+        <param>
+          <type>const Mode &amp;</type>
+          <declname>md</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numCh</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; bool &gt; &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="173" column="9" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="163" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1acb047c89e500c37956cdabb1f7b4c454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QrSegment</definition>
+        <argsstring>(const Mode &amp;md, int numCh, std::vector&lt; bool &gt; &amp;&amp;dt)</argsstring>
+        <name>QrSegment</name>
+        <param>
+          <type>const Mode &amp;</type>
+          <declname>md</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numCh</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; bool &gt; &amp;&amp;</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="181" column="9" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="172" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1aad0ebdbcbd81a92611e00b7fd62a1a86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Mode &amp;</type>
+        <definition>const QrSegment::Mode &amp; getMode</definition>
+        <argsstring>() const</argsstring>
+        <name>getMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="189" column="20" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1a54e3ab742b932122b97680a0536eb52b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getNumChars</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumChars</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="195" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="222" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1ada47b1386b68fa990d7b0c39e42711ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; bool &gt; &amp;</type>
+        <definition>const std::vector&lt; bool &gt; &amp; getData</definition>
+        <argsstring>() const</argsstring>
+        <name>getData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="201" column="27" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="227" bodyend="229"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/qrcodegen.h" line="46" column="1" bodyfile="mkqr_api/qrcodegen.h" bodystart="46" bodyend="216"/>
+    <listofallmembers>
+      <member refid="classqrcodegen_1_1_qr_segment_1a2045c7c6ef7924cbcf8ce40fe5d3953c" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>ALPHANUMERIC_CHARSET</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a2c4f068be959f1f62fa7b310e152bdb8" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>data</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1ada47b1386b68fa990d7b0c39e42711ef" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>getData</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1aad0ebdbcbd81a92611e00b7fd62a1a86" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>getMode</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a54e3ab742b932122b97680a0536eb52b" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>getNumChars</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a1aedcc0891e92f24f2684881e30eedb1" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>getTotalBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a749be3d3d2fd5bface2ce7d9ec514c98" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>isAlphanumeric</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1ac27ed6e0da668891ac4321a8f23de6a8" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>isNumeric</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a174a489a23f4c6fa38453e53d7943e1a" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>makeAlphanumeric</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a8bc4f25b39366df624899bc262c9bd15" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>makeBytes</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1ab63edcbd4945696dbd7f9300a18ba6bd" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>makeEci</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1acd397b5dae37199520df563c2b63aa97" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>makeNumeric</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1ac5c6eacb93c53855a2922b5d2508304e" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>makeSegments</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a527c597e0b7c293f0c17d81d029d25cd" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>mode</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1a21cf352456b9527481b93f0e581f9659" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>numChars</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1aeee37e9ff9c9c7e1b420e9b756c0e152" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>QrSegment</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1acb047c89e500c37956cdabb1f7b4c454" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment</scope><name>QrSegment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

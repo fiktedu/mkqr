@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="namespaceqrcodegen" kind="namespace" language="C++">
+    <compoundname>qrcodegen</compoundname>
+    <innerclass refid="classqrcodegen_1_1_bit_buffer" prot="public">qrcodegen::BitBuffer</innerclass>
+    <innerclass refid="classqrcodegen_1_1data__too__long" prot="public">qrcodegen::data_too_long</innerclass>
+    <innerclass refid="classqrcodegen_1_1_qr_code" prot="public">qrcodegen::QrCode</innerclass>
+    <innerclass refid="classqrcodegen_1_1_qr_segment" prot="public">qrcodegen::QrSegment</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/qrcodegen.cpp" line="40" column="1"/>
+  </compounddef>
+</doxygen>

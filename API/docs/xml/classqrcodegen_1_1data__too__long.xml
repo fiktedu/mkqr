@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classqrcodegen_1_1data__too__long" kind="class" language="C++" prot="public">
+    <compoundname>qrcodegen::data_too_long</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">length_error</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>data_too_long</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>data_too_long</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="523" column="18" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="816" bodyend="817"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/qrcodegen.h" line="521" column="1" bodyfile="mkqr_api/qrcodegen.h" bodystart="521" bodyend="525"/>
+    <listofallmembers>
+      <member refid="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" prot="public" virt="non-virtual"><scope>qrcodegen::data_too_long</scope><name>data_too_long</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

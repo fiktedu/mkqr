@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classqrcodegen_1_1_qr_segment_1_1_mode" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>qrcodegen::QrSegment::Mode</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1ad3cc1d69b1b555fbe1947ed1a281c271" prot="public" static="yes" mutable="no">
+        <type>const Mode</type>
+        <definition>const QrSegment::Mode NUMERIC</definition>
+        <argsstring></argsstring>
+        <name>NUMERIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="57" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1af39f44897bee3e04d1d473f4ae34e8bd" prot="public" static="yes" mutable="no">
+        <type>const Mode</type>
+        <definition>const QrSegment::Mode ALPHANUMERIC</definition>
+        <argsstring></argsstring>
+        <name>ALPHANUMERIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="58" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a3238fac594cabde6a7e9e8c4a8f69d21" prot="public" static="yes" mutable="no">
+        <type>const Mode</type>
+        <definition>const QrSegment::Mode BYTE</definition>
+        <argsstring></argsstring>
+        <name>BYTE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="59" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a811d8957ee17d2aabbebab9bf891dc35" prot="public" static="yes" mutable="no">
+        <type>const Mode</type>
+        <definition>const QrSegment::Mode KANJI</definition>
+        <argsstring></argsstring>
+        <name>KANJI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="60" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a0163090a4c534a28dbed7ee3102fc66d" prot="public" static="yes" mutable="no">
+        <type>const Mode</type>
+        <definition>const QrSegment::Mode ECI</definition>
+        <argsstring></argsstring>
+        <name>ECI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="61" column="27" bodyfile="mkqr_api/qrcodegen.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a6d6193fcf7896fd02eef6a09fcb225c6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int modeBits</definition>
+        <argsstring></argsstring>
+        <name>modeBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="67" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a5b2cf39a8668c22331b133321ebeff05" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int numBitsCharCount[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>numBitsCharCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="70" column="14" bodyfile="mkqr_api/qrcodegen.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a19fd571757e9925c0d8269f00bebd8f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mode</definition>
+        <argsstring>(int mode, int cc0, int cc1, int cc2)</argsstring>
+        <name>Mode</name>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cc0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cc1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cc2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="75" column="10" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="44" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a881f1b249c10b5dfc3535b45f2651739" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getModeBits</definition>
+        <argsstring>() const</argsstring>
+        <name>getModeBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="83" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classqrcodegen_1_1_qr_segment_1_1_mode_1a82d2c9bd7eef555bf8884b48cee84adb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numCharCountBits</definition>
+        <argsstring>(int ver) const</argsstring>
+        <name>numCharCountBits</name>
+        <param>
+          <type>int</type>
+          <declname>ver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/qrcodegen.h" line="89" column="13" bodyfile="mkqr_api/qrcodegen.cpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/qrcodegen.h" line="53" column="9" bodyfile="mkqr_api/qrcodegen.h" bodystart="53" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1af39f44897bee3e04d1d473f4ae34e8bd" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>ALPHANUMERIC</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a3238fac594cabde6a7e9e8c4a8f69d21" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>BYTE</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a0163090a4c534a28dbed7ee3102fc66d" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>ECI</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a881f1b249c10b5dfc3535b45f2651739" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>getModeBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a811d8957ee17d2aabbebab9bf891dc35" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>KANJI</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a19fd571757e9925c0d8269f00bebd8f4" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>Mode</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a6d6193fcf7896fd02eef6a09fcb225c6" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>modeBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a5b2cf39a8668c22331b133321ebeff05" prot="private" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>numBitsCharCount</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a82d2c9bd7eef555bf8884b48cee84adb" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>numCharCountBits</name></member>
+      <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1ad3cc1d69b1b555fbe1947ed1a281c271" prot="public" virt="non-virtual"><scope>qrcodegen::QrSegment::Mode</scope><name>NUMERIC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

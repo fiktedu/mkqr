@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_m_k_q_r_1_1_validator" kind="class" language="C++" prot="public">
+    <compoundname>MKQR::Validator</compoundname>
+    <includes refid="mkqr__validator_8h" local="no">mkqr_validator.h</includes>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; TokenizeString</definition>
+        <argsstring>(const char *str, char delimiter) const</argsstring>
+        <name>TokenizeString</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <briefdescription>
+<para>Splits the string into components. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to split </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiter to split it with, use MKQR_STR_DELIMITER macro</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of strings derived from str </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_validator.h" line="23" column="13" bodyfile="mkqr_api/mkqr_validator.h" bodystart="23" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1ae79807703640fe2e3458e011875be7c9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ValidateStringIBAN</definition>
+        <argsstring>(const std::string &amp;ibanString) const</argsstring>
+        <name>ValidateStringIBAN</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ibanString</declname>
+        </param>
+        <briefdescription>
+<para>Validate IBAN. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ibanString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The IBAN string to validate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if valid, false if not valid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_validator.h" line="47" column="6" bodyfile="mkqr_api/mkqr_validator.h" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a25c3c0ec9a37bc364254ad3ba6e04165" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ValidateStringAltIBAN</definition>
+        <argsstring>(const std::string &amp;aibanString) const</argsstring>
+        <name>ValidateStringAltIBAN</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>aibanString</declname>
+        </param>
+        <briefdescription>
+<para>Splits aibanString into components and then evaluates each component separately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aibanString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alternative IBAN string to validate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if valid, false if not valid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqr_validator.h" line="60" column="6" bodyfile="mkqr_api/mkqr_validator.h" bodystart="60" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class contains functions that validate parameters. Please don&apos;t make it static or singleton, keep all functions const and refrain from using member variables. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mkqr_api/mkqr_validator.h" line="12" column="1" bodyfile="mkqr_api/mkqr_validator.h" bodystart="13" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>TokenizeString</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1a25c3c0ec9a37bc364254ad3ba6e04165" prot="public" virt="non-virtual"><scope>MKQR::Validator</scope><name>ValidateStringAltIBAN</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1ae79807703640fe2e3458e011875be7c9" prot="public" virt="non-virtual"><scope>MKQR::Validator</scope><name>ValidateStringIBAN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

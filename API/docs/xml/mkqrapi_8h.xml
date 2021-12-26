@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="mkqrapi_8h" kind="file" language="C++">
+    <compoundname>mkqrapi.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="mkqrapi_8cpp" local="yes">mkqr_api/mkqrapi.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>mkqr_api/mkqrapi.h</label>
+        <link refid="mkqrapi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="mkqrapi_8h_1aa0e95f89bd6ef81df38d88450920d588" prot="public" static="no">
+        <name>MKQR_API</name>
+        <initializer>__declspec(dllexport)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="4" column="9" bodyfile="mkqr_api/mkqrapi.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mkqrapi_8h_1a00154a55d268ad378642611c1cf87e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API size_t</type>
+        <definition>MKQR_API size_t MkqrCreateNew</definition>
+        <argsstring>()</argsstring>
+        <name>MkqrCreateNew</name>
+        <briefdescription>
+<para>Creates a new unmanaged instance of the <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref>. Returns a handle. Save this handle in a variable of the appropriate type and size on your platform. Send this handle to other functions in the API to manipulate the <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> instance. Remember to call MkqrDelete with this instance when you&apos;re ready to free the memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns a 32-bit or 64-bit integer which represents the pointer (address) to the newly created instance of the <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> class. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="18" column="24" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="6" bodyend="15" declfile="mkqr_api/mkqrapi.h" declline="18" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1adf498ab6b20ca33d08417a0f001c18e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API void</type>
+        <definition>MKQR_API void MkqrDelete</definition>
+        <argsstring>(size_t instance)</argsstring>
+        <name>MkqrDelete</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Deletes the <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> handle if it exists. Remember to call this function whenever you don&apos;t need the <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref> instance anymore. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="28" column="22" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="17" bodyend="28" declfile="mkqr_api/mkqrapi.h" declline="28" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1a06709193ddbd40ef84b78fbcd69717aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API void</type>
+        <definition>MKQR_API void MkqrCreateParameter</definition>
+        <argsstring>(size_t instance, const char *name, const char *value)</argsstring>
+        <name>MkqrCreateParameter</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Tries to create a new parameter on the supplied instance of <ref refid="class_m_k_q_r_1_1_generator" kindref="compound">MKQR::Generator</ref>. If it fails to validate the value of the parameter it will log a message that you can retrieve by calling MkqrGetLastErrorMessage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew() </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the new parameter (might need marshalling) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the new parameter (might need marshalling)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="41" column="22" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="30" bodyend="40" declfile="mkqr_api/mkqrapi.h" declline="41" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1a99e267002c3e025aa75de95af064e37e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API void</type>
+        <definition>MKQR_API void MkqrGenerate</definition>
+        <argsstring>(size_t instance, uint8_t isMonochrome, size_t superSampling)</argsstring>
+        <name>MkqrGenerate</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>isMonochrome</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>superSampling</declname>
+        </param>
+        <briefdescription>
+<para>Tries to generate a new <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code from the supplied parameters. Call only after you have created all parameters using MkqrCreateParameter. The generator may fail because of an invalid parameter, in this case a <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code will not be generated and a message with a code will be logged. You can retrieve the message and the code using the MkqrGetLastErrorMessage and MkqrGetLastErrorCode functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew() </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isMonochrome</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If 0 the generated <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code will be colored, if 1 the generated <ref refid="namespace_m_k_q_r" kindref="compound">MKQR</ref> code will be black and white </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>superSampling</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If set to 1 then for every QR segment (square) that is generated, the resulting image will have exactly 1 pixel. If set to 2 the resulting image will have 4 pixels for each segment, and so on</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="61" column="22" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="42" bodyend="52" declfile="mkqr_api/mkqrapi.h" declline="61" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1a4b84295e7ef72a648cccc939550d089b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API size_t</type>
+        <definition>MKQR_API size_t MkqrGetImageSize</definition>
+        <argsstring>(size_t instance)</argsstring>
+        <name>MkqrGetImageSize</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Gets the total number of pixels (height*width) in the QR image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Total number of pixels </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="70" column="24" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="54" bodyend="64" declfile="mkqr_api/mkqrapi.h" declline="70" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1a0dc361ffaf63fadda683f32ce7c7adcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API uint32_t</type>
+        <definition>MKQR_API uint32_t MkqrGetImageDataAtIndex</definition>
+        <argsstring>(size_t instance, size_t index)</argsstring>
+        <name>MkqrGetImageDataAtIndex</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the pixel color data at a given pixel index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew() </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The absolute index at which to get the color data. To calculate the index from column/row value use: row * rowSize + column</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>32-bit integer which contains the color data for the given pixel, alpha is always set to 0xFF </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="82" column="26" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="68" bodyend="78" declfile="mkqr_api/mkqrapi.h" declline="82" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1ae346eef1f522ec39184625be5a82ca9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API const char *</type>
+        <definition>MKQR_API const char * MkqrGetLastErrorMessage</definition>
+        <argsstring>(size_t instance)</argsstring>
+        <name>MkqrGetLastErrorMessage</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Gets the last error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The error message as a string (<bold>requres marshalling!</bold>) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="91" column="28" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="80" bodyend="90" declfile="mkqr_api/mkqrapi.h" declline="91" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1af4c4416919ab46956a28f0bcc381f6e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API uint8_t</type>
+        <definition>MKQR_API uint8_t MkqrGetLastErrorCode</definition>
+        <argsstring>(size_t instance)</argsstring>
+        <name>MkqrGetLastErrorCode</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Gets the last error code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew()</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>8-bit error code which categorizes the error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mkqr_api/mkqrapi.h" line="99" column="25" bodyfile="mkqr_api/mkqrapi.cpp" bodystart="92" bodyend="102" declfile="mkqr_api/mkqrapi.h" declline="99" declcolumn="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MKQR_API<sp/>__declspec(dllexport)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>MkqrCreateNew();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MkqrDelete(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MkqrCreateParameter(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>value);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MkqrGenerate(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance,<sp/>uint8_t<sp/>isMonochrome,<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>superSampling);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>MkqrGetImageSize(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/>uint32_t<sp/>MkqrGetImageDataAtIndex(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>MkqrGetLastErrorMessage(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/>uint8_t<sp/>MkqrGetLastErrorCode(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="mkqr_api/mkqrapi.h"/>
+  </compounddef>
+</doxygen>

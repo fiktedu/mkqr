@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.2" xml:lang="en-US">
+  <compound refid="classqrcodegen_1_1_bit_buffer" kind="class"><name>qrcodegen::BitBuffer</name>
+    <member refid="classqrcodegen_1_1_bit_buffer_1a4100cc1e451d6d815032a85e6238877b" kind="function"><name>BitBuffer</name></member>
+    <member refid="classqrcodegen_1_1_bit_buffer_1af5771c1c6c59831b78414722f806f2ed" kind="function"><name>appendBits</name></member>
+  </compound>
+  <compound refid="classqrcodegen_1_1data__too__long" kind="class"><name>qrcodegen::data_too_long</name>
+    <member refid="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" kind="function"><name>data_too_long</name></member>
+  </compound>
+  <compound refid="class_m_k_q_r_1_1_generator" kind="class"><name>MKQR::Generator</name>
+    <member refid="class_m_k_q_r_1_1_generator_1ae5a58f25d95db36e4907de457cf163f1" kind="variable"><name>mValidator</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" kind="variable"><name>mParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" kind="variable"><name>mQrMatrixSize</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" kind="variable"><name>mQrMatrix</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" kind="variable"><name>mQrImageData</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1ac546105770aeada94198d0bbb6b800b7" kind="variable"><name>mIsMonochrome</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1aa23a2a7674cc25842de8bcfc38db11ec" kind="variable"><name>mSuperSampling</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" kind="variable"><name>mLastErrorMessage</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" kind="variable"><name>mTempErrorMessage</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" kind="variable"><name>mLastErrorCode</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a2032094a169db7e616e57a900a29b584" kind="function"><name>GenerateStringFromParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" kind="function"><name>MapRange</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" kind="function"><name>Lerp</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1aa709f2f2d94705e3c4d065e84aefcaab" kind="function"><name>LerpColor</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" kind="function"><name>Generator</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" kind="function"><name>~Generator</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" kind="function"><name>CreateParameter</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" kind="function"><name>Generate</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" kind="function"><name>GetQrSize</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" kind="function"><name>GetQrImageDataAtIndex</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a5d4597c0ca51c1d3034b06c7a5746387" kind="function"><name>GetLastErrorMessage</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" kind="function"><name>GetLastErrorCode</name></member>
+  </compound>
+  <compound refid="classqrcodegen_1_1_qr_segment_1_1_mode" kind="class"><name>qrcodegen::QrSegment::Mode</name>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1ad3cc1d69b1b555fbe1947ed1a281c271" kind="variable"><name>NUMERIC</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1af39f44897bee3e04d1d473f4ae34e8bd" kind="variable"><name>ALPHANUMERIC</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a3238fac594cabde6a7e9e8c4a8f69d21" kind="variable"><name>BYTE</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a811d8957ee17d2aabbebab9bf891dc35" kind="variable"><name>KANJI</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a0163090a4c534a28dbed7ee3102fc66d" kind="variable"><name>ECI</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a6d6193fcf7896fd02eef6a09fcb225c6" kind="variable"><name>modeBits</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a5b2cf39a8668c22331b133321ebeff05" kind="variable"><name>numBitsCharCount</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a19fd571757e9925c0d8269f00bebd8f4" kind="function"><name>Mode</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a881f1b249c10b5dfc3535b45f2651739" kind="function"><name>getModeBits</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1_1_mode_1a82d2c9bd7eef555bf8884b48cee84adb" kind="function"><name>numCharCountBits</name></member>
+  </compound>
+  <compound refid="classqrcodegen_1_1_qr_code" kind="class"><name>qrcodegen::QrCode</name>
+    <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317" kind="enum"><name>Ecc</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317a41bc94cbd8eebea13ce0491b2ac11b88" kind="enumvalue"><name>LOW</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317ac87f3be66ffc3c0d4249f1c2cc5f3cce" kind="enumvalue"><name>MEDIUM</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317a8927abb1f5ad5fce6a9eccbcf2b0a12d" kind="enumvalue"><name>QUARTILE</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a5f774f0763a57c1f2949727b7641c317ab89de3b4b81c4facfac906edf29aec8c" kind="enumvalue"><name>HIGH</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1aad880fc4455c253781e8968f2239d56f" kind="variable"><name>version</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a439227feff9d7f55384e8780cfc2eb82" kind="variable"><name>size</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1abd24f07fefef409b2714895fd8cad85e" kind="variable"><name>errorCorrectionLevel</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ab77cc972f3ee899689ba053015472ccd" kind="variable"><name>mask</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1af1c0b162dd3bbcfffd61e99b4f372291" kind="variable"><name>modules</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1aa91695a4622e898cc52a293803152ba9" kind="variable"><name>isFunction</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a03e87c2eb4d8a933972f0db81629246b" kind="variable"><name>MIN_VERSION</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a6324df04a6a728981e2bd545d5134f98" kind="variable"><name>MAX_VERSION</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a3928d5c05a7afc1a1dbacd946ced60e1" kind="variable"><name>PENALTY_N1</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a2e77c1abffa48b55a464b8ebebe6236b" kind="variable"><name>PENALTY_N2</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a04495626b845c0e983106c741235b500" kind="variable"><name>PENALTY_N3</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a69bbf54cb5fecf7d5b18908177662400" kind="variable"><name>PENALTY_N4</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1aa6bf78f71df8a50faaed1b2c0d52f2e8" kind="variable"><name>ECC_CODEWORDS_PER_BLOCK</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a0393775d413537009cc52c8295060992" kind="variable"><name>NUM_ERROR_CORRECTION_BLOCKS</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ab18de2c759ec76fdd0c7a0a111a054e1" kind="function"><name>getFormatBits</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a40eee75fa81a2506753aa097b0d96fe6" kind="function"><name>getNumRawDataModules</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ae76267d6b2e80013123dcfb84c6641f7" kind="function"><name>getNumDataCodewords</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a29708b7b4cd92a66e30299fe34f78aba" kind="function"><name>reedSolomonComputeDivisor</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1afd782e056c69441bd97805f1882b9a97" kind="function"><name>reedSolomonComputeRemainder</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a247fb4919a1648c24f630e5fb686686b" kind="function"><name>reedSolomonMultiply</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a28d2b95bd39d07a37aa8709a99f69848" kind="function"><name>getBit</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a8471e039d03e8fec03e17012acda4f57" kind="function"><name>encodeText</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a79eda2e6a60204b91640b9f9e3b1961e" kind="function"><name>encodeBinary</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a13470d7983dc9cf093a4dc667608a5cf" kind="function"><name>encodeSegments</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a292897c42f161f24e7774d1562b4e2dd" kind="function"><name>QrCode</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ac63a160486412a48be2de2d13b5ccd04" kind="function"><name>getVersion</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a75a346c2c84af39192f73d7a92db1812" kind="function"><name>getSize</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ad9630d60ab568cffe1cf517e90f99691" kind="function"><name>getErrorCorrectionLevel</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a6d09811d42df778ce815ac988f9b8cd9" kind="function"><name>getMask</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a62e4535d6e71152aade6c6ca2f954fb7" kind="function"><name>getModule</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a3b4e8f11b2bea3e4a553cc09cd858eda" kind="function"><name>drawFunctionPatterns</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1acd4ce7908871a7d91f5aa823542bfde6" kind="function"><name>drawFormatBits</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a1db9f3c35ff9fbf3191fdb81bff99335" kind="function"><name>drawVersion</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a0770c8b19e27c70340a784814c4099d5" kind="function"><name>drawFinderPattern</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a6ef1ae0f9e000dc6fb920af8b5183166" kind="function"><name>drawAlignmentPattern</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ac0b8e1d11427e4312c81ea1a374f23f5" kind="function"><name>setFunctionModule</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a31a81c50ffa8c09b5784ec73c9c24ae2" kind="function"><name>module</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a6d7f48f8119cfa0396ffe28943a757d9" kind="function"><name>addEccAndInterleave</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a738a3c125a0c817e46f9ef08bba91e19" kind="function"><name>drawCodewords</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a07f77240b01e9cd3bb81874d2dabdb3e" kind="function"><name>applyMask</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ac09c281949603b3b2f86f6d3f608dd5f" kind="function"><name>getPenaltyScore</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a8693a77d4c66f610580906dc1b557ae4" kind="function"><name>getAlignmentPatternPositions</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a23394c9899625b5d7cf1cb8adf848ca3" kind="function"><name>finderPenaltyCountPatterns</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1ac3a044d75b264dd75df847c50f5bfc63" kind="function"><name>finderPenaltyTerminateAndCount</name></member>
+    <member refid="classqrcodegen_1_1_qr_code_1a64aa4088b3a52eece406e2c90c86526b" kind="function"><name>finderPenaltyAddHistory</name></member>
+  </compound>
+  <compound refid="classqrcodegen_1_1_qr_segment" kind="class"><name>qrcodegen::QrSegment</name>
+    <member refid="classqrcodegen_1_1_qr_segment_1a527c597e0b7c293f0c17d81d029d25cd" kind="variable"><name>mode</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a21cf352456b9527481b93f0e581f9659" kind="variable"><name>numChars</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a2c4f068be959f1f62fa7b310e152bdb8" kind="variable"><name>data</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a2045c7c6ef7924cbcf8ce40fe5d3953c" kind="variable"><name>ALPHANUMERIC_CHARSET</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a8bc4f25b39366df624899bc262c9bd15" kind="function"><name>makeBytes</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1acd397b5dae37199520df563c2b63aa97" kind="function"><name>makeNumeric</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a174a489a23f4c6fa38453e53d7943e1a" kind="function"><name>makeAlphanumeric</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1ac5c6eacb93c53855a2922b5d2508304e" kind="function"><name>makeSegments</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1ab63edcbd4945696dbd7f9300a18ba6bd" kind="function"><name>makeEci</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1ac27ed6e0da668891ac4321a8f23de6a8" kind="function"><name>isNumeric</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a749be3d3d2fd5bface2ce7d9ec514c98" kind="function"><name>isAlphanumeric</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a1aedcc0891e92f24f2684881e30eedb1" kind="function"><name>getTotalBits</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1aeee37e9ff9c9c7e1b420e9b756c0e152" kind="function"><name>QrSegment</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1acb047c89e500c37956cdabb1f7b4c454" kind="function"><name>QrSegment</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1aad0ebdbcbd81a92611e00b7fd62a1a86" kind="function"><name>getMode</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1a54e3ab742b932122b97680a0536eb52b" kind="function"><name>getNumChars</name></member>
+    <member refid="classqrcodegen_1_1_qr_segment_1ada47b1386b68fa990d7b0c39e42711ef" kind="function"><name>getData</name></member>
+  </compound>
+  <compound refid="class_m_k_q_r_1_1_validator" kind="class"><name>MKQR::Validator</name>
+    <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" kind="function"><name>TokenizeString</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1ae79807703640fe2e3458e011875be7c9" kind="function"><name>ValidateStringIBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a25c3c0ec9a37bc364254ad3ba6e04165" kind="function"><name>ValidateStringAltIBAN</name></member>
+  </compound>
+  <compound refid="namespace_m_k_q_r" kind="namespace"><name>MKQR</name>
+  </compound>
+  <compound refid="namespaceqrcodegen" kind="namespace"><name>qrcodegen</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="logo_8h" kind="file"><name>logo.h</name>
+    <member refid="logo_8h_1a4d991118052eadc79e880ed0f97ecaa4" kind="variable"><name>gLogoSize</name></member>
+    <member refid="logo_8h_1a7886994a934b23458141c9f9471dff8e" kind="variable"><name>gLogo</name></member>
+    <member refid="logo_8h_1ae77591d322d9523292136f772f969094" kind="variable"><name>gLogoFlag</name></member>
+  </compound>
+  <compound refid="mkqr__generator_8cpp" kind="file"><name>mkqr_generator.cpp</name>
+  </compound>
+  <compound refid="mkqr__generator_8h" kind="file"><name>mkqr_generator.h</name>
+    <member refid="mkqr__generator_8h_1a9fdf6bfa66133062e34f2657a382f9ff" kind="define"><name>MKQR_ERR_NO</name></member>
+    <member refid="mkqr__generator_8h_1ad7e8458a25bab87e67722d56ed82e249" kind="define"><name>MKQR_ERR_NULL</name></member>
+    <member refid="mkqr__generator_8h_1a1d2649a3b5d9e1f1ebee179314c6b8bc" kind="define"><name>MKQR_ERR_INVALID_ARG</name></member>
+    <member refid="mkqr__generator_8h_1aea81585dfeec3d4813ec053ba34f6883" kind="define"><name>MKQR_YELLOW</name></member>
+    <member refid="mkqr__generator_8h_1a70d050123b351088a0c9c3bbb22edce7" kind="define"><name>MKQR_RED</name></member>
+    <member refid="mkqr__generator_8h_1a7c2a6b9817cf0e92328ffd528f4f44cf" kind="define"><name>MKQR_WHITE</name></member>
+    <member refid="mkqr__generator_8h_1a74a3814d9878850aee5f844d5776ec98" kind="define"><name>MKQR_BLACK</name></member>
+    <member refid="mkqr__generator_8h_1ad91d24e9e7ab9f0b261d9d3c76a89458" kind="define"><name>MKQR_LOGO_SIZE</name></member>
+    <member refid="mkqr__generator_8h_1a2aea35a73733cbfa7f8571a5bdbe81ee" kind="define"><name>MKQR_ERR</name></member>
+  </compound>
+  <compound refid="mkqr__validator_8h" kind="file"><name>mkqr_validator.h</name>
+    <member refid="mkqr__validator_8h_1adff663c72d2b2eb090ae045fb0fbd407" kind="define"><name>MKQR_STR_DELIMITER</name></member>
+  </compound>
+  <compound refid="mkqrapi_8cpp" kind="file"><name>mkqrapi.cpp</name>
+    <member refid="mkqrapi_8cpp_1a00154a55d268ad378642611c1cf87e59" kind="function"><name>MkqrCreateNew</name></member>
+    <member refid="mkqrapi_8cpp_1adf498ab6b20ca33d08417a0f001c18e5" kind="function"><name>MkqrDelete</name></member>
+    <member refid="mkqrapi_8cpp_1a06709193ddbd40ef84b78fbcd69717aa" kind="function"><name>MkqrCreateParameter</name></member>
+    <member refid="mkqrapi_8cpp_1a99e267002c3e025aa75de95af064e37e" kind="function"><name>MkqrGenerate</name></member>
+    <member refid="mkqrapi_8cpp_1a4b84295e7ef72a648cccc939550d089b" kind="function"><name>MkqrGetImageSize</name></member>
+    <member refid="mkqrapi_8cpp_1a0dc361ffaf63fadda683f32ce7c7adcc" kind="function"><name>MkqrGetImageDataAtIndex</name></member>
+    <member refid="mkqrapi_8cpp_1ae346eef1f522ec39184625be5a82ca9a" kind="function"><name>MkqrGetLastErrorMessage</name></member>
+    <member refid="mkqrapi_8cpp_1af4c4416919ab46956a28f0bcc381f6e6" kind="function"><name>MkqrGetLastErrorCode</name></member>
+  </compound>
+  <compound refid="mkqrapi_8h" kind="file"><name>mkqrapi.h</name>
+    <member refid="mkqrapi_8h_1aa0e95f89bd6ef81df38d88450920d588" kind="define"><name>MKQR_API</name></member>
+    <member refid="mkqrapi_8h_1a00154a55d268ad378642611c1cf87e59" kind="function"><name>MkqrCreateNew</name></member>
+    <member refid="mkqrapi_8h_1adf498ab6b20ca33d08417a0f001c18e5" kind="function"><name>MkqrDelete</name></member>
+    <member refid="mkqrapi_8h_1a06709193ddbd40ef84b78fbcd69717aa" kind="function"><name>MkqrCreateParameter</name></member>
+    <member refid="mkqrapi_8h_1a99e267002c3e025aa75de95af064e37e" kind="function"><name>MkqrGenerate</name></member>
+    <member refid="mkqrapi_8h_1a4b84295e7ef72a648cccc939550d089b" kind="function"><name>MkqrGetImageSize</name></member>
+    <member refid="mkqrapi_8h_1a0dc361ffaf63fadda683f32ce7c7adcc" kind="function"><name>MkqrGetImageDataAtIndex</name></member>
+    <member refid="mkqrapi_8h_1ae346eef1f522ec39184625be5a82ca9a" kind="function"><name>MkqrGetLastErrorMessage</name></member>
+    <member refid="mkqrapi_8h_1af4c4416919ab46956a28f0bcc381f6e6" kind="function"><name>MkqrGetLastErrorCode</name></member>
+  </compound>
+  <compound refid="qrcodegen_8cpp" kind="file"><name>qrcodegen.cpp</name>
+  </compound>
+  <compound refid="qrcodegen_8h" kind="file"><name>qrcodegen.h</name>
+  </compound>
+  <compound refid="dir_7a4743c6d98667c9466b65002521998f" kind="dir"><name>mkqr_api</name>
+  </compound>
+</doxygenindex>
