@@ -79,14 +79,26 @@ void MKQR::Generator::CreateParameter(const std::string& name, const std::string
 		MKQR_ERR(MKQR_ERR_FATAL, result.GetMessage());
 		mFatalError = true;
 	}
-
-	mParameters.insert_or_assign(name, value);
+	else if (result.GetLevel() == Validator::SResult::ELevel::Ok)
+	{
+		mParameters.insert_or_assign(name, value);
+	}
 }
 
 void MKQR::Generator::Generate(uint8_t isMonochrome, size_t superSampling) noexcept
 {
 	if (mFatalError)
 		return;
+
+	const std::vector<std::string>& mandatoryParams = mValidator->GetMandatoryParameters();
+	for (const std::string& mandParam : mandatoryParams)
+	{
+		if (mParameters.find(mandParam) == mParameters.end())
+		{
+			MKQR_ERR(MKQR_ERR_FATAL, "Not all mandatory parameters are present");
+			return;
+		}
+	}
 
 	mSuperSampling = superSampling;
 	mIsMonochrome = isMonochrome;

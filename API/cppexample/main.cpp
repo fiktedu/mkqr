@@ -65,8 +65,8 @@ void GenerateQR(size_t num)
 		MkqrCreateParameter(mkqr, "v", "1000");
 		MkqrCreateParameter(mkqr, "c", "1");
 		MkqrCreateParameter(mkqr, "iban", "DE89370400440532013000"); 
-		MkqrCreateParameter(mkqr, "aiban", "312324123|312324123|312324123|312324123|312324123");
-		MkqrCreateParameter(mkqr, "cat", "1");
+		MkqrCreateParameter(mkqr, "aiban", "DE89370400440532013000|DE89370400440532013000");
+		MkqrCreateParameter(mkqr, "cat", "S");
 		MkqrCreateParameter(mkqr, "cn", GenerateRandomString(20).c_str());
 		MkqrCreateParameter(mkqr, "cadd1", "Лондонска бр. 8");
 		MkqrCreateParameter(mkqr, "cz", "1000");

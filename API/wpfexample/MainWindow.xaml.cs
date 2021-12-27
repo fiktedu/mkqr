@@ -95,31 +95,33 @@ namespace wpfexample
 
             CreateParameter("t", "MKD");
             CreateParameter("v", "1000");
+            CreateParameter("c", "1");
             CreateParameter("iban", "DE89370400440532013000");
-            CreateParameter("aiban", "312324123|312324123|312324123|312324123|312324123");
-            CreateParameter("cat", "S");
+            CreateParameter("aiban", "DE89370400440532013000|DE89370400440532013000");
+            CreateParameter("cat", "K");
             CreateParameter("cn", "Toplifikacija Skopje");
-            CreateParameter("cadd1", "Londonska br. 8");
-            CreateParameter("cz", "1000");
-            CreateParameter("cg", "Skopje");
-            CreateParameter("cc", "Makedonija");
+            CreateParameter("cadd1", "Londonska");
+            CreateParameter("cc", "MK");
             CreateParameter("cur", "MKD");
-            CreateParameter("ref", "894732847239");
+            CreateParameter("pcd", "289");
 
             GenerateMkqr();
 
             uint imageSize = (uint)MkqrGetImageSize(mkqr);
-            Bitmap bmp = new Bitmap((int)imageSize, (int)imageSize, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-
-            for (uint i = 0; i < (imageSize * imageSize); i++)
+            if (imageSize != 0)
             {
-                UInt32 data = MkqrGetImageDataAtIndex(mkqr, (UIntPtr)i);
-                byte[] bytes = BitConverter.GetBytes(data);
+                Bitmap bmp = new Bitmap((int)imageSize, (int)imageSize, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
-                bmp.SetPixel((int)(i % imageSize), (int)(i / imageSize), System.Drawing.Color.FromArgb(255, bytes[2], bytes[1], bytes[0]));
+                for (uint i = 0; i < (imageSize * imageSize); i++)
+                {
+                    UInt32 data = MkqrGetImageDataAtIndex(mkqr, (UIntPtr)i);
+                    byte[] bytes = BitConverter.GetBytes(data);
+
+                    bmp.SetPixel((int)(i % imageSize), (int)(i / imageSize), System.Drawing.Color.FromArgb(255, bytes[2], bytes[1], bytes[0]));
+                }
+
+                bitmapCanvas.Source = ImageSourceFromBitmap(bmp);
             }
-
-            bitmapCanvas.Source = ImageSourceFromBitmap(bmp);
         }
 
         ~MainWindow()

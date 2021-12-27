@@ -12,9 +12,10 @@
 
 namespace MKQR
 {
+	class Generator;
+
 	/*!@brief This class contains functions that validate parameters. Please don't make it
 	 * static or singleton and keep all functions const, inlined by default ;)
-	 * Splitting it to a cpp file is unnecesarry if you keep all functions const
 	 */
 	class Validator
 	{
@@ -51,7 +52,7 @@ namespace MKQR
 			MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
 			// TODO: missing rt and ref
 			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(IsDoublePositiveNumber, "")),
-			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsDoublePositiveNumber, "")),
+			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsDoublePositiveNumber, "")),
 			// TODO: missing validations for PP30 and PP50
 			// TODO: missing additional info field validation
 			// TODO: missing curl validation
@@ -60,7 +61,12 @@ namespace MKQR
 
 		const std::vector<std::string> mMandatoryParameters =
 		{
-			"t", "v", "c", "iban", "cat", "cn", "cc", "cur", "rt", "pcd"
+			"t", "v", "c", "iban", "cat", "cn", "cc", "cur", /*"rt",*/ "pcd" // TODO: add rt when validated
+		};
+
+		const std::vector<std::string> mConditionalParameters =
+		{
+			"cadd1", "cz", "cg", "padd1", "pz", "pg"
 		};
 
 		/*!@brief Splits the string into components
@@ -70,71 +76,11 @@ namespace MKQR
 		 *
 		 * @return Vector of strings derived from str
 		 */
-		[[nodiscard]] std::vector<std::string> TokenizeString(const char* str, char delimiter) const
-		{
-			std::vector<std::string> tokens;
+		[[nodiscard]] std::vector<std::string> TokenizeString(const char* str, char delimiter) const;
 
-			while (0 != *str++)
-			{
-				const char* begin = str;
+		[[nodiscard]] bool IsNumber(const std::string& str) const;
 
-				while (*str != delimiter && *str)
-					str++;
-
-				tokens.push_back(std::string(begin, str));
-			}
-
-			return tokens;
-		}
-
-
-		[[nodiscard]] bool IsNumber(const std::string& str) const
-		{
-			for (char const& c : str)
-				if (std::isdigit(c) == 0 || c == '.' || c == '-')
-					return false;
-			return true;
-		}
-
-		[[nodiscard]] bool IsParameterMandatory(const std::string& name) const
-		{
-			bool retVal = std::find(mMandatoryParameters.begin(), mMandatoryParameters.end(), name) != mMandatoryParameters.end();
-			if (!retVal)
-			{
-				if (name == "cadd1")
-				{
-					const std::string& value = mGenerator.GetParameterValue("cat");
-					retVal = (value == "K");
-				}
-				else if (name == "cz")
-				{
-					const std::string& value = mGenerator.GetParameterValue("cat");
-					retVal = (value == "S");
-				}
-				else if (name == "cg")
-				{
-					const std::string& value = mGenerator.GetParameterValue("cat");
-					retVal = (value == "S");
-				}
-				else if (name == "padd1")
-				{
-					const std::string& value = mGenerator.GetParameterValue("pat");
-					retVal = (value == "K");
-				}
-				else if (name == "pz")
-				{
-					const std::string& value = mGenerator.GetParameterValue("pat");
-					retVal = (value == "S");
-				}
-				else if (name == "pg")
-				{
-					const std::string& value = mGenerator.GetParameterValue("pat");
-					retVal = (value == "S");
-				}
-			}
-
-			return retVal;
-		}
+		[[nodiscard]] bool IsParameterMandatory(const std::string& name) const;
 
 		// ==========================================================================================
 
@@ -146,13 +92,7 @@ namespace MKQR
 		 */
 		[[nodiscard]] bool IBAN(const std::string& ibanString,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage += "Supplied IBAN not valid.";
-			const std::regex ibanRegex(
-				"^([A-Z]{2}[ \\-]?[0-9]{2})(?=(?:[ \\-]?[A-Z0-9]){9,30}$)((?:[ \\-]?[A-Z0-9]{3,5}){2,7})([ \\-]?[A-Z0-9]{1,3})?$");
-			return std::regex_match(ibanString, ibanRegex);
-		}
+			std::string& outMessage) const;
 
 		/*!@brief Splits aibanString into components and then evaluates each component separately
 		 *
@@ -162,129 +102,39 @@ namespace MKQR
 		 */
 		[[nodiscard]] bool AltIBAN(const std::string& aibanString,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			std::vector<std::string> tokens = TokenizeString(aibanString.c_str(), MKQR_STR_DELIMITER);
-			bool retVal = true;
-			for (const std::string& token : tokens)
-			{
-				if (!IBAN(token, "", outMessage))
-				{
-					retVal = false;
-					break;
-				}
-			}
-
-			return retVal;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool IsEqual(const std::string& value,
 			const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " is not equal to " + param;
-			return value == param;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool NonZeroMaxLength(const std::string& value,
 			const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " is not between 0 and " + param;
-			size_t l = atoll(param.c_str());
-			return value.length() > 0 && value.length() < l;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool FixedLength(const std::string& value,
 			const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " must have a fixed length of " + param;
-			size_t l = atoll(param.c_str());
-			return value.length() == l;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool FixedChars(const std::string& value,
 			const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " has invalid characters. Expected characters: " + param;
-			for (char cv : value)
-			{
-				bool found = false;
-				for (char cp : param)
-				{
-					if (cp == cv)
-					{
-						found = true;
-						break;
-					}
-				}
-
-				if (!found)
-					return false;
-			}
-			return true;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool CountryCode(const std::string& value,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " must be a valid country code";
-			return std::find(mCountryCodes.begin(), mCountryCodes.end(), value) != mCountryCodes.end();
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool IsDoublePositiveNumber(const std::string& value,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " must be a double-precision positive number";
-			bool retVal = IsNumber(value);
-			if (retVal)
-			{
-				double amount = std::stod(value);
-				retVal = (amount >= 0.0);
-			}
-			return retVal;
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool CurrencyCode(const std::string& value,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			outMessage = "Value " + value + " must be a valid currency code";
-			return std::find(mCurrencyCodes.begin(), mCurrencyCodes.end(), value) != mCurrencyCodes.end();
-		}
+			std::string& outMessage) const;
 
 		[[nodiscard]] bool SwitchOnSK(const std::string& value,
 			[[maybe_unused]] const std::string& param,
-			std::string& outMessage) const
-		{
-			bool retVal = false;
-			outMessage = "Value " + value + " is out of range";
-			const std::string& valueCat = mGenerator.GetParameterValue("cat");
-			const std::vector<std::string>& tokens = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
-			if (tokens.size() == 2)
-			{
-				outMessage = "Number of tokens in " + param + " is not correct";
-				const uint8_t valueS = (uint8_t)atoi(tokens[0].c_str());
-				const uint8_t valueK = (uint8_t)atoi(tokens[1].c_str());
-
-				const size_t valueLength = value.length();
-
-				if (valueCat == "S" && valueLength > 0 && valueLength <= valueS)
-				{
-					retVal = true;
-				}
-				else if (valueCat == "K" && valueLength > 0 && valueLength <= valueK)
-				{
-					retVal = true;
-				}
-			}
-
-			return retVal;
-		}
+			std::string& outMessage) const;
 
 		// ==========================================================================================
 	public:
@@ -318,33 +168,23 @@ namespace MKQR
 			const std::string& GetMessage() { return mMessage; }
 		};
 
-		[[nodiscard]] SResult ValidateParameter(const std::string& name, const std::string& value) const
+		[[nodiscard]] std::vector<std::string> GetMandatoryParameters() const
 		{
-			SResult retVal;
-			const auto& paramIt = mValidators.find(name);
-			if (paramIt != mValidators.end())
+			std::vector<std::string> retVal = mMandatoryParameters;
+
+			for (const std::string& cparam : mConditionalParameters)
 			{
-				const ValidatorQueue& queue = paramIt->second;
-				for (const ValidatorFunction& fn : queue)
+				if (IsParameterMandatory(cparam))
 				{
-					std::string message;
-					bool success = fn.first(value, fn.second, message);
-					bool isMandatory = IsParameterMandatory(name);
-					if (!success)
-					{
-						retVal = SResult(isMandatory ? SResult::ELevel::Error : SResult::ELevel::Warning,
-							"Parameter " + name + ": " + message);
-						break;
-					}
+					retVal.push_back(cparam);
 				}
 			}
-			else
-			{
-				retVal = SResult(SResult::ELevel::Error, "Parameter " + name + " does not exist");
-			}
-
 			return retVal;
 		}
+
+		[[nodiscard]] SResult ValidateParameter(
+			const std::string& name, const std::string& value) const;
+
 
 		// ==========================================================================================
 	private:

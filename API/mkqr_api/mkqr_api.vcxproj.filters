@@ -24,6 +24,9 @@
     <ClCompile Include="mkqrapi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mkqr_validator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mkqr_generator.h">

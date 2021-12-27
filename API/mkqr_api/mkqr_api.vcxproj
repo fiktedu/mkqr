@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mkqr_validator.cpp" />
     <ClCompile Include="qrcodegen.cpp" />
     <ClCompile Include="mkqr_generator.cpp" />
     <ClCompile Include="mkqrapi.cpp" />
