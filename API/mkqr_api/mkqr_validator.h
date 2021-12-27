@@ -6,8 +6,26 @@
 #include <functional>
 #include <queue>
 
+/*!@brief This is the delimiter for combined strings */
 #define MKQR_STR_DELIMITER '|'
+
+/*!@brief Binds a function pointer as a validator function
+ *
+ * @param fnName The name of the function to do the validation
+ * @param paramValue The value of the additional parameter. You can separate multiple
+ * parameters by using the pipe | delimiter
+ */
 #define MKQR_VBIND(fnName, paramValue) { std::bind(&MKQR::Validator::fnName, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), paramValue }
+
+ /*!@brief Defines a validator which is a pair of property name and queue of functions
+ * that need to return true for the parameter to be validated
+ *
+ * example: MKQR_VALIDATOR("name", MKQR_VBIND(IsEqual, "name"), MKQR_VBIND(FixedLength, "4"))
+ *
+ * @param propertyName The name of the property of this validator queue
+ * @param ... One or multiple MKQR_BIND calls which make the validator queue
+ *
+ */
 #define MKQR_VALIDATOR(propertyName, ...) {propertyName,  { __VA_ARGS__ }}
 
 namespace MKQR
@@ -19,14 +37,26 @@ namespace MKQR
 	 */
 	class Validator
 	{
+		/*!@brief All validator functions must have 3x string parameters and must
+		 * return a bool value (is the parameter valid) */
 		typedef std::pair<
 			std::function<bool(const std::string&, const std::string&, std::string&)>,
 			std::string> ValidatorFunction;
 
+		/*!@brief The queue which is executed each time a parameter is validated, contains
+		 * n number of functions */
 		typedef std::vector<ValidatorFunction> ValidatorQueue;
 	private:
+		/*!@brief A reference to the generator class needed to get already
+		 * registered parameters */
 		const Generator& mGenerator;
 
+		/*!@brief The core variable in this class. Contains all parameters
+		 * with their function execution queues.
+		 *
+		 * @param std::string The name of the parameter
+		 * @param ValidatorQueue The queue of functions which validates the parameter
+		 */
 		const std::unordered_map<std::string, ValidatorQueue> mValidators =
 		{
 			MKQR_VALIDATOR("t", MKQR_VBIND(IsEqual, "MKD")),
@@ -59,11 +89,14 @@ namespace MKQR
 			// TODO: missing alternative payment fields validation
 		};
 
+		/*!@brief Contains all the mandatory parameters */
 		const std::vector<std::string> mMandatoryParameters =
 		{
 			"t", "v", "c", "iban", "cat", "cn", "cc", "cur", /*"rt",*/ "pcd" // TODO: add rt when validated
 		};
 
+		/*!@brief Contains all the conditional parameters which may or may not be mandatory
+		 * depending on the context */
 		const std::vector<std::string> mConditionalParameters =
 		{
 			"cadd1", "cz", "cg", "padd1", "pz", "pg"
@@ -78,8 +111,23 @@ namespace MKQR
 		 */
 		[[nodiscard]] std::vector<std::string> TokenizeString(const char* str, char delimiter) const;
 
+		/*!@brief Checks if the provided string is a number.
+		 *
+		 * @param str The string to be checked
+		 *
+		 * @return True if str is a number, false if str is not a number
+		 */
 		[[nodiscard]] bool IsNumber(const std::string& str) const;
 
+		/*!@brief Checks if the provided string is a mandatory parameter **at the time**
+		 * this check is executed. The parameter might appear not to be mandatory if all
+		 * the prerequisites are not yet checked
+		 *
+		 * @param name The string to be checked
+		 *
+		 * @return True if name is a mandatory parameter, false if str is not a
+		 * mandatory parameter
+		 */
 		[[nodiscard]] bool IsParameterMandatory(const std::string& name) const;
 
 		// ==========================================================================================
@@ -87,8 +135,10 @@ namespace MKQR
 		/*!@brief Validate IBAN
 		 *
 		 * @param ibanString The IBAN string to validate
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
 		 *
-		 * @return True if valid, false if not valid
+		 * @return True if valid
 		 */
 		[[nodiscard]] bool IBAN(const std::string& ibanString,
 			[[maybe_unused]] const std::string& param,
@@ -96,54 +146,134 @@ namespace MKQR
 
 		/*!@brief Splits aibanString into components and then evaluates each component separately
 		 *
-		 * @param aibanString The alternative IBAN string to validate
+		 * @param aibanString The alternative IBANs to validate
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
 		 *
-		 * @return True if valid, false if not valid
+		 * @return True if valid
 		 */
 		[[nodiscard]] bool AltIBAN(const std::string& aibanString,
 			[[maybe_unused]] const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value is equal to param
+		 *
+		 * @param value The value to check
+		 * @param param The value to check against
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is equal to param
+		*/
 		[[nodiscard]] bool IsEqual(const std::string& value,
 			const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if the length is greater than zero and less than param
+		 *
+		 * @param value The value on which to check the length
+		 * @param param The maximum value, must be a number
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if the length of value is non-zero and less than param
+		 */
 		[[nodiscard]] bool NonZeroMaxLength(const std::string& value,
 			const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value has a fixed length of param
+		 *
+		 * @param value The value on which to check the length
+		 * @param param The actual length to check, must be a number
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if the length of value is equal to param
+		 */
 		[[nodiscard]] bool FixedLength(const std::string& value,
 			const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value has any/all characters specified in param
+		 *
+		 * @param value The string on which to check the characters
+		 * @param param All possible characters that can appear in value
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value has only the characters specified in param
+		 */
 		[[nodiscard]] bool FixedChars(const std::string& value,
 			const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value is a country code
+		 *
+		 * @param value The string to check
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a country code
+		 */
 		[[nodiscard]] bool CountryCode(const std::string& value,
 			[[maybe_unused]] const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value is a positive number with double precision
+		 *
+		 * @param value The string to check
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a positive number with double precision
+		 */
 		[[nodiscard]] bool IsDoublePositiveNumber(const std::string& value,
 			[[maybe_unused]] const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value is a currency code
+		 *
+		 * @param value The string to check
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a currency code
+		 */
 		[[nodiscard]] bool CurrencyCode(const std::string& value,
 			[[maybe_unused]] const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks special constranints for "cat" and "pat" parameters
+		 *
+		 * @param value The string to check
+		 * @param param Minimum and maximum length of characters for the
+		 * specified parameter
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a currency code
+		 */
 		[[nodiscard]] bool SwitchOnSK(const std::string& value,
-			[[maybe_unused]] const std::string& param,
+			const std::string& param,
 			std::string& outMessage) const;
 
 		// ==========================================================================================
 	public:
+		/*!@brief The validator needs a reference to the Generator, do that here
+		 *
+		 * @param owner The owner generator
+		 */
 		Validator(const Generator& owner)
 			: mGenerator(owner) {}
 
+		/*!@brief The validator needs a reference to the Generator, do that here
+		 * The validator result, can be interpreted by the Validator easily
+		*/
 		struct SResult
 		{
 		public:
+
+			/*!@brief
+			* @param Ok All is good and validated
+			* @param Warning Some non-mandatory validations failed
+			* @param Error Validation failed on mandatory properties
+			*/
 			enum class ELevel
 			{
 				Ok,
@@ -168,26 +298,26 @@ namespace MKQR
 			const std::string& GetMessage() { return mMessage; }
 		};
 
-		[[nodiscard]] std::vector<std::string> GetMandatoryParameters() const
-		{
-			std::vector<std::string> retVal = mMandatoryParameters;
+		/*!@brief Gets all mandatory parameters at this point. This also 
+		 * includes optional parameters which have been evaluated as 
+		 * mandatory
+		 * 
+		 * @reutrn A vector of all mandatory parameters at this point
+		 */
+		[[nodiscard]] std::vector<std::string> GetMandatoryParameters() const;
 
-			for (const std::string& cparam : mConditionalParameters)
-			{
-				if (IsParameterMandatory(cparam))
-				{
-					retVal.push_back(cparam);
-				}
-			}
-			return retVal;
-		}
-
+		/*!@brief Gets all mandatory parameters at this point. This also
+		 * includes optional parameters which have been evaluated as
+		 * mandatory
+		 *
+		 * @return A vector of all mandatory parameters at this point
+		 */
 		[[nodiscard]] SResult ValidateParameter(
 			const std::string& name, const std::string& value) const;
 
-
 		// ==========================================================================================
 	private:
+		/*!@brief Holds all country codes as of year 2022*/
 		const std::vector<std::string> mCountryCodes = { "AF", "AX", "AL", "DZ", "AS", "AD",
 "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB","BY", "BE",
 "BZ", "BJ","BM","BT","BO","BA","BW","BV","BR","IO","BN","BG","BF","BI","KH","CM","CA","CV","KY",
@@ -203,6 +333,7 @@ namespace MKQR
 "SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB",
 "US","UM","UY","UZ","VU","VE","VN","VG","VI","WF","EH","YE","ZM","ZW" };
 
+		/*!@brief Holds all currency codes as of year 2022*/
 		const std::vector<std::string> mCurrencyCodes = {
 "AFA","AWG","AUD","ARS","AZN","BSD","BDT","BBD","BYR","BOB","BRL","GBP","BGN","KHR","CAD","KYD",
 "CLP","CNY","COP","CRC","HRK","CPY","CZK","DKK","DOP","XCD","EGP","ERN","EEK","EUR","GEL","GHC",

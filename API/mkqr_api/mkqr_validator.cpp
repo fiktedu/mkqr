@@ -67,8 +67,8 @@ bool MKQR::Validator::IsParameterMandatory(const std::string& name) const
 }
 
 bool MKQR::Validator::IBAN(
-	const std::string& ibanString, 
-	[[maybe_unused]] const std::string& param, 
+	const std::string& ibanString,
+	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
 	outMessage += "Supplied IBAN not valid.";
@@ -138,8 +138,8 @@ bool MKQR::Validator::FixedChars(const std::string& value, const std::string& pa
 }
 
 bool MKQR::Validator::CountryCode(
-	const std::string& value, 
-	[[maybe_unused]] const std::string& param, 
+	const std::string& value,
+	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
 	outMessage = "Value " + value + " must be a valid country code";
@@ -147,7 +147,7 @@ bool MKQR::Validator::CountryCode(
 }
 
 bool MKQR::Validator::IsDoublePositiveNumber(
-	const std::string& value, 
+	const std::string& value,
 	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
@@ -163,7 +163,7 @@ bool MKQR::Validator::IsDoublePositiveNumber(
 
 bool MKQR::Validator::CurrencyCode(
 	const std::string& value,
-	[[maybe_unused]] const std::string& param, 
+	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
 	outMessage = "Value " + value + " must be a valid currency code";
@@ -197,6 +197,20 @@ bool MKQR::Validator::SwitchOnSK(const std::string& value, const std::string& pa
 		outMessage = "Number of tokens in " + param + " is not correct";
 	}
 
+	return retVal;
+}
+
+std::vector<std::string> MKQR::Validator::GetMandatoryParameters() const
+{
+	std::vector<std::string> retVal = mMandatoryParameters;
+
+	for (const std::string& cparam : mConditionalParameters)
+	{
+		if (IsParameterMandatory(cparam))
+		{
+			retVal.push_back(cparam);
+		}
+	}
 	return retVal;
 }
 
