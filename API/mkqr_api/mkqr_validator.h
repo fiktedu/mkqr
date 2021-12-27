@@ -294,8 +294,8 @@ namespace MKQR
 				mMessage(message)
 			{ }
 
-			ELevel GetLevel() { return mLevel; }
-			const std::string& GetMessage() { return mMessage; }
+			ELevel GetLevel() const { return mLevel; }
+			const std::string& GetMessage() const { return mMessage; }
 		};
 
 		/*!@brief Gets all mandatory parameters at this point. This also 

@@ -82,7 +82,7 @@ bool MKQR::Validator::AltIBAN(
 	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
-	std::vector<std::string> tokens = TokenizeString(aibanString.c_str(), MKQR_STR_DELIMITER);
+	const std::vector<std::string> tokens = TokenizeString(aibanString.c_str(), MKQR_STR_DELIMITER);
 	bool retVal = true;
 	for (const std::string& token : tokens)
 	{
@@ -155,7 +155,7 @@ bool MKQR::Validator::IsDoublePositiveNumber(
 	bool retVal = IsNumber(value);
 	if (retVal)
 	{
-		double amount = std::stod(value);
+		const double amount = std::stod(value);
 		retVal = (amount >= 0.0);
 	}
 	return retVal;

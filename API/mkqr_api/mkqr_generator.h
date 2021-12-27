@@ -175,6 +175,17 @@ namespace MKQR
 		 */
 		void CreateParameter(const std::string& name, const std::string& value) noexcept;
 
+		/*!@brief Validates a parameter value
+		* 
+		* @param name The name of the parameter
+		* @param value The value of the parameter
+		* 
+		* @return If valid returns 0, if not valid and not mandatory returns 1, if 
+		* not valid and mandatory returns 2
+		*/
+		uint8_t ValidateParameter(const std::string& name, 
+							      const std::string& value) const noexcept;
+
 		/*!@brief Generates the MKQR code based on the previously entered parameters.
 		 * This function will fail if a previously created parameter is invalid. The
 		 * result of the function is kept inside the mQrImageData variable, which can

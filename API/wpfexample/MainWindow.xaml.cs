@@ -34,6 +34,9 @@ namespace wpfexample
         [DllImport("mkqr_api.dll")]
         public static extern byte MkqrGetLastErrorCode(UIntPtr instance);
 
+        [DllImport("mkqr_api.dll")]
+        public static extern byte MkqrValidateParameter(UIntPtr instance, string name, string value);
+
         // ===================================================================
 
         [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]

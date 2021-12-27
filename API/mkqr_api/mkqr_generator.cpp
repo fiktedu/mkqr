@@ -85,6 +85,19 @@ void MKQR::Generator::CreateParameter(const std::string& name, const std::string
 	}
 }
 
+uint8_t MKQR::Generator::ValidateParameter(const std::string& name, const std::string& value) const noexcept
+{
+	const Validator::SResult result = mValidator->ValidateParameter(name, value);
+	if (result.GetLevel() == Validator::SResult::ELevel::Ok)
+		return 0;
+	else if (result.GetLevel() == Validator::SResult::ELevel::Warning)
+		return 1;
+	else if (result.GetLevel() == Validator::SResult::ELevel::Error)
+		return 2;
+	
+	return 2;
+}
+
 void MKQR::Generator::Generate(uint8_t isMonochrome, size_t superSampling) noexcept
 {
 	if (mFatalError)

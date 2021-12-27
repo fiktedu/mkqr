@@ -100,3 +100,15 @@ MKQR_API uint8_t MkqrGetLastErrorCode(size_t instance)
 
 	return instancePtr->GetLastErrorCode();
 }
+
+MKQR_API uint8_t MkqrValidateParameter(size_t instance, const char* name, const char* value)
+{
+	MKQR::Generator* const instancePtr = reinterpret_cast<MKQR::Generator*>(instance);
+
+	if (!instancePtr)
+	{
+		return 0;
+	}
+
+	return instancePtr->ValidateParameter(name, value);
+}

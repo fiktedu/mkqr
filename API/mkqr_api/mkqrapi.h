@@ -97,6 +97,19 @@ extern "C" {
 	 * @return 8-bit error code which categorizes the error
 	*/
 	extern MKQR_API uint8_t MkqrGetLastErrorCode(size_t instance);
+
+	/*!@brief Validate a parameter
+	 *
+	 * @param instance The instance created using MkqrCreateNew()
+	 * @param name The name of the parameter
+	 * @param value The value of the parameter
+	 *
+	 * @return If valid returns 0, if not valid and not mandatory returns 1, if 
+	 * not valid and mandatory returns 2
+	*/
+	extern MKQR_API uint8_t MkqrValidateParameter(size_t instance, 
+												  const char* name, 
+												  const char* value);
 #ifdef __cplusplus
 }
 #endif
