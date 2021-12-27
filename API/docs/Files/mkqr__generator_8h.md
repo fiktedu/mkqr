@@ -25,7 +25,8 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h
 | -------------- | -------------- |
 |  | **[MKQR_ERR_NO](/Files/mkqr__generator_8h.md#define-mkqr-err-no)** <br>Indicates that no error has occured during the last action.Use this to check if something has executed successfuly or not.  |
 |  | **[MKQR_ERR_NULL](/Files/mkqr__generator_8h.md#define-mkqr-err-null)** <br>Indicates that the last action has returned null or that the handle that the last function tried to access was null.  |
-|  | **[MKQR_ERR_INVALID_ARG](/Files/mkqr__generator_8h.md#define-mkqr-err-invalid-arg)** <br>Indicates that an argument was invalid.Set this when a validation fails.  |
+|  | **[MKQR_ERR_NONFATAL](/Files/mkqr__generator_8h.md#define-mkqr-err-nonfatal)** <br>Indicates that an argument was invalid. Set this when a validation fails.  |
+|  | **[MKQR_ERR_FATAL](/Files/mkqr__generator_8h.md#define-mkqr-err-fatal)** <br>Indicates that an argument was invalid, but the argument was mandatory. Set this when a validation of a mandatory arguemnt fails.  |
 |  | **[MKQR_YELLOW](/Files/mkqr__generator_8h.md#define-mkqr-yellow)** <br>Yellow color, 24-bit expanded to 32-bit.  |
 |  | **[MKQR_RED](/Files/mkqr__generator_8h.md#define-mkqr-red)** <br>Red color, 24-bit expanded to 32-bit.  |
 |  | **[MKQR_WHITE](/Files/mkqr__generator_8h.md#define-mkqr-white)** <br>White color, 24-bit expanded to 32-bit.  |
@@ -54,13 +55,21 @@ Indicates that no error has occured during the last action.Use this to check if 
 
 Indicates that the last action has returned null or that the handle that the last function tried to access was null. 
 
-### define MKQR_ERR_INVALID_ARG
+### define MKQR_ERR_NONFATAL
 
 ```cpp
-#define MKQR_ERR_INVALID_ARG 2
+#define MKQR_ERR_NONFATAL 2
 ```
 
-Indicates that an argument was invalid.Set this when a validation fails. 
+Indicates that an argument was invalid. Set this when a validation fails. 
+
+### define MKQR_ERR_FATAL
+
+```cpp
+#define MKQR_ERR_FATAL 3
+```
+
+Indicates that an argument was invalid, but the argument was mandatory. Set this when a validation of a mandatory arguemnt fails. 
 
 ### define MKQR_YELLOW
 
@@ -120,10 +129,12 @@ Sets the code and the message of the currently occuring error or warning.
 #pragma once
 #include <string>
 #include <vector>
+#include <unordered_map>
      
 #define MKQR_ERR_NO 0 
 #define MKQR_ERR_NULL 1
-#define MKQR_ERR_INVALID_ARG 2    
+#define MKQR_ERR_NONFATAL 2    
+#define MKQR_ERR_FATAL 3    
 //==========================================================================================
 
 #define MKQR_YELLOW 0xFFE500UL
@@ -142,15 +153,19 @@ Sets the code and the message of the currently occuring error or warning.
 namespace MKQR
 {
     class Validator;
-
     class Generator
     {
+        friend Validator;
     private:
         const Validator* mValidator;
 
-        std::vector<std::string> mParameters;
+        std::unordered_map<std::string, std::string> mParameters;
 
-        std::string GenerateStringFromParameters() const noexcept;
+        bool mFatalError = false;
+
+        [[nodiscard]] std::string GetParameterValue(const std::string& name) const noexcept;
+
+        [[nodiscard]] std::string GenerateStringFromParameters() const noexcept;
 
         template<typename T>
         [[nodiscard]] T MapRange(T value, T low1, T high1, T low2, T high2) const noexcept
@@ -179,7 +194,7 @@ namespace MKQR
 
         std::string mLastErrorMessage;
 
-        char* mTempErrorMessage;
+        char* mTempErrorMessage = nullptr;
 
         uint8_t mLastErrorCode = MKQR_ERR_NO;
     public:
@@ -188,6 +203,9 @@ namespace MKQR
         ~Generator();
 
         void CreateParameter(const std::string& name, const std::string& value) noexcept;
+
+        uint8_t ValidateParameter(const std::string& name, 
+                                  const std::string& value) const noexcept;
 
         void Generate(uint8_t isMonochrome, size_t superSampling) noexcept;
 
@@ -207,4 +225,4 @@ namespace MKQR
 
 -------------------------------
 
-Updated on 2021-12-26 at 18:31:40 +0100
+Updated on 2021-12-27 at 23:28:27 +0100

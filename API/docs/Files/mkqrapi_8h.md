@@ -19,6 +19,7 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqrapi.h
 | MKQR_API uint32_t | **[MkqrGetImageDataAtIndex](/Files/mkqrapi_8h.md#function-mkqrgetimagedataatindex)**(size_t instance, size_t index)<br>Gets the pixel color data at a given pixel index.  |
 | MKQR_API const char * | **[MkqrGetLastErrorMessage](/Files/mkqrapi_8h.md#function-mkqrgetlasterrormessage)**(size_t instance)<br>Gets the last error message.  |
 | MKQR_API uint8_t | **[MkqrGetLastErrorCode](/Files/mkqrapi_8h.md#function-mkqrgetlasterrorcode)**(size_t instance)<br>Gets the last error code.  |
+| MKQR_API uint8_t | **[MkqrValidateParameter](/Files/mkqrapi_8h.md#function-mkqrvalidateparameter)**(size_t instance, const char * name, const char * value)<br>Validate a parameter.  |
 
 ## Defines
 
@@ -168,6 +169,27 @@ Gets the last error code.
 
 **Return**: 8-bit error code which categorizes the error 
 
+### function MkqrValidateParameter
+
+```cpp
+MKQR_API uint8_t MkqrValidateParameter(
+    size_t instance,
+    const char * name,
+    const char * value
+)
+```
+
+Validate a parameter. 
+
+**Parameters**: 
+
+  * **instance** The instance created using MkqrCreateNew() 
+  * **name** The name of the parameter 
+  * **value** The value of the parameter
+
+
+**Return**: If valid returns 0, if not valid and not mandatory returns 1, if not valid and mandatory returns 2 
+
 
 
 ## Macros Documentation
@@ -208,6 +230,10 @@ extern "C" {
     extern MKQR_API const char* MkqrGetLastErrorMessage(size_t instance);
 
     extern MKQR_API uint8_t MkqrGetLastErrorCode(size_t instance);
+
+    extern MKQR_API uint8_t MkqrValidateParameter(size_t instance, 
+                                                  const char* name, 
+                                                  const char* value);
 #ifdef __cplusplus
 }
 #endif
@@ -216,4 +242,4 @@ extern "C" {
 
 -------------------------------
 
-Updated on 2021-12-26 at 18:31:40 +0100
+Updated on 2021-12-27 at 23:28:27 +0100

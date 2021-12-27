@@ -19,6 +19,7 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp
 | MKQR_API uint32_t | **[MkqrGetImageDataAtIndex](/Files/mkqrapi_8cpp.md#function-mkqrgetimagedataatindex)**(size_t instance, size_t index)<br>Gets the pixel color data at a given pixel index.  |
 | MKQR_API const char * | **[MkqrGetLastErrorMessage](/Files/mkqrapi_8cpp.md#function-mkqrgetlasterrormessage)**(size_t instance)<br>Gets the last error message.  |
 | MKQR_API uint8_t | **[MkqrGetLastErrorCode](/Files/mkqrapi_8cpp.md#function-mkqrgetlasterrorcode)**(size_t instance)<br>Gets the last error code.  |
+| MKQR_API uint8_t | **[MkqrValidateParameter](/Files/mkqrapi_8cpp.md#function-mkqrvalidateparameter)**(size_t instance, const char * name, const char * value)<br>Validate a parameter.  |
 
 
 ## Functions Documentation
@@ -162,6 +163,27 @@ Gets the last error code.
 
 **Return**: 8-bit error code which categorizes the error 
 
+### function MkqrValidateParameter
+
+```cpp
+MKQR_API uint8_t MkqrValidateParameter(
+    size_t instance,
+    const char * name,
+    const char * value
+)
+```
+
+Validate a parameter. 
+
+**Parameters**: 
+
+  * **instance** The instance created using MkqrCreateNew() 
+  * **name** The name of the parameter 
+  * **value** The value of the parameter
+
+
+**Return**: If valid returns 0, if not valid and not mandatory returns 1, if not valid and mandatory returns 2 
+
 
 
 ## Source code
@@ -269,9 +291,21 @@ MKQR_API uint8_t MkqrGetLastErrorCode(size_t instance)
 
     return instancePtr->GetLastErrorCode();
 }
+
+MKQR_API uint8_t MkqrValidateParameter(size_t instance, const char* name, const char* value)
+{
+    MKQR::Generator* const instancePtr = reinterpret_cast<MKQR::Generator*>(instance);
+
+    if (!instancePtr)
+    {
+        return 0;
+    }
+
+    return instancePtr->ValidateParameter(name, value);
+}
 ```
 
 
 -------------------------------
 
-Updated on 2021-12-26 at 18:31:40 +0100
+Updated on 2021-12-27 at 23:28:27 +0100

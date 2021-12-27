@@ -316,6 +316,60 @@
         </inbodydescription>
         <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.h" line="99" column="25" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="92" bodyend="102" declfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.h" declline="99" declcolumn="25"/>
       </memberdef>
+      <memberdef kind="function" id="mkqrapi_8h_1ad9f4aa2fac591e0b0d78738b974e7a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MKQR_API uint8_t</type>
+        <definition>MKQR_API uint8_t MkqrValidateParameter</definition>
+        <argsstring>(size_t instance, const char *name, const char *value)</argsstring>
+        <name>MkqrValidateParameter</name>
+        <param>
+          <type>size_t</type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Validate a parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance created using MkqrCreateNew() </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If valid returns 0, if not valid and not mandatory returns 1, if not valid and mandatory returns 2 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.h" line="110" column="25" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.cpp" bodystart="104" bodyend="114" declfile="D:/Projects/mkqr/API/mkqr_api/mkqrapi.h" declline="110" declcolumn="25"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -348,9 +402,13 @@
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>MkqrGetLastErrorMessage(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/>uint8_t<sp/>MkqrGetLastErrorCode(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>MKQR_API<sp/>uint8_t<sp/>MkqrValidateParameter(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>instance,<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>value);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="D:/Projects/mkqr/API/mkqr_api/mkqrapi.h"/>
   </compounddef>

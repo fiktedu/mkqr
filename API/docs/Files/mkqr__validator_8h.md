@@ -18,14 +18,15 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h
 |                | Name           |
 | -------------- | -------------- |
 | class | **[MKQR::Validator](/Classes/class_m_k_q_r_1_1_validator.md)** <br>This class contains functions that validate parameters. Please don't make it static or singleton and keep all functions const, inlined by default ;)  |
+| struct | **[MKQR::Validator::SResult](/Classes/struct_m_k_q_r_1_1_validator_1_1_s_result.md)** <br>The validator needs a reference to the [Generator](/Classes/class_m_k_q_r_1_1_generator.md), do that here The validator result, can be interpreted by the [Validator](/Classes/class_m_k_q_r_1_1_validator.md) easily.  |
 
 ## Defines
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[MKQR_STR_DELIMITER](/Files/mkqr__validator_8h.md#define-mkqr-str-delimiter)**  |
-|  | **[MKQR_VBIND](/Files/mkqr__validator_8h.md#define-mkqr-vbind)**(fnName, paramValue)  |
-|  | **[MKQR_VALIDATOR](/Files/mkqr__validator_8h.md#define-mkqr-validator)**(propertyName, ...)  |
+|  | **[MKQR_STR_DELIMITER](/Files/mkqr__validator_8h.md#define-mkqr-str-delimiter)** <br>This is the delimiter for combined strings.  |
+|  | **[MKQR_VBIND](/Files/mkqr__validator_8h.md#define-mkqr-vbind)**(fnName, paramValue) <br>Binds a function pointer as a validator function.  |
+|  | **[MKQR_VALIDATOR](/Files/mkqr__validator_8h.md#define-mkqr-validator)**(propertyName, ...) <br>Defines a validator which is a pair of property name and queue of functions that need to return true for the parameter to be validated.  |
 
 
 
@@ -38,6 +39,7 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h
 #define MKQR_STR_DELIMITER '|'
 ```
 
+This is the delimiter for combined strings. 
 
 ### define MKQR_VBIND
 
@@ -46,8 +48,15 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h
     fnName,
     paramValue
 )
-{ std::bind(&MKQR::Validator::fnName, this, std::placeholders::_1, std::placeholders::_2), paramValue }
+{ std::bind(&MKQR::Validator::fnName, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), paramValue }
 ```
+
+Binds a function pointer as a validator function. 
+
+**Parameters**: 
+
+  * **fnName** The name of the function to do the validation 
+  * **paramValue** The value of the additional parameter. You can separate multiple parameters by using the pipe | delimiter 
 
 
 ### define MKQR_VALIDATOR
@@ -59,6 +68,16 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h
 )
 {propertyName,  { __VA_ARGS__ }}
 ```
+
+Defines a validator which is a pair of property name and queue of functions that need to return true for the parameter to be validated. 
+
+**Parameters**: 
+
+  * **propertyName** The name of the property of this validator queue 
+  * **...** One or multiple MKQR_BIND calls which make the validator queue 
+
+
+example: MKQR_VALIDATOR("name", MKQR_VBIND(IsEqual, "name"), MKQR_VBIND(FixedLength, "4"))
 
 
 ## Source code
@@ -73,19 +92,24 @@ title: D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h
 #include <queue>
 
 #define MKQR_STR_DELIMITER '|'
-#define MKQR_VBIND(fnName, paramValue) { std::bind(&MKQR::Validator::fnName, this, std::placeholders::_1, std::placeholders::_2), paramValue }
+
+#define MKQR_VBIND(fnName, paramValue) { std::bind(&MKQR::Validator::fnName, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), paramValue }
+
 #define MKQR_VALIDATOR(propertyName, ...) {propertyName,  { __VA_ARGS__ }}
 
 namespace MKQR
 {
+    class Generator;
+
     class Validator
     {
         typedef std::pair<
-            std::function<bool(const std::string&, const std::string&)>,
+            std::function<bool(const std::string&, const std::string&, std::string&)>,
             std::string> ValidatorFunction;
 
         typedef std::vector<ValidatorFunction> ValidatorQueue;
     private:
+        const Generator& mGenerator;
 
         const std::unordered_map<std::string, ValidatorQueue> mValidators =
         {
@@ -96,155 +120,124 @@ namespace MKQR
             MKQR_VALIDATOR("aiban", MKQR_VBIND(AltIBAN, "")),
             MKQR_VALIDATOR("cat", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "SK")),
             MKQR_VALIDATOR("cn", MKQR_VBIND(NonZeroMaxLength, "70")),
-            // TODO: missing checks for conditional parameters
+            MKQR_VALIDATOR("cadd1", MKQR_VBIND(SwitchOnSK, "16|70")),
+            MKQR_VALIDATOR("cadd2", MKQR_VBIND(SwitchOnSK, "16|70")),
+            MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0")),
+            MKQR_VALIDATOR("cg", MKQR_VBIND(SwitchOnSK, "35|0")),
             MKQR_VALIDATOR("cc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
-            MKQR_VALIDATOR("a", MKQR_VBIND(IsPositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
+            MKQR_VALIDATOR("a", MKQR_VBIND(IsDoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
             MKQR_VALIDATOR("cur", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(CurrencyCode, "")),
             MKQR_VALIDATOR("pat", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "SK")),
             MKQR_VALIDATOR("pn", MKQR_VBIND(NonZeroMaxLength, "70")),
-            // TODO: missing checks for conditional parameters
+            MKQR_VALIDATOR("padd1", MKQR_VBIND(SwitchOnSK, "16|70")),
+            MKQR_VALIDATOR("padd2", MKQR_VBIND(SwitchOnSK, "16|70")),
+            MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0")),
+            MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0")),
             MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
             // TODO: missing rt and ref
-            MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(IsPositiveNumber, "")),
-            MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsPositiveNumber, "")),
+            MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(IsDoublePositiveNumber, "")),
+            MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsDoublePositiveNumber, "")),
             // TODO: missing validations for PP30 and PP50
             // TODO: missing additional info field validation
             // TODO: missing curl validation
             // TODO: missing alternative payment fields validation
         };
 
-        std::vector<std::string> TokenizeString(const char* str, char delimiter) const
+        const std::vector<std::string> mMandatoryParameters =
         {
-            std::vector<std::string> tokens;
+            "t", "v", "c", "iban", "cat", "cn", "cc", "cur", /*"rt",*/ "pcd" // TODO: add rt when validated
+        };
 
-            while (0 != *str++)
-            {
-                const char* begin = str;
-
-                while (*str != delimiter && *str)
-                    str++;
-
-                tokens.push_back(std::string(begin, str));
-            }
-
-            return tokens;
-        }
-
-
-        bool IsNumber(const std::string& str) const
+        const std::vector<std::string> mConditionalParameters =
         {
-            for (char const& c : str)
-                if (std::isdigit(c) == 0 || c == '.' || c == '-')
-                    return false;
-            return true;
-        }
+            "cadd1", "cz", "cg", "padd1", "pz", "pg"
+        };
+
+        [[nodiscard]] std::vector<std::string> TokenizeString(const char* str, char delimiter) const;
+
+        [[nodiscard]] bool IsNumber(const std::string& str) const;
+
+        [[nodiscard]] bool IsParameterMandatory(const std::string& name) const;
 
         // ==========================================================================================
 
-        bool IBAN(const std::string& ibanString, [[maybe_unused]] const std::string& param) const
-        {
-            const std::regex ibanRegex(
-                "^([A-Z]{2}[ \\-]?[0-9]{2})(?=(?:[ \\-]?[A-Z0-9]){9,30}$)((?:[ \\-]?[A-Z0-9]{3,5}){2,7})([ \\-]?[A-Z0-9]{1,3})?$");
-            return std::regex_match(ibanString, ibanRegex);
-        }
+        [[nodiscard]] bool IBAN(const std::string& ibanString,
+            [[maybe_unused]] const std::string& param,
+            std::string& outMessage) const;
 
-        bool AltIBAN(const std::string& aibanString, [[maybe_unused]] const std::string& param) const
-        {
-            std::vector<std::string> tokens = TokenizeString(aibanString.c_str(), MKQR_STR_DELIMITER);
-            bool retVal = true;
-            for (const std::string& token : tokens)
-            {
-                if (!IBAN(token, ""))
-                {
-                    retVal = false;
-                    break;
-                }
-            }
+        [[nodiscard]] bool AltIBAN(const std::string& aibanString,
+            [[maybe_unused]] const std::string& param,
+            std::string& outMessage) const;
 
-            return retVal;
-        }
+        [[nodiscard]] bool IsEqual(const std::string& value,
+            const std::string& param,
+            std::string& outMessage) const;
 
-        bool IsEqual(const std::string& value, const std::string& param) const
-        {
-            return value == param;
-        }
+        [[nodiscard]] bool NonZeroMaxLength(const std::string& value,
+            const std::string& param,
+            std::string& outMessage) const;
 
-        bool NonZeroMaxLength(const std::string& value, const std::string& param) const
-        {
-            size_t l = atoll(param.c_str());
-            return value.length() > 0 && value.length() < l;
-        }
+        [[nodiscard]] bool FixedLength(const std::string& value,
+            const std::string& param,
+            std::string& outMessage) const;
 
-        bool FixedLength(const std::string& value, const std::string& param) const
-        {
-            size_t l = atoll(param.c_str());
-            return value.length() == l;
-        }
+        [[nodiscard]] bool FixedChars(const std::string& value,
+            const std::string& param,
+            std::string& outMessage) const;
 
-        bool FixedChars(const std::string& value, const std::string& param) const
-        {
-            for (char cv : value)
-            {
-                bool found = false;
-                for (char cp : param)
-                {
-                    if (cp == cv)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
+        [[nodiscard]] bool CountryCode(const std::string& value,
+            [[maybe_unused]] const std::string& param,
+            std::string& outMessage) const;
 
-                if (!found)
-                    return false;
-            }
-            return true;
-        }
+        [[nodiscard]] bool IsDoublePositiveNumber(const std::string& value,
+            [[maybe_unused]] const std::string& param,
+            std::string& outMessage) const;
 
-        bool CountryCode(const std::string& value, [[maybe_unused]] const std::string& param) const
-        {
-            return std::find(mCountryCodes.begin(), mCountryCodes.end(), value) != mCountryCodes.end();
-        }
+        [[nodiscard]] bool CurrencyCode(const std::string& value,
+            [[maybe_unused]] const std::string& param,
+            std::string& outMessage) const;
 
-        bool IsPositiveNumber(const std::string& value, [[maybe_unused]] const std::string& param) const
-        {
-            bool retVal = IsNumber(value);
-            if (retVal)
-            {
-                double amount = std::stod(value);
-                retVal = (amount >= 0.0);
-            }
-            return retVal;
-        }
-
-        bool CurrencyCode(const std::string& value, [[maybe_unused]] const std::string& param) const
-        {
-            return std::find(mCurrencyCodes.begin(), mCurrencyCodes.end(), value) != mCurrencyCodes.end();
-        }
+        [[nodiscard]] bool SwitchOnSK(const std::string& value,
+            const std::string& param,
+            std::string& outMessage) const;
 
         // ==========================================================================================
     public:
-        bool ValidateParameter(const std::string& name, const std::string& value) const
-        {
-            bool retVal = true;
-            const auto& paramIt = mValidators.find(name);
-            if (paramIt != mValidators.end())
-            {
-                const ValidatorQueue& queue = paramIt->second;
-                for (const ValidatorFunction& fn : queue)
-                {
-                    retVal = fn.first(value, fn.second);
-                    if (!retVal)
-                        break;
-                }
-            }
-            else
-            {
-                retVal = false;
-            }
+        Validator(const Generator& owner)
+            : mGenerator(owner) {}
 
-            return retVal;
-        }
+        struct SResult
+        {
+        public:
+
+            enum class ELevel
+            {
+                Ok,
+                Warning,
+                Error
+            };
+        private:
+            ELevel mLevel;
+            std::string mMessage;
+        public:
+            SResult()
+                : mLevel(ELevel::Ok),
+                mMessage("")
+            { }
+
+            SResult(ELevel level, const std::string& message)
+                : mLevel(level),
+                mMessage(message)
+            { }
+
+            ELevel GetLevel() const { return mLevel; }
+            const std::string& GetMessage() const { return mMessage; }
+        };
+
+        [[nodiscard]] std::vector<std::string> GetMandatoryParameters() const;
+
+        [[nodiscard]] SResult ValidateParameter(
+            const std::string& name, const std::string& value) const;
 
         // ==========================================================================================
     private:
@@ -279,4 +272,4 @@ namespace MKQR
 
 -------------------------------
 
-Updated on 2021-12-26 at 18:31:40 +0100
+Updated on 2021-12-27 at 23:28:27 +0100

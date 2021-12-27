@@ -8,8 +8,10 @@
     <member refid="classqrcodegen_1_1data__too__long_1a7720f96f5b590b075d560b196f49a7c1" kind="function"><name>data_too_long</name></member>
   </compound>
   <compound refid="class_m_k_q_r_1_1_generator" kind="class"><name>MKQR::Generator</name>
+    <member refid="class_m_k_q_r_1_1_generator_1af424274bf870e6b8370eca82ed3f0d54" kind="variable"><name>Validator</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" kind="variable"><name>mValidator</name></member>
-    <member refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" kind="variable"><name>mParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a3da211a028d344f58033ea80ce678c77" kind="variable"><name>mParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1affc45d1d42dde5a5736cf40f309f4a40" kind="variable"><name>mFatalError</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" kind="variable"><name>mQrMatrixSize</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" kind="variable"><name>mQrMatrix</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" kind="variable"><name>mQrImageData</name></member>
@@ -18,6 +20,7 @@
     <member refid="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" kind="variable"><name>mLastErrorMessage</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" kind="variable"><name>mTempErrorMessage</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" kind="variable"><name>mLastErrorCode</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a42480566ce41a73f27b5f17b683cb097" kind="function"><name>GetParameterValue</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a2032094a169db7e616e57a900a29b584" kind="function"><name>GenerateStringFromParameters</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" kind="function"><name>MapRange</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" kind="function"><name>Lerp</name></member>
@@ -25,6 +28,7 @@
     <member refid="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" kind="function"><name>Generator</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" kind="function"><name>~Generator</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" kind="function"><name>CreateParameter</name></member>
+    <member refid="class_m_k_q_r_1_1_generator_1a3991e7570df5d1492c21b77ba6c62e80" kind="function"><name>ValidateParameter</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" kind="function"><name>Generate</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" kind="function"><name>GetQrSize</name></member>
     <member refid="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" kind="function"><name>GetQrImageDataAtIndex</name></member>
@@ -114,24 +118,43 @@
     <member refid="classqrcodegen_1_1_qr_segment_1a54e3ab742b932122b97680a0536eb52b" kind="function"><name>getNumChars</name></member>
     <member refid="classqrcodegen_1_1_qr_segment_1ada47b1386b68fa990d7b0c39e42711ef" kind="function"><name>getData</name></member>
   </compound>
+  <compound refid="struct_m_k_q_r_1_1_validator_1_1_s_result" kind="struct"><name>MKQR::Validator::SResult</name>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786" kind="enum"><name>ELevel</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786aa60852f204ed8028c1c58808b746d115" kind="enumvalue"><name>Ok</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786a0eaadb4fcb48a0a0ed7bc9868be9fbaa" kind="enumvalue"><name>Warning</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786a902b0d55fddef6f8d651fe1035b7d4bd" kind="enumvalue"><name>Error</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a323ed4d8b05621e5e2789e89c5ddf18f" kind="variable"><name>mLevel</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a998bcaea5937b9a4dcb5225dcf1c643f" kind="variable"><name>mMessage</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1af63e1aa6f7e23a97c7611a26b7e943b7" kind="function"><name>SResult</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a94e47f437bbaf0b28e58b86b5219e071" kind="function"><name>SResult</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a859cb70d58a76d5166ace1a5da80eb98" kind="function"><name>GetLevel</name></member>
+    <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a67d8bc5b9e6cf51272034883baddb800" kind="function"><name>GetMessage</name></member>
+  </compound>
   <compound refid="class_m_k_q_r_1_1_validator" kind="class"><name>MKQR::Validator</name>
-    <member refid="class_m_k_q_r_1_1_validator_1a8a6babf73e71e2cbfb872f5cb2d6cb9e" kind="typedef"><name>ValidatorFunction</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a2d2e2b9e48de03d2afd7afad8bfdb5db" kind="typedef"><name>ValidatorFunction</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a1e99d2f0ff0882f202643dc3a428fbc3" kind="typedef"><name>ValidatorQueue</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a954f67b7906867a4f24f70767c18a832" kind="variable"><name>mGenerator</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a755cf48d9d4292766b0baf34f309cec1" kind="variable"><name>mValidators</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1ac04565a7a2ea83399dd830261df85196" kind="variable"><name>mMandatoryParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1ad9ab3daaf12f2eebeb3f8972291a233a" kind="variable"><name>mConditionalParameters</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a3ce00208034b756110ca76615a430ce7" kind="variable"><name>mCountryCodes</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a9b36ae4f2fe596212190140f925aec02" kind="variable"><name>mCurrencyCodes</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" kind="function"><name>TokenizeString</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a89216e8c2ffe1ad023dfb425675ca16b" kind="function"><name>IsNumber</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a42c2113b5d0ce536c4922b4725aed244" kind="function"><name>IBAN</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1af1bc343078e98dec83e584634462868e" kind="function"><name>AltIBAN</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1ad294123e39150e8704180a86d3586bcf" kind="function"><name>IsEqual</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1aece9e4efcdca1a5863b31491293f83ca" kind="function"><name>NonZeroMaxLength</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a78b11d1d2dab0d8640b8da51c40e794d" kind="function"><name>FixedLength</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a48b8e3a5d04c8e6d59cf789c7c4eebf8" kind="function"><name>FixedChars</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a52370046cb564bea389a52f3a563b5b1" kind="function"><name>CountryCode</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1acdc7d72e5c86efd99fd9e35ad4d1fafb" kind="function"><name>IsPositiveNumber</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1aa5866f470c86c3e25d9668377a5ce72d" kind="function"><name>CurrencyCode</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a03cdd022cc100630284f601c23979ced" kind="function"><name>ValidateParameter</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a6e57a92a7faa2a187c41084abb766834" kind="function"><name>IsParameterMandatory</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a37cbdb7ca9ebe129e57097ba4a63d704" kind="function"><name>IBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1acdb1dbfbd60343c54f25e6927301dc2b" kind="function"><name>AltIBAN</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1af310c82e5b491eed51a3710a084bca4a" kind="function"><name>IsEqual</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a9d46dd44d5ab7764737fac14fd5a9004" kind="function"><name>NonZeroMaxLength</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a5e1c5b66c3702381f7ff113f7fbb4d15" kind="function"><name>FixedLength</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1abb8e9f7c4a05324058f5b5b5dc0ac6f0" kind="function"><name>FixedChars</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a12d2765c86ea45675b264aa1f6dd084f" kind="function"><name>CountryCode</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a073e79999b99191e6236445aa9964584" kind="function"><name>IsDoublePositiveNumber</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a8a9d135f29ccb1e60dcb3d8c6e6ce7a4" kind="function"><name>CurrencyCode</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a1a27fd842409dba7220c6948e88240d9" kind="function"><name>SwitchOnSK</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1aad749382d5ee01ac762f6c901f4d3e42" kind="function"><name>Validator</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1af9d18847c48e2ef6fbf8aba1c7785832" kind="function"><name>GetMandatoryParameters</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a396c7ee569034234895e6fc20ec13661" kind="function"><name>ValidateParameter</name></member>
   </compound>
   <compound refid="namespace_m_k_q_r" kind="namespace"><name>MKQR</name>
   </compound>
@@ -149,13 +172,16 @@
   <compound refid="mkqr__generator_8h" kind="file"><name>mkqr_generator.h</name>
     <member refid="mkqr__generator_8h_1a9fdf6bfa66133062e34f2657a382f9ff" kind="define"><name>MKQR_ERR_NO</name></member>
     <member refid="mkqr__generator_8h_1ad7e8458a25bab87e67722d56ed82e249" kind="define"><name>MKQR_ERR_NULL</name></member>
-    <member refid="mkqr__generator_8h_1a1d2649a3b5d9e1f1ebee179314c6b8bc" kind="define"><name>MKQR_ERR_INVALID_ARG</name></member>
+    <member refid="mkqr__generator_8h_1a51021106a688ac7ae9d9157c5b595d69" kind="define"><name>MKQR_ERR_NONFATAL</name></member>
+    <member refid="mkqr__generator_8h_1a87de14f2149d9ae86dcf6193213a2751" kind="define"><name>MKQR_ERR_FATAL</name></member>
     <member refid="mkqr__generator_8h_1aea81585dfeec3d4813ec053ba34f6883" kind="define"><name>MKQR_YELLOW</name></member>
     <member refid="mkqr__generator_8h_1a70d050123b351088a0c9c3bbb22edce7" kind="define"><name>MKQR_RED</name></member>
     <member refid="mkqr__generator_8h_1a7c2a6b9817cf0e92328ffd528f4f44cf" kind="define"><name>MKQR_WHITE</name></member>
     <member refid="mkqr__generator_8h_1a74a3814d9878850aee5f844d5776ec98" kind="define"><name>MKQR_BLACK</name></member>
     <member refid="mkqr__generator_8h_1ad91d24e9e7ab9f0b261d9d3c76a89458" kind="define"><name>MKQR_LOGO_SIZE</name></member>
     <member refid="mkqr__generator_8h_1a2aea35a73733cbfa7f8571a5bdbe81ee" kind="define"><name>MKQR_ERR</name></member>
+  </compound>
+  <compound refid="mkqr__validator_8cpp" kind="file"><name>mkqr_validator.cpp</name>
   </compound>
   <compound refid="mkqr__validator_8h" kind="file"><name>mkqr_validator.h</name>
     <member refid="mkqr__validator_8h_1adff663c72d2b2eb090ae045fb0fbd407" kind="define"><name>MKQR_STR_DELIMITER</name></member>
@@ -171,6 +197,7 @@
     <member refid="mkqrapi_8cpp_1a0dc361ffaf63fadda683f32ce7c7adcc" kind="function"><name>MkqrGetImageDataAtIndex</name></member>
     <member refid="mkqrapi_8cpp_1ae346eef1f522ec39184625be5a82ca9a" kind="function"><name>MkqrGetLastErrorMessage</name></member>
     <member refid="mkqrapi_8cpp_1af4c4416919ab46956a28f0bcc381f6e6" kind="function"><name>MkqrGetLastErrorCode</name></member>
+    <member refid="mkqrapi_8cpp_1ad9f4aa2fac591e0b0d78738b974e7a6a" kind="function"><name>MkqrValidateParameter</name></member>
   </compound>
   <compound refid="mkqrapi_8h" kind="file"><name>mkqrapi.h</name>
     <member refid="mkqrapi_8h_1aa0e95f89bd6ef81df38d88450920d588" kind="define"><name>MKQR_API</name></member>
@@ -182,6 +209,7 @@
     <member refid="mkqrapi_8h_1a0dc361ffaf63fadda683f32ce7c7adcc" kind="function"><name>MkqrGetImageDataAtIndex</name></member>
     <member refid="mkqrapi_8h_1ae346eef1f522ec39184625be5a82ca9a" kind="function"><name>MkqrGetLastErrorMessage</name></member>
     <member refid="mkqrapi_8h_1af4c4416919ab46956a28f0bcc381f6e6" kind="function"><name>MkqrGetLastErrorCode</name></member>
+    <member refid="mkqrapi_8h_1ad9f4aa2fac591e0b0d78738b974e7a6a" kind="function"><name>MkqrValidateParameter</name></member>
   </compound>
   <compound refid="qrcodegen_8cpp" kind="file"><name>qrcodegen.cpp</name>
   </compound>

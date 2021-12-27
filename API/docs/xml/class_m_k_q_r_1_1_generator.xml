@@ -4,6 +4,19 @@
     <compoundname>MKQR::Generator</compoundname>
     <includes refid="mkqr__generator_8h" local="no">mkqr_generator.h</includes>
       <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1af424274bf870e6b8370eca82ed3f0d54" prot="private" static="no" mutable="no">
+        <type>friend</type>
+        <definition>friend Validator</definition>
+        <argsstring></argsstring>
+        <name>Validator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="48" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" prot="private" static="no" mutable="no">
         <type>const <ref refid="class_m_k_q_r_1_1_validator" kindref="compound">Validator</ref> *</type>
         <definition>const Validator* mValidator</definition>
@@ -16,21 +29,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="47" column="17" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="47" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="51" column="17" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="51" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; std::string &gt;</type>
-        <definition>std::vector&lt;std::string&gt; mParameters</definition>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a3da211a028d344f58033ea80ce678c77" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; mParameters</definition>
         <argsstring></argsstring>
         <name>mParameters</name>
         <briefdescription>
-<para>Holds all preconcatanated parameter values. </para>
+<para>Holds all parameter values. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="50" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="50" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="54" column="20" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1affc45d1d42dde5a5736cf40f309f4a40" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mFatalError</definition>
+        <argsstring></argsstring>
+        <name>mFatalError</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>If true, a fatal error has occured and there is no need to continue executing any functions any further. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="59" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -45,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="106" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="106" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="123" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" prot="private" static="no" mutable="no">
         <type>std::vector&lt; bool &gt;</type>
@@ -60,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="110" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="110" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="127" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" prot="private" static="no" mutable="no">
         <type>std::vector&lt; uint32_t &gt;</type>
@@ -74,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="115" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="115" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="132" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1ac546105770aeada94198d0bbb6b800b7" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -89,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="119" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="119" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="136" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aa23a2a7674cc25842de8bcfc38db11ec" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -104,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="124" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="124" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="141" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -118,13 +146,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="127" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="127" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="144" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="144" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" prot="private" static="no" mutable="no">
         <type>char *</type>
         <definition>char* mTempErrorMessage</definition>
         <argsstring></argsstring>
         <name>mTempErrorMessage</name>
+        <initializer>= nullptr</initializer>
         <briefdescription>
 <para>Internal use only. Used for copying the last error message when it&apos;s removed. </para>
         </briefdescription>
@@ -132,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="131" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="131" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="148" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -147,10 +176,40 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="134" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="134" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="151" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a42480566ce41a73f27b5f17b683cb097" prot="private" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string GetParameterValue</definition>
+        <argsstring>(const std::string &amp;name) const noexcept</argsstring>
+        <name>GetParameterValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Gets a parameter value based on the name, used only for validation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the parameter </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="67" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="8" bodyend="18"/>
+      </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a2032094a169db7e616e57a900a29b584" prot="private" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string GenerateStringFromParameters</definition>
@@ -168,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="59" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="8" bodyend="18"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="76" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="20" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -251,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="72" column="4" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="72" bodyend="75"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="89" column="4" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -310,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="87" column="4" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="87" bodyend="90"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="104" column="4" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="104" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1aa709f2f2d94705e3c4d065e84aefcaab" prot="private" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>uint32_t</type>
@@ -364,7 +423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="101" column="11" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="20" bodyend="35"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="118" column="11" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="32" bodyend="47"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -380,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="137" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="37" bodyend="40"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="154" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -394,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="141" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="42" bodyend="46"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="158" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="54" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -437,7 +496,49 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="159" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="48" bodyend="59"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="176" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="60" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a3991e7570df5d1492c21b77ba6c62e80" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t ValidateParameter</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;value) const noexcept</argsstring>
+        <name>ValidateParameter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Validates a parameter value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If valid returns 0, if not valid and not mandatory returns 1, if not valid and mandatory returns 2 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="186" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="88" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -479,7 +580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="175" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="61" bodyend="132"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="203" column="6" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="101" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -496,7 +597,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="181" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="181" bodyend="182"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="209" column="9" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="209" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>uint32_t</type>
@@ -526,7 +627,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="191" column="11" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="191" bodyend="192"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="219" column="11" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="219" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1a5d4597c0ca51c1d3034b06c7a5746387" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const char *</type>
@@ -543,7 +644,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="198" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="134" bodyend="141"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="226" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="187" bodyend="194"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>uint8_t</type>
@@ -560,7 +661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="204" column="10" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="143" bodyend="148"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="232" column="10" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.cpp" bodystart="196" bodyend="201"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -576,12 +677,22 @@
           <edgelabel>mValidator</edgelabel>
         </childnode>
       </node>
+      <node id="3">
+        <label>Generator</label>
+        <link refid="class_m_k_q_r_1_1_generator"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mValidator</edgelabel>
+        </childnode>
+      </node>
       <node id="2">
         <label>Validator</label>
         <link refid="class_m_k_q_r_1_1_validator"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mGenerator</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="43" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="44" bodyend="205"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" line="46" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_generator.h" bodystart="47" bodyend="233"/>
     <listofallmembers>
       <member refid="class_m_k_q_r_1_1_generator_1ad0861be296ff99439a5d36aaf254f64f" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>CreateParameter</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a9b20bcae9b61e40965d1bc200e929339" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>Generate</name></member>
@@ -589,21 +700,25 @@
       <member refid="class_m_k_q_r_1_1_generator_1abacbfb0c5c4c69b6be8a77ab8c7587c5" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>Generator</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1ada4000314b7c6344a3ac829159cb07d9" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetLastErrorCode</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a5d4597c0ca51c1d3034b06c7a5746387" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetLastErrorMessage</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a42480566ce41a73f27b5f17b683cb097" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetParameterValue</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a897453d4d28e3ed7508956347cb69f10" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetQrImageDataAtIndex</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1ad8eb97d4b074dae46f6429bca71c3d3a" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>GetQrSize</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a79401fc561f2d0a57921106b7a03a5cf" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>Lerp</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1aa709f2f2d94705e3c4d065e84aefcaab" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>LerpColor</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a20714bbb749c8561b5c566fa34858e19" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>MapRange</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1affc45d1d42dde5a5736cf40f309f4a40" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mFatalError</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1ac546105770aeada94198d0bbb6b800b7" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mIsMonochrome</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1aa62689def75a6ffa69968fd447595e8f" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mLastErrorCode</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a8cab3e75c7d6c2819f7bfa4b071812f9" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mLastErrorMessage</name></member>
-      <member refid="class_m_k_q_r_1_1_generator_1a9ef910276dbe9875c2e3ca28f5d1994d" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mParameters</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a3da211a028d344f58033ea80ce678c77" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mParameters</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1af25a4fc972e5798ebcb4e116fac59d19" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrImageData</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a10c45d5fe3353981ce1bdaa72dfb3047" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrMatrix</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1aab79b1d6d888cc44a9737b840934009b" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mQrMatrixSize</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1aa23a2a7674cc25842de8bcfc38db11ec" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mSuperSampling</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a63879a7b4af67a3483691ab4635d14b0" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mTempErrorMessage</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1a6587b3b9b6bd6c0debe9b387d856ce08" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>mValidator</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1a3991e7570df5d1492c21b77ba6c62e80" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>ValidateParameter</name></member>
+      <member refid="class_m_k_q_r_1_1_generator_1af424274bf870e6b8370eca82ed3f0d54" prot="private" virt="non-virtual"><scope>MKQR::Generator</scope><name>Validator</name></member>
       <member refid="class_m_k_q_r_1_1_generator_1abcff0538f94b5968044f0b2fe8e348e3" prot="public" virt="non-virtual"><scope>MKQR::Generator</scope><name>~Generator</name></member>
     </listofallmembers>
   </compounddef>

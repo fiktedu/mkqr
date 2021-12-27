@@ -5,6 +5,7 @@
     <innerfile refid="logo_8h">logo.h</innerfile>
     <innerfile refid="mkqr__generator_8cpp">mkqr_generator.cpp</innerfile>
     <innerfile refid="mkqr__generator_8h">mkqr_generator.h</innerfile>
+    <innerfile refid="mkqr__validator_8cpp">mkqr_validator.cpp</innerfile>
     <innerfile refid="mkqr__validator_8h">mkqr_validator.h</innerfile>
     <innerfile refid="mkqrapi_8cpp">mkqrapi.cpp</innerfile>
     <innerfile refid="mkqrapi_8h">mkqrapi.h</innerfile>

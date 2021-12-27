@@ -20,6 +20,7 @@ The [MKQR::Generator]() class contains functionality for generating and validati
 | | **[Generator](/Classes/class_m_k_q_r_1_1_generator.md#function-generator)**()<br>Default constructor. Used to initialize the validator.  |
 | | **[~Generator](/Classes/class_m_k_q_r_1_1_generator.md#function-~generator)**()<br>Default destructor. Is used to delete the temporary error message used when copying if it exists.  |
 | void | **[CreateParameter](/Classes/class_m_k_q_r_1_1_generator.md#function-createparameter)**(const std::string & name, const std::string & value)<br>Creates parameter with the given name and value. Additionaly, the validation of the parameter is done inside this function. If a validation fails this function will set the mLastErrorMessage and mLastErrorCode. If it fails any subsequent calls to the Generate function will fail. to the Example:    name=t value=0 This will result with a new parameter t=0 which will be added to the map of parameters.  |
+| uint8_t | **[ValidateParameter](/Classes/class_m_k_q_r_1_1_generator.md#function-validateparameter)**(const std::string & name, const std::string & value) const<br>Validates a parameter value.  |
 | void | **[Generate](/Classes/class_m_k_q_r_1_1_generator.md#function-generate)**(uint8_t isMonochrome, size_t superSampling)<br>Generates the [MKQR](/Namespaces/namespace_m_k_q_r.md) code based on the previously entered parameters. This function will fail if a previously created parameter is invalid. The result of the function is kept inside the mQrImageData variable, which can then be retrieved by the GetQrImageDataAtIndex function.  |
 | size_t | **[GetQrSize](/Classes/class_m_k_q_r_1_1_generator.md#function-getqrsize)**() const<br>Gets the size of the QR image.  |
 | uint32_t | **[GetQrImageDataAtIndex](/Classes/class_m_k_q_r_1_1_generator.md#function-getqrimagedataatindex)**(size_t index) const<br>Gets the color of the pixel at the specified index.  |
@@ -62,6 +63,25 @@ Creates parameter with the given name and value. Additionaly, the validation of 
 
 
 **Return**: void 
+
+### function ValidateParameter
+
+```cpp
+uint8_t ValidateParameter(
+    const std::string & name,
+    const std::string & value
+) const
+```
+
+Validates a parameter value. 
+
+**Parameters**: 
+
+  * **name** The name of the parameter 
+  * **value** The value of the parameter
+
+
+**Return**: If valid returns 0, if not valid and not mandatory returns 1, if not valid and mandatory returns 2 
 
 ### function Generate
 
@@ -131,4 +151,4 @@ Gets the last error code.
 
 -------------------------------
 
-Updated on 2021-12-26 at 18:31:40 +0100
+Updated on 2021-12-27 at 23:28:27 +0100
