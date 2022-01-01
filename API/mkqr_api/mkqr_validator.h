@@ -60,7 +60,7 @@ namespace MKQR
 		const std::unordered_map<std::string, ValidatorQueue> mValidators =
 		{
 			MKQR_VALIDATOR("t", MKQR_VBIND(IsEqual, "MKD")),
-			MKQR_VALIDATOR("v", MKQR_VBIND(FixedLength, "4")),
+			MKQR_VALIDATOR("v", MKQR_VBIND(FixedLength, "4"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("c", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "12")),
 			MKQR_VALIDATOR("iban", MKQR_VBIND(IBAN, "")),
 			MKQR_VALIDATOR("aiban", MKQR_VBIND(AltIBAN, "")),
@@ -68,7 +68,7 @@ namespace MKQR
 			MKQR_VALIDATOR("cn", MKQR_VBIND(NonZeroMaxLength, "70")),
 			MKQR_VALIDATOR("cadd1", MKQR_VBIND(SwitchOnSK, "16|70")),
 			MKQR_VALIDATOR("cadd2", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0")),
+			MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("cg", MKQR_VBIND(SwitchOnSK, "35|0")),
 			MKQR_VALIDATOR("cc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
 			MKQR_VALIDATOR("a", MKQR_VBIND(IsDoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
@@ -77,15 +77,18 @@ namespace MKQR
 			MKQR_VALIDATOR("pn", MKQR_VBIND(NonZeroMaxLength, "70")),
 			MKQR_VALIDATOR("padd1", MKQR_VBIND(SwitchOnSK, "16|70")),
 			MKQR_VALIDATOR("padd2", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0")),
+			MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0"),  MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0")),
 			MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
 			// TODO: missing rt and ref
 			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(IsDoublePositiveNumber, "")),
 			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsDoublePositiveNumber, "")),
-			// TODO: missing validations for PP30 and PP50
+			MKQR_VALIDATOR("us50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("usek50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("us30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("usek30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			// TODO: missing additional info field validation
-			// TODO: missing curl validation
+			MKQR_VALIDATOR("curl", MKQR_VBIND(URL, ""))
 			// TODO: missing alternative payment fields validation
 		};
 
@@ -117,7 +120,7 @@ namespace MKQR
 		 *
 		 * @return True if str is a number, false if str is not a number
 		 */
-		[[nodiscard]] bool IsNumber(const std::string& str) const;
+		[[nodiscard]] bool IsNumber(const std::string& str, bool isAnyNumber = 0) const;
 
 		/*!@brief Checks if the provided string is a mandatory parameter **at the time**
 		 * this check is executed. The parameter might appear not to be mandatory if all
@@ -252,6 +255,30 @@ namespace MKQR
 		[[nodiscard]] bool SwitchOnSK(const std::string& value,
 			const std::string& param,
 			std::string& outMessage) const;
+
+		/*!@brief Checks if the provided URL is valid
+		 *
+		 * @param value The string to check
+		 * @param param Not used
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a valid URL
+		 */
+		[[nodiscard]] bool URL(const std::string& value,
+			const std::string& param,
+			std::string& outMessage);
+
+		/*!@brief Checks if the provided string is a number
+		 *
+		 * @param value The string to check
+		 * @param param 0 all numbers, 1 real numbers
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value is a valid number
+		 */
+		[[nodiscard]] bool Number(const std::string& value,
+			const std::string& param,
+			std::string& outMessage);
 
 		// ==========================================================================================
 	public:

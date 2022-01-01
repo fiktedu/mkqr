@@ -18,12 +18,11 @@ std::vector<std::string> MKQR::Validator::TokenizeString(const char* str, char d
 	return tokens;
 }
 
-bool MKQR::Validator::IsNumber(const std::string& str) const
+bool MKQR::Validator::IsNumber(const std::string& str, bool isAnyNumber) const
 {
-	for (char const& c : str)
-		if (std::isdigit(c) == 0 && c != '.' && c != '-')
-			return false;
-	return true;
+	std::regex anyRegex("/^-?\\d+\\.?\\d*$/");
+	std::regex naturalRegex("^[0-9]+$");
+	return std::regex_match(str, isAnyNumber ? anyRegex : naturalRegex);
 }
 
 bool MKQR::Validator::IsParameterMandatory(const std::string& name) const
@@ -71,7 +70,7 @@ bool MKQR::Validator::IBAN(
 	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
 {
-	outMessage += "Supplied IBAN not valid.";
+	outMessage += "Supplied IBAN is not valid.";
 	const std::regex ibanRegex(
 		"^([A-Z]{2}[ \\-]?[0-9]{2})(?=(?:[ \\-]?[A-Z0-9]){9,30}$)((?:[ \\-]?[A-Z0-9]{3,5}){2,7})([ \\-]?[A-Z0-9]{1,3})?$");
 	return std::regex_match(ibanString, ibanRegex);
@@ -198,6 +197,25 @@ bool MKQR::Validator::SwitchOnSK(const std::string& value, const std::string& pa
 	}
 
 	return retVal;
+}
+
+bool MKQR::Validator::URL(const std::string& value, [[maybe_unused]] const std::string& param, std::string& outMessage)
+{
+	outMessage += "Supplied URL is not valid.";
+	const std::regex urlRegex(
+		"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+");
+
+	return std::regex_match(value, urlRegex);
+}
+
+bool MKQR::Validator::Number(const std::string& value, const std::string& param, std::string& outMessage)
+{
+	outMessage = "String " + value + " is not a number.";
+	if (param == "0")
+		return IsNumber(value, true);
+	else if (param == "1")
+		return IsNumber(value, false);
+	return false;
 }
 
 std::vector<std::string> MKQR::Validator::GetMandatoryParameters() const
