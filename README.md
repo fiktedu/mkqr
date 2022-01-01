@@ -110,4 +110,4 @@ MKQR не ја гарантира комплетната валидност на
 	"AFA","AWG","AUD","ARS","AZN","BSD","BDT","BBD","BYR","BOB","BRL","GBP","BGN","KHR","CAD","KYD","CLP","CNY","COP","CRC","HRK","CPY","CZK","DKK","DOP","XCD","EGP","ERN","EEK","EUR","GEL","GHC","GIP","GTQ","HNL","HKD","HUF","ISK","INR","IDR","ILS","JMD","JPY","KZT","KES","KWD","LVL","LBP","LTL","MOP","MKD","MGA","MYR","MTL","BAM","MUR","MXN","MZM","NPR","ANG","TWD","NZD","NIO","NGN","KPW","NOK","OMR","PKR","PYG","PEN","PHP","QAR","RON","RUB","SAR","CSD","SCR","SGD","SKK","SIT","ZAR","KRW","LKR","SRD","SEK","CHF","TZS","THB","TTD","TRY","AED","USD","UGX","UAH","UYU","UZS","VEB","VND","AMK","ZWD"
 	
 ## Шифри на плаќање
-[https://finance.gov.mk](https://finance.gov.mk/wp-content/uploads/2009/02/%D1%82%D0%B5%D0%BA%D1%81%D1%82-%D0%BD%D0%B0-%D0%A8%D0%B8%D1%84%D1%80%D0%B8-%D0%B7%D0%B0-%D0%BF%D0%BB%D0%B0%D1%9C%D0%B0%D1%9A%D0%B5.pdf)
+[Линк](https://finance.gov.mk/wp-content/uploads/2009/02/%D1%82%D0%B5%D0%BA%D1%81%D1%82-%D0%BD%D0%B0-%D0%A8%D0%B8%D1%84%D1%80%D0%B8-%D0%B7%D0%B0-%D0%BF%D0%BB%D0%B0%D1%9C%D0%B0%D1%9A%D0%B5.pdf)

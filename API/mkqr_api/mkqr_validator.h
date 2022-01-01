@@ -71,7 +71,7 @@ namespace MKQR
 			MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("cg", MKQR_VBIND(SwitchOnSK, "35|0")),
 			MKQR_VALIDATOR("cc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
-			MKQR_VALIDATOR("a", MKQR_VBIND(IsDoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
+			MKQR_VALIDATOR("a", MKQR_VBIND(DoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
 			MKQR_VALIDATOR("cur", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(CurrencyCode, "")),
 			MKQR_VALIDATOR("pat", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "SK")),
 			MKQR_VALIDATOR("pn", MKQR_VBIND(NonZeroMaxLength, "70")),
@@ -81,8 +81,8 @@ namespace MKQR
 			MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0")),
 			MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
 			// TODO: missing rt and ref
-			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(IsDoublePositiveNumber, "")),
-			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(IsDoublePositiveNumber, "")),
+			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(DoublePositiveNumber, "")),
+			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(DoublePositiveNumber, "")),
 			MKQR_VALIDATOR("us50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("usek50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("us30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
@@ -227,7 +227,7 @@ namespace MKQR
 		 *
 		 * @return True if value is a positive number with double precision
 		 */
-		[[nodiscard]] bool IsDoublePositiveNumber(const std::string& value,
+		[[nodiscard]] bool DoublePositiveNumber(const std::string& value,
 			[[maybe_unused]] const std::string& param,
 			std::string& outMessage) const;
 

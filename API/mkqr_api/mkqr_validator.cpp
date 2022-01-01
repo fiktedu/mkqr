@@ -145,7 +145,7 @@ bool MKQR::Validator::CountryCode(
 	return std::find(mCountryCodes.begin(), mCountryCodes.end(), value) != mCountryCodes.end();
 }
 
-bool MKQR::Validator::IsDoublePositiveNumber(
+bool MKQR::Validator::DoublePositiveNumber(
 	const std::string& value,
 	[[maybe_unused]] const std::string& param,
 	std::string& outMessage) const
