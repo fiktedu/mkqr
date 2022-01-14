@@ -118,20 +118,25 @@ bool MKQR::Validator::FixedLength(const std::string& value, const std::string& p
 bool MKQR::Validator::FixedChars(const std::string& value, const std::string& param, std::string& outMessage) const
 {
 	outMessage = "Value " + value + " has invalid characters. Expected characters: " + param;
-	for (char cv : value)
-	{
-		bool found = false;
-		for (char cp : param)
-		{
-			if (cp == cv)
-			{
-				found = true;
-				break;
-			}
-		}
 
-		if (!found)
-			return false;
+	std::vector<std::string> params = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+	for (const std::string& p : params)
+	{
+		for (char cv : value)
+		{
+			bool found = false;
+			for (char cp : p)
+			{
+				if (cp == cv)
+				{
+					found = true;
+					break;
+				}
+			}
+
+			if (!found)
+				return false;
+		}
 	}
 	return true;
 }

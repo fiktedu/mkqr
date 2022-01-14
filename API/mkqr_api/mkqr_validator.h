@@ -80,22 +80,26 @@ namespace MKQR
 			MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0"),  MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0")),
 			MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
-			// TODO: missing rt and ref
+			MKQR_VALIDATOR("rt", MKQR_VBIND(FixedChars, "QRR|SCOR|NON")),
+			MKQR_VALIDATOR("ref", MKQR_VBIND(NonZeroMaxLength, "27")),
 			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(DoublePositiveNumber, "")),
 			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(DoublePositiveNumber, "")),
 			MKQR_VALIDATOR("us50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("usek50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("us30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("usek30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
-			// TODO: missing additional info field validation
-			MKQR_VALIDATOR("curl", MKQR_VBIND(URL, ""))
-			// TODO: missing alternative payment fields validation
+			MKQR_VALIDATOR("i", MKQR_VBIND(NonZeroMaxLength, "140")),
+			MKQR_VALIDATOR("curl", MKQR_VBIND(URL, "")),
+			MKQR_VALIDATOR("ap", MKQR_VBIND(NonZeroMaxLength, "20")),
+			MKQR_VALIDATOR("av", MKQR_VBIND(DoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")),
+			MKQR_VALIDATOR("ad", MKQR_VBIND(NonZeroMaxLength, "240")),
+			MKQR_VALIDATOR("ac", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(CurrencyCode, ""))
 		};
 
 		/*!@brief Contains all the mandatory parameters */
 		const std::vector<std::string> mMandatoryParameters =
 		{
-			"t", "v", "c", "iban", "cat", "cn", "cc", "cur", /*"rt",*/ "pcd" // TODO: add rt when validated
+			"t", "v", "c", "iban", "cat", "cn", "cc", "cur", "rt", "pcd" // TODO: add rt when validated
 		};
 
 		/*!@brief Contains all the conditional parameters which may or may not be mandatory

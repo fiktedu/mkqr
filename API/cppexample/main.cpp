@@ -73,7 +73,7 @@ void GenerateQR(size_t num)
 		MkqrCreateParameter(mkqr, "cg", "Скопје");
 		MkqrCreateParameter(mkqr, "cc", "MK");
 		MkqrCreateParameter(mkqr, "cur", "MKD");
-		MkqrCreateParameter(mkqr, "ref", "894732847239");
+		MkqrCreateParameter(mkqr, "ref", "NON");
 
 		const size_t supersampling = 8;
 		MkqrGenerate(mkqr, 0, supersampling);
