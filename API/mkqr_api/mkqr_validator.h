@@ -66,24 +66,24 @@ namespace MKQR
 			MKQR_VALIDATOR("aiban", MKQR_VBIND(AltIBAN, "")),
 			MKQR_VALIDATOR("cat", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "SK")),
 			MKQR_VALIDATOR("cn", MKQR_VBIND(NonZeroMaxLength, "70")),
-			MKQR_VALIDATOR("cadd1", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("cadd2", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0"), MKQR_VBIND(Number, "1")),
-			MKQR_VALIDATOR("cg", MKQR_VBIND(SwitchOnSK, "35|0")),
+			MKQR_VALIDATOR("cadd1", MKQR_VBIND(SwitchOnSK, "16|70|cat")),
+			MKQR_VALIDATOR("cadd2", MKQR_VBIND(SwitchOnSK, "16|70|cat")),
+			MKQR_VALIDATOR("cz", MKQR_VBIND(SwitchOnSK, "7|0|cat"), MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("cg", MKQR_VBIND(SwitchOnSK, "35|0|cat")),
 			MKQR_VALIDATOR("cc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
 			MKQR_VALIDATOR("a", MKQR_VBIND(DoublePositiveNumber, ""), MKQR_VBIND(NonZeroMaxLength, "1079")), // 64-bit IEEE double
 			MKQR_VALIDATOR("cur", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(CurrencyCode, "")),
 			MKQR_VALIDATOR("pat", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(FixedChars, "SK")),
 			MKQR_VALIDATOR("pn", MKQR_VBIND(NonZeroMaxLength, "70")),
-			MKQR_VALIDATOR("padd1", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("padd2", MKQR_VBIND(SwitchOnSK, "16|70")),
-			MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0"),  MKQR_VBIND(Number, "1")),
-			MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0")),
+			MKQR_VALIDATOR("padd1", MKQR_VBIND(SwitchOnSK, "16|70|pat")),
+			MKQR_VALIDATOR("padd2", MKQR_VBIND(SwitchOnSK, "16|70|pat")),
+			MKQR_VALIDATOR("pz", MKQR_VBIND(SwitchOnSK, "7|0|pat"),  MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("pg", MKQR_VBIND(SwitchOnSK, "35|0|pat")),
 			MKQR_VALIDATOR("pc", MKQR_VBIND(FixedLength, "2"), MKQR_VBIND(CountryCode, "")),
-			MKQR_VALIDATOR("rt", MKQR_VBIND(FixedChars, "QRR|SCOR|NON")),
+			MKQR_VALIDATOR("rt", MKQR_VBIND(FixedStr, "QRR|SCOR|NON")),
 			MKQR_VALIDATOR("ref", MKQR_VBIND(NonZeroMaxLength, "27")),
-			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(DoublePositiveNumber, "")),
-			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(DoublePositiveNumber, "")),
+			MKQR_VALIDATOR("pcd", MKQR_VBIND(FixedLength, "3"), MKQR_VBIND(Number, "1")),
+			MKQR_VALIDATOR("nac", MKQR_VBIND(FixedLength, "1"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("us50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("usek50", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
 			MKQR_VALIDATOR("us30", MKQR_VBIND(FixedLength, "15"), MKQR_VBIND(Number, "1")),
@@ -211,6 +211,19 @@ namespace MKQR
 			const std::string& param,
 			std::string& outMessage) const;
 
+		/*!@brief Checks if value has all characters specified in param.
+		 * param can contain multiple strings separated by the | delimiter
+		 *
+		 * @param value The string on which to check the characters
+		 * @param param All possible characters that can appear in value
+		 * @param outMessage The message this function generates if it fails
+		 *
+		 * @return True if value has only the characters specified in param
+		 */
+		[[nodiscard]] bool FixedStr(const std::string& value,
+			const std::string& param,
+			std::string& outMessage) const;
+
 		/*!@brief Checks if value is a country code
 		 *
 		 * @param value The string to check
@@ -251,7 +264,7 @@ namespace MKQR
 		 *
 		 * @param value The string to check
 		 * @param param Minimum and maximum length of characters for the
-		 * specified parameter
+		 * specified parameter, last argument must be "cat" or "pat"
 		 * @param outMessage The message this function generates if it fails
 		 *
 		 * @return True if value is a currency code
@@ -275,7 +288,7 @@ namespace MKQR
 		/*!@brief Checks if the provided string is a number
 		 *
 		 * @param value The string to check
-		 * @param param 0 all numbers, 1 real numbers
+		 * @param param 0 all numbers, 1 natural and zero
 		 * @param outMessage The message this function generates if it fails
 		 *
 		 * @return True if value is a valid number

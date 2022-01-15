@@ -20,7 +20,7 @@ std::vector<std::string> MKQR::Validator::TokenizeString(const char* str, char d
 
 bool MKQR::Validator::IsNumber(const std::string& str, bool isAnyNumber) const
 {
-	std::regex anyRegex("/^-?\\d+\\.?\\d*$/");
+	std::regex anyRegex("[-.0-9]+");
 	std::regex naturalRegex("^[0-9]+$");
 	return std::regex_match(str, isAnyNumber ? anyRegex : naturalRegex);
 }
@@ -105,7 +105,7 @@ bool MKQR::Validator::NonZeroMaxLength(const std::string& value, const std::stri
 {
 	outMessage = "Value " + value + " is not between 0 and " + param;
 	size_t l = atoll(param.c_str());
-	return value.length() > 0 && value.length() < l;
+	return value.length() > 0 && value.length() <= l;
 }
 
 bool MKQR::Validator::FixedLength(const std::string& value, const std::string& param, std::string& outMessage) const
@@ -119,26 +119,41 @@ bool MKQR::Validator::FixedChars(const std::string& value, const std::string& pa
 {
 	outMessage = "Value " + value + " has invalid characters. Expected characters: " + param;
 
+	for (char cv : value)
+	{
+		bool found = false;
+		for (char cp : param)
+		{
+			if (cp == cv)
+			{
+				found = true;
+				break;
+			}
+		}
+
+		if (!found)
+			return false;
+	}
+
+	return true;
+}
+
+bool MKQR::Validator::FixedStr(const std::string& value, const std::string& param, std::string& outMessage) const
+{
+	outMessage = "Value " + value + " has invalid strings. Expected strings: " + param;
+	bool retVal = false;
+
 	std::vector<std::string> params = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
 	for (const std::string& p : params)
 	{
-		for (char cv : value)
+		if (p == value)
 		{
-			bool found = false;
-			for (char cp : p)
-			{
-				if (cp == cv)
-				{
-					found = true;
-					break;
-				}
-			}
-
-			if (!found)
-				return false;
+			retVal = true;
+			break;
 		}
 	}
-	return true;
+
+	return retVal;
 }
 
 bool MKQR::Validator::CountryCode(
@@ -156,7 +171,7 @@ bool MKQR::Validator::DoublePositiveNumber(
 	std::string& outMessage) const
 {
 	outMessage = "Value " + value + " must be a double-precision positive number";
-	bool retVal = IsNumber(value);
+	bool retVal = IsNumber(value, true);
 	if (retVal)
 	{
 		const double amount = std::stod(value);
@@ -178,8 +193,9 @@ bool MKQR::Validator::SwitchOnSK(const std::string& value, const std::string& pa
 {
 	bool retVal = false;
 	outMessage = "Value " + value + " is out of range";
-	const std::string& valueCat = mGenerator.GetParameterValue("cat");
-	const std::vector<std::string>& tokens = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+	std::vector<std::string> tokens = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+	const std::string& valueCat = mGenerator.GetParameterValue(tokens.back());
+	tokens.pop_back();
 	if (tokens.size() == 2)
 	{
 		const uint8_t valueS = (uint8_t)atoi(tokens[0].c_str());
