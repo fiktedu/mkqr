@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="277" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="278" bodyend="282"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="321" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="322" bodyend="326"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="284" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="284" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="328" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="328" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_m_k_q_r_1_1_validator_1_1_s_result_1a998bcaea5937b9a4dcb5225dcf1c643f" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="285" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="285" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="329" column="13" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="329" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="287" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="287" bodyend="290"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="331" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="331" bodyend="334"/>
       </memberdef>
       <memberdef kind="function" id="struct_m_k_q_r_1_1_validator_1_1_s_result_1a94e47f437bbaf0b28e58b86b5219e071" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="292" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="292" bodyend="295"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="336" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="336" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="struct_m_k_q_r_1_1_validator_1_1_s_result_1a859cb70d58a76d5166ace1a5da80eb98" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786" kindref="member">ELevel</ref></type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="297" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="297" bodyend="297"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="341" column="8" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="341" bodyend="341"/>
       </memberdef>
       <memberdef kind="function" id="struct_m_k_q_r_1_1_validator_1_1_s_result_1a67d8bc5b9e6cf51272034883baddb800" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::string &amp;</type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="298" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="298" bodyend="298"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="342" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="342" bodyend="342"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -158,7 +158,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="268" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="269" bodyend="299"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="312" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="313" bodyend="343"/>
     <listofallmembers>
       <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a7cd66fd9f1b78589fbb50b32467ce786" prot="public" virt="non-virtual"><scope>MKQR::Validator::SResult</scope><name>ELevel</name></member>
       <member refid="struct_m_k_q_r_1_1_validator_1_1_s_result_1a859cb70d58a76d5166ace1a5da80eb98" prot="public" virt="non-virtual"><scope>MKQR::Validator::SResult</scope><name>GetLevel</name></member>

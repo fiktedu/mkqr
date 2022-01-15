@@ -88,7 +88,7 @@
         <name>mMandatoryParameters</name>
         <initializer>=
 		{
-			&quot;t&quot;, &quot;v&quot;, &quot;c&quot;, &quot;iban&quot;, &quot;cat&quot;, &quot;cn&quot;, &quot;cc&quot;, &quot;cur&quot;,  &quot;pcd&quot; 
+			&quot;t&quot;, &quot;v&quot;, &quot;c&quot;, &quot;iban&quot;, &quot;cat&quot;, &quot;cn&quot;, &quot;cc&quot;, &quot;cur&quot;, &quot;rt&quot;, &quot;pcd&quot; 
 		}</initializer>
         <briefdescription>
 <para>Contains all the mandatory parameters. </para>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="93" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="93" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="100" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_validator_1ad9ab3daaf12f2eebeb3f8972291a233a" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::string &gt;</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="100" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="100" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="107" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_validator_1a3ce00208034b756110ca76615a430ce7" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::string &gt;</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="321" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="321" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="365" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="365" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_m_k_q_r_1_1_validator_1a9b36ae4f2fe596212190140f925aec02" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::string &gt;</type>
@@ -166,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="337" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="337" bodyend="-1"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="381" column="19" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="381" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -210,16 +210,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="112" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="4" bodyend="19"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="119" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="4" bodyend="19"/>
       </memberdef>
-      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a89216e8c2ffe1ad023dfb425675ca16b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a36b056f8bd62383d71f3511181a0386a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool IsNumber</definition>
-        <argsstring>(const std::string &amp;str) const</argsstring>
+        <argsstring>(const std::string &amp;str, bool isAnyNumber=0) const</argsstring>
         <name>IsNumber</name>
         <param>
           <type>const std::string &amp;</type>
           <declname>str</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isAnyNumber</declname>
+          <defval>0</defval>
         </param>
         <briefdescription>
 <para>Checks if the provided string is a number. </para>
@@ -240,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="120" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="21" bodyend="27"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="127" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="21" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a6e57a92a7faa2a187c41084abb766834" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -270,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="131" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="29" bodyend="67"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="138" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="28" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a37cbdb7ca9ebe129e57097ba4a63d704" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -324,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="143" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="69" bodyend="78"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="150" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="68" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1acdb1dbfbd60343c54f25e6927301dc2b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -378,7 +383,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="155" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="80" bodyend="97"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="162" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="79" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1af310c82e5b491eed51a3710a084bca4a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -432,7 +437,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="167" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="99" bodyend="103"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="174" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a9d46dd44d5ab7764737fac14fd5a9004" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -486,7 +491,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="179" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="105" bodyend="110"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="186" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="104" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a5e1c5b66c3702381f7ff113f7fbb4d15" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -540,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="191" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="112" bodyend="117"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="198" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="111" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1abb8e9f7c4a05324058f5b5b5dc0ac6f0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -594,7 +599,61 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="203" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="119" bodyend="138"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="210" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="118" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a7804019bda72e170178c4e5244d5add2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FixedStr</definition>
+        <argsstring>(const std::string &amp;value, const std::string &amp;param, std::string &amp;outMessage) const</argsstring>
+        <name>FixedStr</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>outMessage</declname>
+        </param>
+        <briefdescription>
+<para>Checks if value has all characters specified in param. param can contain multiple strings separated by the | delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string on which to check the characters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>All possible characters that can appear in value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outMessage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message this function generates if it fails</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if value has only the characters specified in param </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="223" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="141" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a12d2765c86ea45675b264aa1f6dd084f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -648,13 +707,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="215" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="140" bodyend="147"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="235" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="159" bodyend="166"/>
       </memberdef>
-      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a073e79999b99191e6236445aa9964584" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1ad6c770a5f739cb158c26d583ab27ee77" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool IsDoublePositiveNumber</definition>
+        <definition>bool DoublePositiveNumber</definition>
         <argsstring>(const std::string &amp;value, const std::string &amp;param, std::string &amp;outMessage) const</argsstring>
-        <name>IsDoublePositiveNumber</name>
+        <name>DoublePositiveNumber</name>
         <param>
           <type>const std::string &amp;</type>
           <declname>value</declname>
@@ -702,7 +761,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="227" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="149" bodyend="162"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="247" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="168" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a8a9d135f29ccb1e60dcb3d8c6e6ce7a4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -756,7 +815,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="239" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="164" bodyend="171"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="259" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="183" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a1a27fd842409dba7220c6948e88240d9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -792,7 +851,7 @@
 <parametername>param</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Minimum and maximum length of characters for the specified parameter </para>
+<para>Minimum and maximum length of characters for the specified parameter, last argument must be &quot;cat&quot; or &quot;pat&quot; </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -810,7 +869,115 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="252" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="173" bodyend="201"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="272" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="192" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1aa06bc278c07054f1050db24ed344d6e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool URL</definition>
+        <argsstring>(const std::string &amp;value, const std::string &amp;param, std::string &amp;outMessage)</argsstring>
+        <name>URL</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>outMessage</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the provided URL is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not used </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outMessage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message this function generates if it fails</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if value is a valid URL </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="284" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="223" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a7e3308f4ad59d91f8fa6a00f25db2cb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Number</definition>
+        <argsstring>(const std::string &amp;value, const std::string &amp;param, std::string &amp;outMessage)</argsstring>
+        <name>Number</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>outMessage</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the provided string is a number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 all numbers, 1 natural and zero </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outMessage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message this function generates if it fails</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if value is a valid number </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="296" column="7" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="232" bodyend="240"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -840,7 +1007,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="262" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="262" bodyend="263"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="306" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="306" bodyend="307"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1af9d18847c48e2ef6fbf8aba1c7785832" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::string &gt;</type>
@@ -855,7 +1022,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="307" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="203" bodyend="215"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="351" column="14" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="242" bodyend="254"/>
       </memberdef>
       <memberdef kind="function" id="class_m_k_q_r_1_1_validator_1a396c7ee569034234895e6fc20ec13661" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_m_k_q_r_1_1_validator_1_1_s_result" kindref="compound">SResult</ref></type>
@@ -880,7 +1047,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="315" column="10" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="217" bodyend="243"/>
+        <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="359" column="10" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.cpp" bodystart="256" bodyend="282"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -911,18 +1078,19 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="38" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="39" bodyend="346"/>
+    <location file="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" line="38" column="1" bodyfile="D:/Projects/mkqr/API/mkqr_api/mkqr_validator.h" bodystart="39" bodyend="390"/>
     <listofallmembers>
       <member refid="class_m_k_q_r_1_1_validator_1acdb1dbfbd60343c54f25e6927301dc2b" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>AltIBAN</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a12d2765c86ea45675b264aa1f6dd084f" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>CountryCode</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a8a9d135f29ccb1e60dcb3d8c6e6ce7a4" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>CurrencyCode</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1ad6c770a5f739cb158c26d583ab27ee77" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>DoublePositiveNumber</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1abb8e9f7c4a05324058f5b5b5dc0ac6f0" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>FixedChars</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a5e1c5b66c3702381f7ff113f7fbb4d15" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>FixedLength</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1a7804019bda72e170178c4e5244d5add2" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>FixedStr</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1af9d18847c48e2ef6fbf8aba1c7785832" prot="public" virt="non-virtual"><scope>MKQR::Validator</scope><name>GetMandatoryParameters</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a37cbdb7ca9ebe129e57097ba4a63d704" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IBAN</name></member>
-      <member refid="class_m_k_q_r_1_1_validator_1a073e79999b99191e6236445aa9964584" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IsDoublePositiveNumber</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1af310c82e5b491eed51a3710a084bca4a" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IsEqual</name></member>
-      <member refid="class_m_k_q_r_1_1_validator_1a89216e8c2ffe1ad023dfb425675ca16b" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IsNumber</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1a36b056f8bd62383d71f3511181a0386a" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IsNumber</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a6e57a92a7faa2a187c41084abb766834" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>IsParameterMandatory</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1ad9ab3daaf12f2eebeb3f8972291a233a" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>mConditionalParameters</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a3ce00208034b756110ca76615a430ce7" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>mCountryCodes</name></member>
@@ -931,8 +1099,10 @@
       <member refid="class_m_k_q_r_1_1_validator_1ac04565a7a2ea83399dd830261df85196" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>mMandatoryParameters</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a755cf48d9d4292766b0baf34f309cec1" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>mValidators</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a9d46dd44d5ab7764737fac14fd5a9004" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>NonZeroMaxLength</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1a7e3308f4ad59d91f8fa6a00f25db2cb1" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>Number</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a1a27fd842409dba7220c6948e88240d9" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>SwitchOnSK</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>TokenizeString</name></member>
+      <member refid="class_m_k_q_r_1_1_validator_1aa06bc278c07054f1050db24ed344d6e0" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>URL</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a396c7ee569034234895e6fc20ec13661" prot="public" virt="non-virtual"><scope>MKQR::Validator</scope><name>ValidateParameter</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1aad749382d5ee01ac762f6c901f4d3e42" prot="public" virt="non-virtual"><scope>MKQR::Validator</scope><name>Validator</name></member>
       <member refid="class_m_k_q_r_1_1_validator_1a2d2e2b9e48de03d2afd7afad8bfdb5db" prot="private" virt="non-virtual"><scope>MKQR::Validator</scope><name>ValidatorFunction</name></member>

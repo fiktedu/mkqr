@@ -33,12 +33,11 @@ std::vector<std::string> MKQR::Validator::TokenizeString(const char* str, char d
     return tokens;
 }
 
-bool MKQR::Validator::IsNumber(const std::string& str) const
+bool MKQR::Validator::IsNumber(const std::string& str, bool isAnyNumber) const
 {
-    for (char const& c : str)
-        if (std::isdigit(c) == 0 && c != '.' && c != '-')
-            return false;
-    return true;
+    std::regex anyRegex("[-.0-9]+");
+    std::regex naturalRegex("^[0-9]+$");
+    return std::regex_match(str, isAnyNumber ? anyRegex : naturalRegex);
 }
 
 bool MKQR::Validator::IsParameterMandatory(const std::string& name) const
@@ -86,7 +85,7 @@ bool MKQR::Validator::IBAN(
     [[maybe_unused]] const std::string& param,
     std::string& outMessage) const
 {
-    outMessage += "Supplied IBAN not valid.";
+    outMessage += "Supplied IBAN is not valid.";
     const std::regex ibanRegex(
         "^([A-Z]{2}[ \\-]?[0-9]{2})(?=(?:[ \\-]?[A-Z0-9]){9,30}$)((?:[ \\-]?[A-Z0-9]{3,5}){2,7})([ \\-]?[A-Z0-9]{1,3})?$");
     return std::regex_match(ibanString, ibanRegex);
@@ -121,7 +120,7 @@ bool MKQR::Validator::NonZeroMaxLength(const std::string& value, const std::stri
 {
     outMessage = "Value " + value + " is not between 0 and " + param;
     size_t l = atoll(param.c_str());
-    return value.length() > 0 && value.length() < l;
+    return value.length() > 0 && value.length() <= l;
 }
 
 bool MKQR::Validator::FixedLength(const std::string& value, const std::string& param, std::string& outMessage) const
@@ -134,6 +133,7 @@ bool MKQR::Validator::FixedLength(const std::string& value, const std::string& p
 bool MKQR::Validator::FixedChars(const std::string& value, const std::string& param, std::string& outMessage) const
 {
     outMessage = "Value " + value + " has invalid characters. Expected characters: " + param;
+
     for (char cv : value)
     {
         bool found = false;
@@ -149,7 +149,26 @@ bool MKQR::Validator::FixedChars(const std::string& value, const std::string& pa
         if (!found)
             return false;
     }
+
     return true;
+}
+
+bool MKQR::Validator::FixedStr(const std::string& value, const std::string& param, std::string& outMessage) const
+{
+    outMessage = "Value " + value + " has invalid strings. Expected strings: " + param;
+    bool retVal = false;
+
+    std::vector<std::string> params = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+    for (const std::string& p : params)
+    {
+        if (p == value)
+        {
+            retVal = true;
+            break;
+        }
+    }
+
+    return retVal;
 }
 
 bool MKQR::Validator::CountryCode(
@@ -161,13 +180,13 @@ bool MKQR::Validator::CountryCode(
     return std::find(mCountryCodes.begin(), mCountryCodes.end(), value) != mCountryCodes.end();
 }
 
-bool MKQR::Validator::IsDoublePositiveNumber(
+bool MKQR::Validator::DoublePositiveNumber(
     const std::string& value,
     [[maybe_unused]] const std::string& param,
     std::string& outMessage) const
 {
     outMessage = "Value " + value + " must be a double-precision positive number";
-    bool retVal = IsNumber(value);
+    bool retVal = IsNumber(value, true);
     if (retVal)
     {
         const double amount = std::stod(value);
@@ -189,8 +208,9 @@ bool MKQR::Validator::SwitchOnSK(const std::string& value, const std::string& pa
 {
     bool retVal = false;
     outMessage = "Value " + value + " is out of range";
-    const std::string& valueCat = mGenerator.GetParameterValue("cat");
-    const std::vector<std::string>& tokens = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+    std::vector<std::string> tokens = TokenizeString(param.c_str(), MKQR_STR_DELIMITER);
+    const std::string& valueCat = mGenerator.GetParameterValue(tokens.back());
+    tokens.pop_back();
     if (tokens.size() == 2)
     {
         const uint8_t valueS = (uint8_t)atoi(tokens[0].c_str());
@@ -213,6 +233,25 @@ bool MKQR::Validator::SwitchOnSK(const std::string& value, const std::string& pa
     }
 
     return retVal;
+}
+
+bool MKQR::Validator::URL(const std::string& value, [[maybe_unused]] const std::string& param, std::string& outMessage)
+{
+    outMessage += "Supplied URL is not valid.";
+    const std::regex urlRegex(
+        "(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+");
+
+    return std::regex_match(value, urlRegex);
+}
+
+bool MKQR::Validator::Number(const std::string& value, const std::string& param, std::string& outMessage)
+{
+    outMessage = "String " + value + " is not a number.";
+    if (param == "0")
+        return IsNumber(value, true);
+    else if (param == "1")
+        return IsNumber(value, false);
+    return false;
 }
 
 std::vector<std::string> MKQR::Validator::GetMandatoryParameters() const
@@ -261,4 +300,4 @@ MKQR::Validator::SResult MKQR::Validator::ValidateParameter(const std::string& n
 
 -------------------------------
 
-Updated on 2021-12-27 at 23:28:27 +0100
+Updated on 2022-01-15 at 21:45:57 +0100

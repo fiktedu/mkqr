@@ -140,7 +140,7 @@
     <member refid="class_m_k_q_r_1_1_validator_1a3ce00208034b756110ca76615a430ce7" kind="variable"><name>mCountryCodes</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a9b36ae4f2fe596212190140f925aec02" kind="variable"><name>mCurrencyCodes</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a4f620d3bb5b47b290c39e7a4c33cd97f" kind="function"><name>TokenizeString</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a89216e8c2ffe1ad023dfb425675ca16b" kind="function"><name>IsNumber</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a36b056f8bd62383d71f3511181a0386a" kind="function"><name>IsNumber</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a6e57a92a7faa2a187c41084abb766834" kind="function"><name>IsParameterMandatory</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a37cbdb7ca9ebe129e57097ba4a63d704" kind="function"><name>IBAN</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1acdb1dbfbd60343c54f25e6927301dc2b" kind="function"><name>AltIBAN</name></member>
@@ -148,10 +148,13 @@
     <member refid="class_m_k_q_r_1_1_validator_1a9d46dd44d5ab7764737fac14fd5a9004" kind="function"><name>NonZeroMaxLength</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a5e1c5b66c3702381f7ff113f7fbb4d15" kind="function"><name>FixedLength</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1abb8e9f7c4a05324058f5b5b5dc0ac6f0" kind="function"><name>FixedChars</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a7804019bda72e170178c4e5244d5add2" kind="function"><name>FixedStr</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a12d2765c86ea45675b264aa1f6dd084f" kind="function"><name>CountryCode</name></member>
-    <member refid="class_m_k_q_r_1_1_validator_1a073e79999b99191e6236445aa9964584" kind="function"><name>IsDoublePositiveNumber</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1ad6c770a5f739cb158c26d583ab27ee77" kind="function"><name>DoublePositiveNumber</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a8a9d135f29ccb1e60dcb3d8c6e6ce7a4" kind="function"><name>CurrencyCode</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a1a27fd842409dba7220c6948e88240d9" kind="function"><name>SwitchOnSK</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1aa06bc278c07054f1050db24ed344d6e0" kind="function"><name>URL</name></member>
+    <member refid="class_m_k_q_r_1_1_validator_1a7e3308f4ad59d91f8fa6a00f25db2cb1" kind="function"><name>Number</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1aad749382d5ee01ac762f6c901f4d3e42" kind="function"><name>Validator</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1af9d18847c48e2ef6fbf8aba1c7785832" kind="function"><name>GetMandatoryParameters</name></member>
     <member refid="class_m_k_q_r_1_1_validator_1a396c7ee569034234895e6fc20ec13661" kind="function"><name>ValidateParameter</name></member>
