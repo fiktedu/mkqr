@@ -99,14 +99,17 @@ namespace wpfexample
             CreateParameter("t", "MKD");
             CreateParameter("v", "1000");
             CreateParameter("c", "1");
-            CreateParameter("iban", "DE89370400440532013000");
-            CreateParameter("aiban", "DE89370400440532013000|DE89370400440532013000");
+            CreateParameter("iban", "MK12345678901234567890");
             CreateParameter("cat", "K");
-            CreateParameter("cn", "Toplifikacija Skopje");
-            CreateParameter("cadd1", "Londonska");
+            CreateParameter("cn", "Petre Petrevski");
+            CreateParameter("cadd1", "Goce Delcev 12");
+            CreateParameter("a", "1000");
             CreateParameter("cc", "MK");
             CreateParameter("cur", "MKD");
-            CreateParameter("pcd", "289");
+            CreateParameter("rt", "QRR");
+            CreateParameter("pcd", "100");
+            CreateParameter("us30", "210000000000000");
+            CreateParameter("usek30", "210000000000000");
 
             GenerateMkqr();
 
